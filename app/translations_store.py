@@ -91,6 +91,9 @@ RTL_KEYS = ("rtl", "is_rtl", "rightToLeft", "right_to_left")
 # Possible field names for front card content
 FRONT_KEYS = ("front", "Front", "content", "Content", "card_front", "cardFront", "text")
 
+# Possible field names for source/attribution information
+SOURCE_KEYS = ("source", "Source", "attribution", "Attribution", "origin", "Origin")
+
 
 # =============================================================================
 # HELPER FUNCTIONS FOR FLEXIBLE FIELD ACCESS
@@ -327,6 +330,12 @@ class TranslationsStore:
             "front": {              # Front card content
                 "header": "KNOW YOUR RIGHTS",
                 "bullets": ["Point 1", "Point 2", ...]
+            },
+            "source": {             # Optional source/attribution info
+                "type": "official",
+                "origin": "ILRC",
+                "url": "https://...",
+                "verified": true
             }
         }
     """
@@ -465,6 +474,7 @@ class TranslationsStore:
             name = _first_str(item, NAME_KEYS) or code  # Fall back to code if no name
             rtl = _first_bool(item, RTL_KEYS, default=False)
             front = _first_obj(item, FRONT_KEYS)
+            source = _first_obj(item, SOURCE_KEYS)
 
             # Normalize front content to dict format
             if isinstance(front, str):
@@ -477,6 +487,16 @@ class TranslationsStore:
                 # Other type -> wrap in dict
                 front_obj = {"value": front}
 
+            # Normalize source to dict format (or None if not present)
+            source_obj: Optional[Dict[str, Any]] = None
+            if isinstance(source, dict) and source:
+                source_obj = {
+                    "type": source.get("type", "unknown"),
+                    "origin": source.get("origin", "unknown"),
+                    "url": source.get("url"),
+                    "verified": bool(source.get("verified", False)),
+                }
+
             # Skip items without a code
             if not code:
                 continue
@@ -488,6 +508,7 @@ class TranslationsStore:
                 "rtl": rtl,
                 "official": True,  # Assume all loaded translations are official
                 "front": front_obj,
+                "source": source_obj,
             })
 
         # === Validate we got at least one valid language ===

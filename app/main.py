@@ -349,7 +349,7 @@ def list_languages():
 
         # Create response item with font support flag
         result.append(LanguageItem(
-            **lang,  # Spread existing fields (code, name, rtl, official)
+            **lang,  # Spread existing fields (code, name, rtl, official, source)
             fontSupported=font_supported
         ))
 
@@ -405,6 +405,7 @@ def get_card_payload(code: str):
         rtl=item["rtl"],
         official=item.get("official", True),
         front=item.get("front", {}),
+        source=item.get("source"),
     )
 
 

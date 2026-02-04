@@ -70,17 +70,18 @@ Request Flow:
 ### Setup
 
 ```bash
-# Navigate to backend directory
-cd Backend
+# Clone the repository
+git clone https://github.com/pierre-projects/redcardapi.git
+cd redcardapi
 
 # Create virtual environment
-python -m venv venv
+python -m venv .venv
 
 # Activate virtual environment
 # Windows:
-venv\Scripts\activate
+.venv\Scripts\activate
 # Linux/Mac:
-source venv/bin/activate
+source .venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
@@ -247,7 +248,7 @@ Generates and downloads a printable PDF.
 ### Installing Fonts
 
 1. Download Noto Sans fonts from [Google Fonts](https://fonts.google.com/noto)
-2. Place TTF files in `Backend/assets/fonts/`
+2. Place TTF files in `assets/fonts/`
 3. Required files per font family:
    - `NotoSans{Script}-Regular.ttf`
    - `NotoSans{Script}-Bold.ttf`
@@ -309,7 +310,7 @@ If the language uses a new script:
    SCRIPT_TO_FONTS[Script.NEW_SCRIPT] = ["NotoSansNew", "NotoSans"]
    ```
 
-3. Place font files in `Backend/assets/fonts/`
+3. Place font files in `assets/fonts/`
 
 ## Testing
 
@@ -318,7 +319,6 @@ If the language uses a new script:
 Tests that all languages can actually render PDFs:
 
 ```bash
-cd Backend
 python test_font_coverage.py
 ```
 

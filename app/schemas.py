@@ -64,6 +64,50 @@ LANGUAGE_CODE_PATTERN = re.compile(r"^[a-z]{2,3}(-[A-Z]{2})?$")
 
 
 # =============================================================================
+# SOURCE INFO SCHEMA
+# =============================================================================
+
+class SourceInfo(BaseModel):
+    """
+    Source/attribution information for a translation.
+
+    Tracks where each translation came from and its verification status.
+    This allows the frontend to display proper attribution and trust indicators.
+
+    ATTRIBUTES:
+        type: Source category ("official", "community", "machine", etc.)
+        origin: Specific source name (e.g., "ILRC", "community_contributor")
+        url: Optional link to the original source
+        verified: Whether the translation has been verified/reviewed
+
+    JSON EXAMPLE:
+        {
+            "type": "official",
+            "origin": "ILRC",
+            "url": "https://www.ilrc.org/red-cards",
+            "verified": true
+        }
+    """
+
+    type: str = "unknown"
+    origin: str = "unknown"
+    url: Optional[str] = None
+    verified: bool = False
+
+    @field_validator("type")
+    @classmethod
+    def validate_type(cls, v: str) -> str:
+        """Normalize source type to lowercase."""
+        return v.strip().lower() if v else "unknown"
+
+    @field_validator("origin")
+    @classmethod
+    def validate_origin(cls, v: str) -> str:
+        """Strip whitespace from origin."""
+        return v.strip() if v else "unknown"
+
+
+# =============================================================================
 # BULLET ITEM SCHEMA
 # =============================================================================
 
@@ -186,6 +230,7 @@ class LanguageItem(BaseModel):
         rtl: True if language is right-to-left (Arabic, Hebrew)
         official: True if this is an official/verified translation
         fontSupported: True if fonts are available for PDF rendering
+        source: Optional source/attribution information for the translation
 
     JSON EXAMPLE:
         {
@@ -193,7 +238,13 @@ class LanguageItem(BaseModel):
             "name": "Arabic",
             "rtl": true,
             "official": true,
-            "fontSupported": true
+            "fontSupported": true,
+            "source": {
+                "type": "official",
+                "origin": "ILRC",
+                "url": "https://www.ilrc.org/red-cards",
+                "verified": true
+            }
         }
 
     FRONTEND USAGE:
@@ -201,13 +252,15 @@ class LanguageItem(BaseModel):
         - name: Displayed in dropdown
         - rtl: Shows "RTL" badge in dropdown
         - fontSupported: Shows warning icon if false, disables PDF button
+        - source: Displays attribution and verification badge
     """
 
     code: str
     name: str
     rtl: bool = False
     official: bool = True
-    fontSupported: bool = True  # Added to support font availability warnings
+    fontSupported: bool = True
+    source: Optional[SourceInfo] = None
 
     @field_validator("code")
     @classmethod
@@ -265,6 +318,7 @@ class CardPayload(BaseModel):
         rtl: Right-to-left flag
         official: Official translation flag
         front: Dictionary containing header and bullets
+        source: Optional source/attribution information for the translation
 
     JSON EXAMPLE:
         {
@@ -275,6 +329,12 @@ class CardPayload(BaseModel):
             "front": {
                 "header": "CONOZCA SUS DERECHOS",
                 "bullets": ["Punto 1", "Punto 2"]
+            },
+            "source": {
+                "type": "official",
+                "origin": "ILRC",
+                "url": "https://www.ilrc.org/red-cards",
+                "verified": true
             }
         }
 
@@ -293,6 +353,7 @@ class CardPayload(BaseModel):
     rtl: bool = False
     official: bool = True
     front: Dict[str, Any]  # Flexible dict to handle various JSON structures
+    source: Optional[SourceInfo] = None
 
     @field_validator("code")
     @classmethod
