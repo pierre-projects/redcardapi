@@ -1,0 +1,1676 @@
+{
+  "version": "1.0.0",
+  "languages":{
+    "am": {
+  "name": "Amharic",
+  "native": "አማርኛ",
+  "code": "am",
+  "rtl": false,
+  "official": true,
+  "front": {
+    "header": "ሕገ መንግሥታዊ መብት አሎት፡-",
+    "bullets": [
+      {
+        "id": "bullet_1",
+        "text": "የኢሚግሬሽን ወኪሎች በሮን ሲያንኳኩ በሩን አይክፈቱ።"
+      },
+      {
+        "id": "bullet_2",
+        "text": "የኢሚግሬሽን ወኪሎች እርስዎን ለማነጋገር ከሞከሩ ምንም ዓይነት ጥያቄ አይመልሱላቸው። ዝም የማለት መብት አሎት። "
+      },
+      {
+        "id": "bullet_3",
+        "text": "መጀመሪያ ጠበቃን ሳያናግሩ ምንም ነገር አይፈርሙ። ከጠበቃ ጋር የመነጋገር መብት አሎት።"
+      },
+      {
+        "id": "bullet_4",
+        "text": "ከቤትዎ ውጭ ከሆኑ፣ ለመሄድ ነፃ እንደሆኑ የኢሚግሬሽን ወኪሎቹን ይጠይቁ። አዎ ካሉ፣ በእርጋታ ይሂዱ።"
+      },
+      {
+        "id": "bullet_5",
+        "text": "ይህንን ካርድ ለወኪሉ ይስጡት። በቤትዎ ውስጥ ከሆኑ፣ ካርዱን በመስኮቱ በኩል ያሳዩ ወይም በበሩ ስር ያንሸራትቱ።"
+      }
+    ]
+  }
+},
+    "ar": {
+      "name": "Arabic",
+      "native": "العربية",
+      "code": "ar",
+      "rtl": true,
+      "official": true,
+      "front": {
+        "header": "لديك حقوق دستورية:",
+        "bullets": [
+          { "id": "bullet_1", "text": "ال تفتح الباب إذا كان رشطي الهجرة يطرق الباب." },
+          { "id": "bullet_2", "text": "ال تجيب عىل أي أسئلة يسئلها رشطة الهجرة إذا حاولوا التحدث إليك. لديك الحق يف التزام الصمت." },
+          { "id": "bullet_3", "text": "ال توقع أي يشء دون التحدث أوال إىل محامي. لك الحق يف التحدث اىل محامي." },
+          { "id": "bullet_4", "text": "إذا کنت خارج بیتك، اسأل الرشطي إذا کان لدیك حریة املغادرة، وإذا قال نعم، غادر بهدوء." },
+          { "id": "bullet_5", "text": "أعطي هذه البطاقة للرشطي. إذا كنت داخل منزلك، اعرض البطاقة من خالل النافذة أو مررها من تحت الباب." }
+        ]
+      }
+    },
+    "hy": {
+      "name": "Armenian",
+      "native": "Հայերեն",
+      "code": "hy",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "Դուք սահմանադրական իրավունքներ ունեք։",
+        "bullets": [
+          { "id": "bullet_1", "text": "ՄԻ՛ ԲԱՑԵՔ ԴՈՒՌԸ եթե ներգաղթի գործակալը թակում է ձեր դուռը։" },
+          { "id": "bullet_2", "text": "ՄԻ՛ ՊԱՏԱՍԽԱՆԵՔ ներգաղթի գործակալի ՈՉ ՄԻ ՀԱՐՑԻ եթե նրանք փորձեն խոսել ձեզ հետ։ Դուք իրավունք ունեք լուռ մնալու։" },
+          { "id": "bullet_3", "text": "ՄԻ՛ ՍՏՈՐԱԳՐԵՔ ՈՉ ՄԻ ԲԱՆ առանց նախապես խոսելու ձեր իրավաբանի հետ։ Դուք իրավունք ունեք իրավաբանի հետ խոսելու։" },
+          { "id": "bullet_4", "text": "Եթե դուք ձեր տնից դուրս եք, հարցրե՛ք ներգաղթի գործակալին եթե ազատ եք հեռանալու. եթե նրանք ասեն «այո», հանդարտ կերպով հեռացե՛ք։" },
+          { "id": "bullet_5", "text": "ՏՎԵ՛Ք ԱՅՍ ԹՈՒՂԹԸ ԳՈՐԾԱԿԱԼԻՆ։ Եթե ձեր տան ներսում եք, նրանց ցույց տվե՛ք այս թուղթը պատուհանից կամ սահեցրե՛ք դռան ներքեվից։" }
+        ]
+      }
+    },
+    "bn": {
+      "name": "Bangla",
+      "native": "বাংলা",
+      "code": "bn",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "আপনার যে সকল সাংবিধানিক অধিকার আছে:",
+        "bullets": [
+          { "id": "bullet_1", "text": "যদি কোনো অভিবাসন এজেন্ট দরজায় কড়া নাড়ে তাহলে দরজা খুলবেন না।" },
+          { "id": "bullet_2", "text": "অভিবাসন এজেন্ট যদি আপনার সাথে কথা বলার চেষ্টা করেন তাহলে তাদের কোনো প্রশ্নের উত্তর দেবেন না। আপনার নীরব থাকার অধিকার আছে।" },
+          { "id": "bullet_3", "text": "প্রথমে আইনজীবীর সাথে কথা না বলে কোনো কিছুতে স্বাক্ষর করবেন না। আপনার একজন আইনজীবীর সাথে কথা বলার অধিকার আছে।" },
+          { "id": "bullet_4", "text": "আপনি যদি আপনার বাড়ির বাইরে থাকেন, তাহলে এজেন্টকে জিজ্ঞাসা করুন যে, আপনি যেতে পারবেন কিনা; যদি তারা হ্যাঁ বলে, তাহলে শান্তভাবে চলে যান।" },
+          { "id": "bullet_5", "text": "এজেন্টকে এই কার্ডটি দিন। যদি আপনি আপনার বাড়ির ভিতরে থাকেন তবে কার্ডটি জানালা দিয়ে দেখান এবং দরজার নিচ দিয়ে বাইরে দিন।" }
+        ]
+      }
+    },
+    "bs": {
+      "name": "Bosnian",
+      "native": "Bosanski",
+      "code": "bs",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "Imate ustavna prava:",
+        "bullets": [
+          { "id": "bullet_1", "text": "NEMOJTE OTVARATI VRATA ako Vam imigracijski službenik kuca na vrata." },
+          { "id": "bullet_2", "text": "NEMOJTE ODGOVARATI NI NA JEDNO PITANJE imigracijskog službenika ako pokušava da razgovara s Vama. Imate pravo da ćutite." },
+          { "id": "bullet_3", "text": "NEMOJTE NIŠTA POTPISIVATI prije nego što razgovarate sa advokatom. Imate pravo da razgovarate sa advokatom." },
+          { "id": "bullet_4", "text": "Ako ste van svog doma, pitajte službenika da li smijete da odete. Ako kaže da smijete, udaljite se mirno." },
+          { "id": "bullet_5", "text": "DAJTE OVU KARTICU SLUŽBENIKU. Ako ste u svom domu, pokažite karticu kroz prozor ili je provucite ispod vrata." }
+        ]
+      }
+      },
+
+
+    "my": {
+      "name": "Burmese",
+      "native": "မြန်မာ",
+      "code": "my",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "သင့်တွင် ဖွဲ့စည်းပုံအခြေခံဥပဒေဆိုင်ရာ အခွင့်အရေးများ ရှိပါသည်",
+        "bullets": [
+          { "id": "bullet_1", "text": "လူဝင်မှုကြီးကြပ်ရေး အရာရှိက တံခါးလာခေါက်လျှင် မဖွင့်ပေးပါနှင့်။" },
+          { "id": "bullet_2", "text": "သင့်ကို စကားပြောဆိုရန် ကြိုးပမ်းလာပါက မည်သည့်မေးခွန်းကိုမျှ ပြန်လည်ဖြေကြားခြင်း မပြုလုပ်ပါနှင့်။ သင့်တွင် နှုတ်ဆိတ်နေပိုင်ခွင့် ရှိပါသည်။" },
+          { "id": "bullet_3", "text": "ရှေ့နေတစ်ဦးနှင့် ဦးစွာတိုင်ပင်ခြင်းမရှိဘဲ မည်သည့်အရာကိုမျှ လက်မှတ်မထိုးပါနှင့်။ သင့်တွင် ရှေ့နေတစ်ဦးနှင့် ပြောဆိုတိုင်ပင်ပိုင်ခွင့် ရှိပါသည်။" },
+          { "id": "bullet_4", "text": "နေအိမ်ပြင်ပသို့ ရောက်ရှိနေပါက အရာရှိအား သင်လွတ်လပ်စွာ ထွက်ခွာနိုင်ခြင်း ရှိမရှိ မေးမြန်းပါ။ ထွက်ခွာနိုင်ပါက အေးဆေးစွာ ထွက်ခွာပါ။" },
+          { "id": "bullet_5", "text": "ဤကဒ်ပြားကို အရာရှိအား ပြသပါ။ သင်သည် အိမ်အတွင်းရှိပါက ပြူတင်းပေါက်မှ ပြသပါ သို့မဟုတ် တံခါးအောက်မှ တစ်ဆင့် ထုတ်ပြပါ။" }
+        ]
+      }
+    },
+
+    "yue": {
+      "name": "Cantonese",
+      "native": "廣東話",
+      "code": "yue",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "你享有憲法所賦予的權利：",
+        "bullets": [
+          { "id": "bullet_1", "text": "如果移民官員喺門外敲門，請唔好開門。" },
+          { "id": "bullet_2", "text": "如果移民官員試圖同你交談，請唔好回答任何問題。你有權保持沉默。" },
+          { "id": "bullet_3", "text": "喺未諮詢律師嘅情況下，請唔好簽署任何文件。你有權同律師溝通。" },
+          { "id": "bullet_4", "text": "如果你喺屋企以外嘅地方，請詢問移民官員你係咪可以離開；如果佢哋話可以，請冷靜離開。" },
+          { "id": "bullet_5", "text": "請將此卡片交畀移民官員。如果你喺屋企入面，可以經窗口展示卡片，或由門下遞出。" }
+        ]
+      }
+    },
+
+    "kea": {
+      "name": "Cape Verdean Creole",
+      "native": "Kriolu",
+      "code": "kea",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "Bu ten direitu konstitusional:",
+        "bullets": [
+          { "id": "bullet_1", "text": "KA BU ABRI PORTA si ajenti di imigrason konkôu na pórta." },
+          { "id": "bullet_2", "text": "KA BU RUSPONDI NINHUN PURGUNTA di ajenti di imigrason ses tenta pâpia ku bo. Bu ten direitu di fika en silénsiu." },
+          { "id": "bullet_3", "text": "KA BU SINA NADA sen prumeru antis pâpia ku un adivogadu. Bu ten direitu di pâpia ku un adivogadu." },
+          { "id": "bullet_4", "text": "Si bu sta fora di bu kasa, purgunta ajenti si bu sta livri pa bu bai. Si é fla sin, bai na mansu." },
+          { "id": "bullet_5", "text": "DA AJENTI KEL KARTON LI. Si bu sta dentu di bu kasa, mostra-l na janela ô pasa-l pa baxu di porta." }
+        ]
+      }
+    },
+
+    "ceb": {
+      "name": "Cebuano",
+      "native": "Cebuano",
+      "code": "ceb",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "Ang Konstitusyon naghatag kanimo ug mga katungod:",
+        "bullets": [
+          { "id": "bullet_1", "text": "AYAW ABRIHI ANG PULTAHAN kon ang usa ka ahente sa imigrasyon magtuktok sa pultahan." },
+          { "id": "bullet_2", "text": "AYAW TUBAGA ANG BISAN UNSANG MGA PANGUTANA gikan sa ahente sa imigrasyon kon sila mosulay sa pagpakigsulti kanimo. Aduna kay katungod nga magpabilin nga hilom." },
+          { "id": "bullet_3", "text": "AYAW PAGPIRMA SA BISAN UNSANG DOKUMENTO nga wala una makig-estorya sa usa ka abogado. Ikaw adunay katungod sa pagkonsulta sa usa ka abogado." },
+          { "id": "bullet_4", "text": "Kon ikaw anaa sa gawas sa imong balay, pangutan-a ang ahente kon mahimo ka ba nga mobiya. Kon moingon sila nga oo, mobiya nga malinawon." },
+          { "id": "bullet_5", "text": "IHATAG KINI NGA KARD NGADTO SA AHENTE. Kon anaa ka sa sulod sa imong balay, ipakita ang kard sa bintana o isuksok kini sa ilawom sa pultahan." }
+        ]
+      }
+    },
+
+    "zh-CN": {
+      "name": "Chinese (Simplified)",
+      "native": "中文（简体）",
+      "code": "zh-CN",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "您拥有宪法赋予的权利：",
+        "bullets": [
+          { "id": "bullet_1", "text": "如果移民调查员敲门，不要开门。" },
+          { "id": "bullet_2", "text": "如果移民调查员试图与您交谈，不要回答任何问题。您有权保持沉默。" },
+          { "id": "bullet_3", "text": "在与律师沟通之前，不要签署任何文件。您有权与律师谈话。" },
+          { "id": "bullet_4", "text": "如果您在户外，询问调查员您是否可以离开。如果他们说可以，请冷静离开。" },
+          { "id": "bullet_5", "text": "将此卡片交给调查员。如果您在家中，请通过窗户展示这张卡片，或从门缝下递出。" }
+        ]
+      }
+    },
+
+    "zh-TW": {
+      "name": "Chinese (Traditional)",
+      "native": "中文（繁體）",
+      "code": "zh-TW",
+      "rtl": false,
+      "official": true,
+      "front": {
+        "header": "你有以下憲法賦與的權利：",
+        "bullets": [
+          { "id": "bullet_1", "text": "如移民局人員敲門，不要開門。" },
+          { "id": "bullet_2", "text": "如移民局人員想和你交談，不要回答任何問題。你有權保持緘默。" },
+          { "id": "bullet_3", "text": "未和律師諮詢之前，不要簽署任何文件。你有權和一名律師交談。" },
+          { "id": "bullet_4", "text": "如你在家外面，問移民局人員你是否可以離開；如他們答可以，請鎮靜地離開。" },
+          { "id": "bullet_5", "text": "出示此卡給移民局人員看。如你在家裡，可在窗口或門下面遞出去給他們看。" }
+        ]
+      }
+    },
+
+
+    "prs": {
+        "name": "Dari",
+        "native": "دری",
+        "code": "prs",
+        "rtl": true,
+        "official": true,
+        "front": {
+          "header": "شام حقوق قانونی دارید:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "دروازه را باز نکنید اگر یک مأمور مهاجرت بر دروازه شام می کوبد."
+            },
+            {
+              "id": "bullet_2",
+              "text": "به هیچ سوالی پاسخ ندهید اگر یک مأمور مهاجرت تلاش کند با شام صحبت کند. شام حق دارید که سکوت کنید."
+            },
+            {
+              "id": "bullet_3",
+              "text": "هیچ چیزی را امضا نکنید بدون این که ابتدا با یک وکیل صحبت کنید. شام حق دارید که با یک وکیل مشورت کنید."
+            },
+            {
+              "id": "bullet_4",
+              "text": "اگر بیرون از خانه خود هستید، از مأمور بپرسید که آیا شام آزاد هستید که بروید. اگر بگوید بلی، آرام محل را ترک کنید."
+            },
+            {
+              "id": "bullet_5",
+              "text": "این کارت را به مأمور بدهید. اگر در داخل خانه خود هستید، کارت را از طریق کلکین نشان دهید یا آنرا از زیر دروازه بفرستید."
+            }
+          ]
+        }
+      },
+
+      "en": {
+        "name": "English",
+        "native": "English",
+        "code": "en",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "You have constitutional rights:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "DO NOT OPEN THE DOOR if an immigration agent is knocking on the door."
+            },
+            {
+              "id": "bullet_2",
+              "text": "DO NOT ANSWER ANY QUESTIONS from an immigration agent if they try to talk to you. You have the right to remain silent."
+            },
+            {
+              "id": "bullet_3",
+              "text": "DO NOT SIGN ANYTHING without first speaking to a lawyer. You have the right to speak with a lawyer."
+            },
+            {
+              "id": "bullet_4",
+              "text": "If you are outside of your home, ask the agent if you are free to leave and if they say yes, leave calmly."
+            },
+            {
+              "id": "bullet_5",
+              "text": "GIVE THIS CARD TO THE AGENT. If you are inside of your home, show the card through the window or slide it under the door."
+            }
+          ]
+        }
+      },
+
+      "fa": {
+        "name": "Farsi",
+        "native": "فارسی",
+        "code": "fa",
+        "rtl": true,
+        "official": true,
+        "front": {
+          "header": "شام دارای حقوق قانونی هستید:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "در را باز نکنید اگر مأمور مهاجرت دِِر خانه را می کوبد."
+            },
+            {
+              "id": "bullet_2",
+              "text": "به هیچ پرسشی از مأمور مهاجرت پاسخ ندهید اگر تالش کرد با شام صحبت کند. شام حق دارید سکوت کنید."
+            },
+            {
+              "id": "bullet_3",
+              "text": "هیچ چیز را امضا نکنید بدون آنکه ابتدا با یک وکیل صحبت کرده باشید. شام حق دارید با وکیل مشورت کنید."
+            },
+            {
+              "id": "bullet_4",
+              "text": "اگر بیرون از خانه هستید، از مأمور بپرسید که آیا آزاد هستید بروید یا خیر. اگر گفت بله، آرام آنجا را ترک کنید."
+            },
+            {
+              "id": "bullet_5",
+              "text": "این کارت را به مأمور بدهید. اگر داخل خونه هستید، کارت را از پشت پنجره نشان دهید یا از زیر در رد بدهید."
+            }
+          ]
+        }
+      },
+
+      "fr": {
+        "name": "French",
+        "native": "Français",
+        "code": "fr",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "La constitution des États-Unis vous donne des droits :",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "Si un agent d’immigration frappe chez vous, N’OUVREZ PAS LA PORTE."
+            },
+            {
+              "id": "bullet_2",
+              "text": "Si un agent d’immigration essaie de vous parler, NE RÉPONDEZ PAS À SES QUESTIONS. Vous avez le droit de garder le silence."
+            },
+            {
+              "id": "bullet_3",
+              "text": "NE SIGNEZ RIEN sans avoir d’abord consulté un avocat. Vous avez le droit de parler à un avocat."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Si vous êtes à l’extérieur, demandez à l’agent d’immigration si vous pouvez partir librement, et si l’agent vous dit oui, partez calmement."
+            },
+            {
+              "id": "bullet_5",
+              "text": "DONNEZ CETTE CARTE À L’AGENT. Si vous êtes chez vous, montrez-lui la carte à la fenêtre ou glissez-la sous la porte."
+            }
+          ]
+        }
+      },
+
+      "ka": {
+        "name": "Georgian",
+        "native": "ქართული",
+        "code": "ka",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "თქვენ გაქვთ კონსტიტუციური უფლებები:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "არ გააღოთ კარები თუკი საიმიგრაციო აგენტი კარებზე აკაკუნებს."
+            },
+            {
+              "id": "bullet_2",
+              "text": "არ უპასუხოთ შეკითხვებზე საიმიგრაციო აგენტს, თუკი ის თქვენთან საუბარს ცდილობს. თქვენ გაქვთ დუმილის უფლება."
+            },
+            {
+              "id": "bullet_3",
+              "text": "იურისტთან გასაუბრებამდე არ მოაწეროთ ხელი არაფერს. თქვენ გაქვთ იურისტთან საუბრის უფლება."
+            },
+            {
+              "id": "bullet_4",
+              "text": "თუ სახლში არ იმყოფებით, ჰკითხეთ აგენტს თუკი შეგიძლიათ წასვლა და თუ გეტყვიან რომ შეგიძლიათ, მშვიდად დატოვეთ ადგილი."
+            },
+            {
+              "id": "bullet_5",
+              "text": "მიეცით ეს ბარათი აგენტს. თუ სახლში იმყოფებით, აჩვენეთ ეს ბარათი მას ფანჯრიდან ან გააცურეთ კარების ქვეშ."
+            }
+          ]
+        }
+      },
+
+
+          "el": {
+          "name": "Greek",
+          "native": "Ελληνικά",
+          "code": "el",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "Έχετε συνταγματικά δικαιώματα:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "ΜΗΝ ΑΝΟΙΞΕΤΕ ΤΗΝ ΠΟΡΤΑ εάν ένας πράκτορας μετανάστευσης χτυπήσει την πόρτα."
+              },
+              {
+                "id": "bullet_2",
+                "text": "ΜΗΝ ΑΠΑΝΤΗΣΕΤΕ ΣΕ ΟΠΟΙΑΔΗΠΟΤΕ ΕΡΩΤΗΣΗ ενός πράκτορα μετανάστευσης εάν προσπαθήσει να σας μιλήσει. Έχετε το δικαίωμα να παραμείνετε σιωπηλοί."
+              },
+              {
+                "id": "bullet_3",
+                "text": "ΜΗΝ ΥΠΟΓΡΑΨΕΤΕ ΤΙΠΟΤΑ χωρίς να μιλήσετε πρώτα σε δικηγόρο. Έχετε το δικαίωμα να μιλήσετε με δικηγόρο."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Εάν βρίσκεστε έξω από το σπίτι σας, ρωτήστε τον πράκτορα αν είστε ελεύθεροι να φύγετε, και αν σας πουν ναι, φύγετε ήρεμα."
+              },
+              {
+                "id": "bullet_5",
+                "text": "ΔΩΣΤΕ ΑΥΤΗ ΤΗΝ ΚΑΡΤΑ ΣΤΟΝ ΠΡΑΚΤΟΡΑ. Εάν βρίσκεστε μέσα στο σπίτι σας, δείξτε την κάρτα από το παράθυρο ή περάστε την κάτω από την πόρτα."
+              }
+            ]
+          }
+        },
+
+        "ht": {
+          "name": "Haitian Creole",
+          "native": "Kreyòl Ayisyen",
+          "code": "ht",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "Ou gen dwa konstitisyonèl:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "PA LOUVRI PÒT la si yon ajan imigrasyon frape pòt la."
+              },
+              {
+                "id": "bullet_2",
+                "text": "PA REPONN OKENN KEKSYON yon ofisye imigrasyon si yo eseye pale avèk ou. Ou gen dwa pou rete an silans."
+              },
+              {
+                "id": "bullet_3",
+                "text": "PA SIYEN ANYEN san w pa pale anvan avèk yon avoka. Ou gen dwa pale ak yon avoka."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Si w deyò lakay ou, mande ajan an si w lib pou ale epi si yo di wi, ale avèk kalm."
+              },
+              {
+                "id": "bullet_5",
+                "text": "BAY AJAN KAT SA. Si ou anndan lakay ou, montre kat la nan fenèt la oswa glise li anba pòt la."
+              }
+            ]
+          }
+        },
+
+        "ha": {
+          "name": "Hausa",
+          "native": "Hausa",
+          "code": "ha",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "Kana da haƙƙin tsarin mulki:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "KADA KA BUƊE KOFAR idan wakilin shige da fice yana buga ƙofa."
+              },
+              {
+                "id": "bullet_2",
+                "text": "KADA KA AMSA KOWANE TAMBAYA daga wakilin shige da fice idan sun yi ƙoƙarin yin magana da kai. Kana da damar yin shiru."
+              },
+              {
+                "id": "bullet_3",
+                "text": "KADA KA SA HANNU A KOMAI ba tare da fara magana da lauya ba. Kana da damar yin magana da lauya."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Idan kana waje da gidan ka, tambayi wakilin idan kana da ’yancin tafiya kuma idan sun ce eh, ka tafi cikin nutsuwa."
+              },
+              {
+                "id": "bullet_5",
+                "text": "BA WAKILIN WANNAN KATIN. Idan kana cikin gidanka, nuna katin ta taga ko ka tura shi ta ƙarƙashin ƙofa."
+              }
+            ]
+          }
+        },
+
+        "he": {
+          "name": "Hebrew",
+          "native": "עברית",
+          "code": "he",
+          "rtl": true,
+          "official": true,
+          "front": {
+            "header": "יש לך זכויות חוקתיות:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "אם סוכן מטעם רשות ההגירה נוקש על דלתך, אל תפתח את הדלת."
+              },
+              {
+                "id": "bullet_2",
+                "text": "אם סוכן מטעם רשות ההגירה מנסה לשוחח איתך, אל תענה על אף שאלה. שמורה לך הזכות לשמור על שתיקה."
+              },
+              {
+                "id": "bullet_3",
+                "text": "אל תחתום על דבר לפני שיתאפשר לך לשוחח עם עורך דין. שמורה לך הזכות לשיחה עם עורך דין."
+              },
+              {
+                "id": "bullet_4",
+                "text": "אם הנך מחוץ לביתך, שאל את סוכן רשות ההגירה אם אתה חופשי לעזוב, ואם יאמר כן – עזוב בשלווה."
+              },
+              {
+                "id": "bullet_5",
+                "text": "תן כרטיס זה לסוכן ההגירה. אם אתה בתוך ביתך, ניתן להציג את הכרטיס דרך החלון או להעבירו מתחת לדלת."
+              }
+            ]
+          }
+        },
+
+        "hi": {
+          "name": "Hindi",
+          "native": "हिन्दी",
+          "code": "hi",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "आपके पास संवैधानिक अधिकार हैं:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "अगर कोई इमिग्रेशन एजेंट दरवाज़ा खटखटा रहा है तो दरवाज़ा न खोलें।"
+              },
+              {
+                "id": "bullet_2",
+                "text": "अगर कोई इमिग्रेशन एजेंट आपसे बात करने की कोशिश करता है तो उसके किसी भी सवाल का जवाब न दें। आपको चुप रहने का अधिकार है।"
+              },
+              {
+                "id": "bullet_3",
+                "text": "वकील से बात किए बिना किसी भी दस्तावेज़ पर हस्ताक्षर न करें। आपको वकील से बात करने का अधिकार है।"
+              },
+              {
+                "id": "bullet_4",
+                "text": "अगर आप अपने घर से बाहर हैं, तो एजेंट से पूछें कि क्या आप जाने के लिए स्वतंत्र हैं, और अगर वे हाँ कहें, तो शांति से चले जाएँ।"
+              },
+              {
+                "id": "bullet_5",
+                "text": "यह कार्ड एजेंट को दें। अगर आप अपने घर के अंदर हैं, तो कार्ड को खिड़की से दिखाएँ या दरवाज़े के नीचे से सरका दें।"
+              }
+            ]
+          }
+        },
+
+
+      "hmn": {
+        "name": "Hmong",
+        "native": "Hmoob",
+        "code": "hmn",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Koj muaj cai los ntawm tug txhooj lij choj:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "TSIS TXHOB QHIB QHOV ROOJ li yog thaum muaj ib tus tib neeg sawv cev tsoom fwv immigration tuaj khob qhov rooj."
+            },
+            {
+              "id": "bullet_2",
+              "text": "TSIS TXHOB TEB IB NQI LUS NUG LI yog muaj ib tus tib neeg sawv cev tsoom fwv immigration xav nrog koj tham. Koj yeej muaj cai nyob twb ywm tsis hais lus."
+            },
+            {
+              "id": "bullet_3",
+              "text": "TSIS TXHOB KOS NPE RAU DAB TSI LI yog thaum koj tseem tsis tau nrog ib tug kws lij choj tham. Koj yeej muaj cai nrog ib tug kws lij choj hais lus."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Yog tias koj nyob nraum zoov ntawm koj lub tsev, koj yuav tau nug tus tib neeg sawv cev tsoom fwv immigration ntawd seb koj mus puas tau. Yog lawv teb tias mus tau, ces maj mam mus."
+            },
+            {
+              "id": "bullet_5",
+              "text": "MUAB DAIM NPAV (DAIM PHIAJ) RAU TUS TIB NEEG SAWV CEV TSOOM FWV. Yog tias koj nyob hauv tsev, tes muab daim npav tsa ntawm lub qhov rais kom nws pom los yog muab ntxig hauv qab qhov rooj mus."
+            }
+          ]
+        }
+      },
+
+      "ig": {
+        "name": "Igbo",
+        "native": "Igbo",
+        "code": "ig",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Ị nwere ikike iwu obodo",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "EMEGHELA ỤZỌ ma ọ bụrụ na onye ọrụ mbata na ọpụpụ na-akụ aka n’ọnụ ụzọ."
+            },
+            {
+              "id": "bullet_2",
+              "text": "AZALA AJỤJỤ Ọ BỤLA sitere n’aka onye ọrụ mbata na ọpụpụ ma ọ bụrụ na ha nwaa ịgwa gị okwu. Ị nwere ikike ịgbachi nkịtị."
+            },
+            {
+              "id": "bullet_3",
+              "text": "ABỊANYELA AKA N’IHE na-ebughị ụzọ gwa onye ọka iwu okwu. Ị nwere ikike ịgwa onye ọka iwu okwu."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Ọ bụrụ na ịnọ n’èzí ụlọ gị, jụọ onye ọrụ ahụ ma ị nweere onwe gị ịpụ ma ọ bụrụ na ha asị ee, pụ nwayọọ."
+            },
+            {
+              "id": "bullet_5",
+              "text": "ENYE KAADỊ ONYE NNỌCHI ANYA. Ọ bụrụ na ị nọ n’ime ụlọ gị, gosi kaadị ahụ site na windo ma ọ bụ s’ite n’okpuru ọnụ ụzọ."
+            }
+          ]
+        }
+      },
+
+      "ilo": {
+        "name": "Ilocano",
+        "native": "Ilokano",
+        "code": "ilo",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Addaanka kadagiti konstitusional a karbengan:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "SAAN A LUKTAN TI RIDAW no adda ahente ti imigrasion nga agtuktok iti ridaw."
+            },
+            {
+              "id": "bullet_2",
+              "text": "SAAN A SUNGBATAN TI ANYAMAN A SALUDSOD manipud iti ahente ti imigrasion no padasendaka a kasarita. Karbengam ti agulimek."
+            },
+            {
+              "id": "bullet_3",
+              "text": "SAAN NGA AGPIRMA ITI ANYAMAN a dikay umuna a makisarita iti abogado. Adda karbengam a makisarita iti abogado."
+            },
+            {
+              "id": "bullet_4",
+              "text": "No addaka iti ruar ti pagtaengam, damagem iti ahente no nawayaka a pumanaw ket no kunada a wen, kalmado a pumanawka."
+            },
+            {
+              "id": "bullet_5",
+              "text": "ITED DAYTOY A CARD ITI AHENTE. No addaka iti uneg ti pagtaengam, ipakitam ti kard babaen ti tawa wenno i-slide-mo iti sirok ti ridaw."
+            }
+          ]
+        }
+      },
+
+      "ja": {
+        "name": "Japanese",
+        "native": "日本語",
+        "code": "ja",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "あなたには憲法で保障された権利があります。",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "もし、移民局の職員がドアをノックしても、ドアを開けないでください。"
+            },
+            {
+              "id": "bullet_2",
+              "text": "移民局の職員が話しかけても、質問には答えないでください。なぜなら、あなたには黙秘権があるからです。"
+            },
+            {
+              "id": "bullet_3",
+              "text": "弁護士と相談する前に、何も署名しないでください。弁護士と話す権利があります。"
+            },
+            {
+              "id": "bullet_4",
+              "text": "自宅にいない場合は、職員に自由に行ってもよいか確認し、許可されたら冷静にその場を離れてください。"
+            },
+            {
+              "id": "bullet_5",
+              "text": "このカードを職員に渡してください。家にいる場合は、窓から見せるか、ドアの下から滑り込ませてください。"
+            }
+          ]
+        }
+      },
+
+      "kar": {
+        "name": "Karen",
+        "native": "ကညီ",
+        "code": "kar",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "နအိၣ်ဒီးသဲစးတၢ်ဘျၢမိၢ်ပှၢ်ခွဲးယာ်-",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "တၢ်နုာ်လီၤအိၣ်ကီၢ်ပၢၤကီၢ်ပှၤဘၣ်မူဘၣ်ဒါမ့ၢ်ဟဲဒိတကျိာ်နပဲတြီန့ၣ် တဘၣ်တူၢ်လိာ်တဂ့ၤႋ"
+            },
+            {
+              "id": "bullet_2",
+              "text": "တၢ်နုာ်လီၤအိၣ်ကီၢ်ပၢၤကီၢ်ပှၤဘၣ်မူဘၣ်ဒါ မ့ၢ်ကျဲးစၢးကတိၤတၢ်ဒီးနၤ တဘၣ်စံးဆၢတၢ်သံကွၢ်နီတမံၤတဂ့ၤႋ နခွဲးယာ်အိၣ်လၢတဘၣ်စံးဆၢတၢ်န့ၣ်လီၤႋ"
+            },
+            {
+              "id": "bullet_3",
+              "text": "မ့ၢ်တတၢၣ်ပီၣ်ဘၣ်ဆိတၢ်ဒီးပီၢ်ရီန့ၣ် တဘၣ်စံးတၢ်နီတမံၤတဂ့ၤႋ နတၢ်ခွဲးတၢ်ယာ်အိၣ်လၢကတၢၣ်ပီၣ်တၢ်ဒီးပီၢ်ရီန့ၣ်လီၤႋ"
+            },
+            {
+              "id": "bullet_4",
+              "text": "နမ့ၢ်အိၣ်လၢတၢ်ချၢ သံကွၢ်ပှၤဘၣ်မူဘၣ်ဒါလၢ မ့ၢ်နလဲၤသဒၣ်ကွံာ်သ့ဧါ ဒီးအဝဲသ့ၣ်မ့ၢ်ပျဲနၤ ဟးသဒၣ်ကွံာ်ဃိဒိ တက့ၢ်ႋ"
+            },
+            {
+              "id": "bullet_5",
+              "text": "ဟ့ၣ်ခးအံၤဆူပှၤဘၣ်မူဘၣ်ဒါတက့ၢ်ႋ နမ့ၢ်အိၣ်လၢနဟံၣ်ပူၤ ဒုးနဲၣ်ပာ်ဖျါခးခီဖျိပဲတြီဖိ မ့တမ့ၢ် ဂိာ်လီၤလၢပဲတြီဖီလာ်တက့ၢ်ႋ"
+            }
+          ]
+        }
+      },
+
+
+        "km": {
+        "name": "Khmer",
+        "native": "ភាសាខ្មែរ",
+        "code": "km",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "អ្នកមបនសិទ្ធិពីរដ្ឋធម្មនុញ្ញ៖",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "្របសិនេបើភា)*ក់ងារអេនា1*្របេវសន៍េគាះទា7*រសូមកុំេបើកទា7*រឲ*=ពួកេគឲ*=េសាះ។"
+            },
+            {
+              "id": "bullet_2",
+              "text": "្របសិនេបើភា)*ក់งារអេនា1*្របេវសន៍ព*Cយាមនិយាយជាមួយេលាកអ្នកសូមកុំេឆ្លើយសំណLរព ីពួ កគាត់ឲ*=េសាះ។ េលាកអ្នកមានសិទ្ធិេនៅ េស្ងTមមិននិយាយ។"
+            },
+            {
+              "id": "bullet_3",
+              "text": "សូមកុំចុះហត្ថេលខាេលើអ្វីេដាយមិនទាន់និយាយជាមុនជាមួយេមធាវ]។ េលាកអ្នក មានស ិទ្ធិនិយាយជាមួយេមធាវ]។"
+            },
+            {
+              "id": "bullet_4",
+              "text": "្របសិនេបើេលាកអ្នកេនៅខាងេ្រកៅផ្ទះ របស់ េលាកអ្នក សូមសួរភា)*ក់งារថា េតើេលាកអ្នក អាចចា កេចញបានេទ ្របសិនេបើពួកេគ និយាយថាបាន សូមចាកេចញតាមស្រមhល។"
+            },
+            {
+              "id": "bullet_5",
+              "text": "ផ្តល់កាតេនះេទៅឲ*=ភា)*ក់ងារ។ ្របសិនេប ើេលាកអ្នកេនៅខាងក្នlងផ្ទះរបស ់េលាកអ្នក សូមបងា m*ញកាតេនះតាមបង្អoច ឬរុញវាេទៅ"
+            }
+          ]
+        }
+      },
+
+      "rw": {
+        "name": "Kinyarwanda",
+        "native": "Kinyarwanda",
+        "code": "rw",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Ufite uburenganzira uhabwa n’Itegeko Nshinga:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "NTUGAFUNGURE UMURYANGO igihe umukozi ushinzwe abinjira n’abasohoka akomanze."
+            },
+            {
+              "id": "bullet_2",
+              "text": "NTUGASUBIZE IBIBAZO by’umukozi w’abinjira n’abasohoka n’iyo yaba agerageje kukuganiriza. Ufite uburenganzira bwo kuguma ucecetse."
+            },
+            {
+              "id": "bullet_3",
+              "text": "NTUZASINYE IKINTU NA KIMWE utabanje kuganira n’umunyamategeko. Ufite uburenganzira bwo kuvugana n’umunyamategeko."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Niba uri hanze y’urugo rwawe, baza uwo mukozi niba wemerewe kugenda, navuga yego, wigendere witonze."
+            },
+            {
+              "id": "bullet_5",
+              "text": "HA UWO MUKOZI IYI KARITA. Niba uri mu nzu, uzerekanire ikarita mu idirishya cyangwa uyinyuze munsi y’urugi."
+            }
+          ]
+        }
+      },
+
+      "ko": {
+        "name": "Korean",
+        "native": "한국어",
+        "code": "ko",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "귀하에게는 헌법이 부여한 권리가 있습니다.",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "이민국 요원이 문을 두드릴 경우 문을 열어주지 마십시요."
+            },
+            {
+              "id": "bullet_2",
+              "text": "이민국 요원이 검문을 할 때 어떤 질문에도 대답하지 마십시요. 귀하에게는 묵비권을 행사할 권리가 있습니다."
+            },
+            {
+              "id": "bullet_3",
+              "text": "변호사와 만나기 전에는 어떠한 서명도 하지 마십시요. 귀하에게는 변호사와 상담할 권리가 있습니다."
+            },
+            {
+              "id": "bullet_4",
+              "text": "집 밖에 있을 경우, 이민국 요원에게 귀하가 그 자리를 떠날 수 있는 자유가 있는지 여부를 묻고 이민국 요원이 ‘예’ 라고 답변을 한다면 침착하게 자리를 떠나십시요."
+            },
+            {
+              "id": "bullet_5",
+              "text": "이 카드를 이민국 요원에게 주십시요. 만약 귀하가 집안에 머물고 있다면, 이 카드를 창문이나 문 아래로 밀어 넣어 전달하십시요."
+            }
+          ]
+        }
+      },
+
+      "lo": {
+        "name": "Lao",
+        "native": "ລາວ",
+        "code": "lo",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "ທ່ານມີສິດຕາມລັດຖະທຳມະນູນໃນການ::",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "ບໍ່ເປີດປະຕູ, ຖ້າຫາກໜ່ວຍງານກວດຄົນເຂົ້າເມືອງມາເຄາະປະຕູ."
+            },
+            {
+              "id": "bullet_2",
+              "text": "ບໍ່ຕອບຄຳຖາມໃດໆຈາກໜ່ວຍງານກວດຄົນເຂົ້າເມືອງ, ຖ້າພວກເຂົາ ພະຍາຍາມຖາມທ່ານ. ທ່ານມີສິດທີ່ຈະບໍ່ອອກສຽງໄດ້."
+            },
+            {
+              "id": "bullet_3",
+              "text": "ບໍ່ຕ້ອງເຊັນເອກະສານໃດໆໂດຍທີ່ບໍ່ໄດ້ປຶກສາກັບນັກກົດໝາຍກ່ອນ. ທ່ານມີ ສິດທີ່ຈະປຶກສາກັບນັກກົດໝາຍ."
+            },
+            {
+              "id": "bullet_4",
+              "text": "ຖ້າຫາກທ່ານຢູ່ນອກເຮືອນຂອງທ່ານ, ຖາມໜ໋ວຍງານນັ້ນວ່າທ່ານສາມາດ ອອກໄປໄດ້ບໍ ແລະ ຖ້າພວກເຂົາບອກໃຫ້ໄປໄດ້, ອອກໄປຢ່າງໃຈເຢັນ."
+            },
+            {
+              "id": "bullet_5",
+              "text": "ເອົາບັດນີ້ໃຫ້ໜ່ວຍງານ. ຖ້າຫາກທ່ານຢູ່ໃນເຮືອນຂອງທ່ານ, ສະແດງບັດນີ້ ຜ່ານປ່ອງຢ້ຽມ ຫຼື ສອດມັນໄປທາງດ້ານລຸ່ມປະຕູ."
+            }
+          ]
+        }
+      },
+
+      "ln": {
+        "name": "Lingala",
+        "native": "Lingála",
+        "code": "ln",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Ufite uburenganzira uhabwa n’Itegeko Nshinga:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "NTUGAFUNGURE UMURYANGO igihe umukozi ushinzwe abinjira n’abasohoka akomanze."
+            },
+            {
+              "id": "bullet_2",
+              "text": "NTUGASUBIZE IBIBAZO by’umukozi w’abinjira n’abasohoka n’iyo yaba agerageje kukuganiriza. Ufite uburenganzira bwo kuguma ucecetse."
+            },
+            {
+              "id": "bullet_3",
+              "text": "NTUZASINYE IKINTU NA KIMWE utabanje kuganira n’umunyamategeko. Ufite uburenganzira bwo kuvugana n’umunyamategeko."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Niba uri hanze y’urugo rwawe, baza uwo mukozi niba wemerewe kugenda, navuga yego, wigendere witonze."
+            },
+            {
+              "id": "bullet_5",
+              "text": "HA UWO MUKOZI IYI KARITA. Niba uri mu nzu, uzerekanire ikarita mu idirishya cyangwa uyinyuze munsi y’urugi."
+            }
+          ]
+        }
+      },
+
+
+     "mh": {
+  "name": "Marshallese",
+  "native": "Kajin M̧ajeļ",
+  "code": "mh",
+  "rtl": false,
+  "official": true,
+  "front": {
+    "header": "Ewōr am maroñ ñan jet jimwe ko an kien:",
+    "bullets": [
+      {
+        "id": "bullet_1",
+        "text": "Elañe juon opiija in immigration ej kōjan̄jan̄ ilo kōjām eo am, JAMIN BŌBRAE KŌJĀM EO."
+      },
+      {
+        "id": "bullet_2",
+        "text": "Ñe juon opiija in immigration ej kajeoñ in konono ippaṃ, JAMIN UAK JABREWŌT KAJITŌK KO. Jimwe eo ñan jab konono ej am."
+      },
+      {
+        "id": "bullet_3",
+        "text": "Juon lawyer ej aikuj in kajitok mokta JEN AM SIGN E JABDREWOT PEBA. Kwoj maroñ in bwebwenato ibben juon lawyer."
+      },
+      {
+        "id": "bullet_4",
+        "text": "Kajjitōk ippān rijerbal eo eļan̄̄n̄̄e kwoj anemkwoj in etal eļan̄̄n̄̄e kwojjab pād ilo m̧̧weo, im eļan̄̄n̄̄e rej uwaak bwe kwoj, innām etal ilo jidimkij."
+      },
+      {
+        "id": "bullet_5",
+        "text": "KWŌJ KŌMMAN RI-JERBAL EO KAAR IN. Likūt kaat eo ium̧̧win kōjām eo ak kwaļo̧̧ke ilo wintō eo eļan̄̄n̄̄e kwoj pād ilowaan m̧̧weo im̧̧ōm̧̧."
+      }
+    ]
+  }
+}
+,
+
+      "mn": {
+        "name": "Mongolian",
+        "native": "Монгол",
+        "code": "mn",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Та Үндсэн хуулиар олгогдсон эрхтэй:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "Цагаачлалын албаны ажилтан хаалга тогшвол ХААЛГАА БҮҮ ОНГОЙЛГО."
+            },
+            {
+              "id": "bullet_2",
+              "text": "Цагаачлалын албаны ажилтан тантай ярихыг оролдвол АСУУЛТАД НЬ ХАРИУЛАХГҮЙ БАЙ. Та дуугүй байх эрхтэй."
+            },
+            {
+              "id": "bullet_3",
+              "text": "ӨМНӨ НЬ ХУУЛЬЧТАЙ ЯРИЛЦААГҮЙ БОЛ ЮУ Ч БҮҮ ГАРЫН ҮСЭГ ЗУР."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Хэрвээ та гэрээсээ гадуур байвал, явах эрхтэй эсэхээ асуугаарай. Хэрвээ тийм гэвэл тайван яв."
+            },
+            {
+              "id": "bullet_5",
+              "text": "ЭНЭ КАРТЫГ АЖИЛТАНД ӨГ. Хэрвээ гэртээ байвал картыг цонхоор харуул эсвэл хаалганы доогуур шургуул."
+            }
+          ]
+        }
+      },
+
+      "nah": {
+        "name": "Nahuatl",
+        "native": "Nāhuatl",
+        "code": "nah",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Tinechpalehuilia in nemiliztli tlen tlanahuatilli:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "AMO XIKTLAKATI IN KALPAN tla se inmigración tekitki kiknotza in kalpan."
+            },
+            {
+              "id": "bullet_2",
+              "text": "AMO XIKNANKILI SE TLATOL tla se inmigración tekitki kineki mitznotza. Tinechpalehuilia amo titlatos."
+            },
+            {
+              "id": "bullet_3",
+              "text": "AMO XIKTLALI MOFIRMA ipan tlen amo achto tiknotza se abogado."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Tla tiitztok ipan kampa amo mokalpan, xiktlatlani in tekitki tla hueli tiyas; tla kijtoa quema, xiya ica yolseuilistli."
+            },
+            {
+              "id": "bullet_5",
+              "text": "XIKMAKA ININ AMATL IN TEKITKI. Tla tiitztok ipan mokalpan, xikinexti ipan ventana o xiktlalia ikampa tlatsintla in kalpan."
+            }
+          ]
+        }
+      },
+
+      "ne": {
+        "name": "Nepali",
+        "native": "नेपाली",
+        "code": "ne",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "तपाईंलाई संविधानद्वारा प्रदान गरिएका अधिकारहरू छन्:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "यदि आप्रवासन एजेण्टले ढोका ढकढकाए भने ढोका नखोल्नुहोस्।"
+            },
+            {
+              "id": "bullet_2",
+              "text": "यदि आप्रवासन एजेण्टले तपाईंसँग कुरा गर्न खोजे भने कुनै पनि प्रश्नको जवाफ नदिनुहोस्। तपाईंलाई मौन बस्ने अधिकार छ।"
+            },
+            {
+              "id": "bullet_3",
+              "text": "वकिलसँग कुरा नगरी कुनै पनि कागजातमा हस्ताक्षर नगर्नुहोस्। तपाईंलाई वकिलसँग कुरा गर्ने अधिकार छ।"
+            },
+            {
+              "id": "bullet_4",
+              "text": "यदि तपाईं घर बाहिर हुनुहुन्छ भने, जान स्वतन्त्र हुनुहुन्छ कि होइन भनेर सोध्नुहोस्। यदि उनीहरूले हुन्छ भने भने शान्तिपूर्वक जानुहोस्।"
+            },
+            {
+              "id": "bullet_5",
+              "text": "यो कार्ड एजेण्टलाई दिनुहोस्। यदि तपाईं घरभित्र हुनुहुन्छ भने झ्यालबाट देखाउनुहोस् वा ढोकामुनि सार्नुहोस्।"
+            }
+          ]
+        }
+      },
+
+      "om": {
+        "name": "Oromo",
+        "native": "Afaan Oromoo",
+        "code": "om",
+        "rtl": false,
+        "official": true,
+        "front": {
+          "header": "Mirga seera mootummaaatiin kenname ni qabdu:",
+          "bullets": [
+            {
+              "id": "bullet_1",
+              "text": "Yoo bakka bu’aan immigireeshinii balbala keessan rukutan BALBALA HIN BANINA."
+            },
+            {
+              "id": "bullet_2",
+              "text": "Yoo isin haasofsiisuuf yaalan gaaffii kamiyyuu bakka bu’aa immigireeshinii irraa HIN DEEBISINA. Callisuuf mirga ni qabdu."
+            },
+            {
+              "id": "bullet_3",
+              "text": "Dursa abukaatoo waliin osoo hin mari’atin WAAN TOKKOYYU HIN MALLATTEESSINAA."
+            },
+            {
+              "id": "bullet_4",
+              "text": "Abbaa seeraa waliin dubbachuuf mirga ni qabdu."
+            },
+            {
+              "id": "bullet_5",
+              "text": "KAARDII KANA BAKKA BU’AA IMMIGIREESHINII KENNAA. Yoo mana keessa jirtu ta’e, karaa foddaatiin agarsiisi yookaan balbala jalatti siqsi."
+            }
+          ]
+        }
+      },
+
+
+
+            "ps": {
+            "name": "Pashto",
+            "native": "پښتو",
+            "code": "ps",
+            "rtl": true,
+            "official": true,
+            "front": {
+              "header": "تاسو دا لاندی قانونی حقوق لری چی:",
+              "bullets": [
+                {
+                  "id": "bullet_1",
+                  "text": "که د مهاجرینو نماینده ستاسو د کور دروازه ونکوی، تاسو کولی شی دروازه ور خلاصه یه واره نکری."
+                },
+                {
+                  "id": "bullet_2",
+                  "text": "که د مهاجرینو نماینده کوشش کولو له تاسو یوښتنی وکری تاسو کولی شی خواب ورنکری یه یدکل سکوت اختیار کری."
+                },
+                {
+                  "id": "bullet_3",
+                  "text": "د خپل وکیل سره د مشوره پرته هیڅ اسناد مه امضاء کوی. تاسو حق لری ته خپیل سره د خبری وکری."
+                },
+                {
+                  "id": "bullet_4",
+                  "text": "که نه خپیل بیرون باست نه نماینده خخه یویننته وکری چی کوئ هغه حای خخه لار شی که هغه ووی بلی نو هغه جای یه اراحی سره پریږدی."
+                },
+                {
+                  "id": "bullet_5",
+                  "text": "دا کارت د مهاجرینو نماینده نه و سپارست، که تاسو د ننه یه کور باست نو د کارت دروازه له لاندی ورنه ورکری او پیښی د کرکی له شاته ورنه وښایاست."
+                }
+              ]
+            }
+          },
+
+          "pl": {
+            "name": "Polish",
+            "native": "Polski",
+            "code": "pl",
+            "rtl": false,
+            "official": true,
+            "front": {
+              "header": "Masz konstytucyjne prawa:",
+              "bullets": [
+                {
+                  "id": "bullet_1",
+                  "text": "NIE OTWIERAJ DRZWI jeśli puka agent imigracyjny."
+                },
+                {
+                  "id": "bullet_2",
+                  "text": "NIE ODPOWIADAJ NA ŻADNE PYTANIA agenta imigracyjnego jeśli będzie próbował z Tobą rozmawiać. Masz prawo zachować milczenie."
+                },
+                {
+                  "id": "bullet_3",
+                  "text": "NIC NIE PODPISUJ bez uprzedniej konsultacji z prawnikiem. Masz prawo do rozmowy z prawnikiem."
+                },
+                {
+                  "id": "bullet_4",
+                  "text": "Jeśli jesteś poza domem, zapytaj agenta czy masz prawo się oddalić. Jeśli powie, że tak, spokojnie odejdź."
+                },
+                {
+                  "id": "bullet_5",
+                  "text": "DAJ TĘ KARTĘ AGENTOWI. Jeśli jesteś w domu, pokaż kartę przez okno lub wsuń ją pod drzwi."
+                }
+              ]
+            }
+          },
+
+          "pt": {
+            "name": "Portuguese",
+            "native": "Português",
+            "code": "pt",
+            "rtl": false,
+            "official": true,
+            "front": {
+              "header": "Você tem direitos constitucionais:",
+              "bullets": [
+                {
+                  "id": "bullet_1",
+                  "text": "NÃO ABRA A PORTA se um agente de imigração estiver a bater à porta."
+                },
+                {
+                  "id": "bullet_2",
+                  "text": "NÃO RESPONDA A NENHUMA PERGUNTA de um agente de imigração se este tentar falar consigo. Tem o direito de permanecer em silêncio."
+                },
+                {
+                  "id": "bullet_3",
+                  "text": "NÃO ASSINE NADA sem falar primeiro com um advogado. Você tem o direito de falar com um advogado."
+                },
+                {
+                  "id": "bullet_4",
+                  "text": "Se estiver fora da sua casa, pergunte ao agente se tem autorização para ir embora e, se ele disser que sim, retire-se calmamente."
+                },
+                {
+                  "id": "bullet_5",
+                  "text": "ENTREGUE ESTE CARTÃO AO AGENTE. Se estiver dentro da sua casa, mostre o cartão através da janela ou passe-o por baixo da porta."
+                }
+              ]
+            }
+          },
+
+          "pa": {
+            "name": "Punjabi",
+            "native": "ਪੰਜਾਬੀ",
+            "code": "pa",
+            "rtl": false,
+            "official": true,
+            "front": {
+              "header": "ਤੁਹਾਡੇ ਕੋਲ ਸੰਵਿਧਾਨਕ ਅਧਿਕਾਰ ਹਨ:",
+              "bullets": [
+                {
+                  "id": "bullet_1",
+                  "text": "ਦਰਵਾਜ਼ਾ ਨਾ ਖੋਲ੍ਹੋ ਜੇਕਰ ਇੱਕ ਇਮੀਗ੍ਰੇਸ਼ਨ ਏਜੰਟ ਤੁਹਾਡੇ ਦਰਵਾਜ਼ੇ 'ਤੇ ਖਟਖਟਾ ਰਿਹਾ ਹੈ।"
+                },
+                {
+                  "id": "bullet_2",
+                  "text": "ਕੋਈ ਵੀ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਨਾ ਦਿਓ ਜੇਕਰ ਇੱਕ ਇਮੀਗ੍ਰੇਸ਼ਨ ਏਜੰਟ ਤੁਹਾਨੂੰ ਗੱਲ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦਾ ਹੈ। ਤੁਹਾਡੇ ਕੋਲ ਚੁੱਪ ਰਹਿਣ ਦਾ ਅਧਿਕਾਰ ਹੈ।"
+                },
+                {
+                  "id": "bullet_3",
+                  "text": "ਵਕੀਲ ਨਾਲ ਪਹਿਲਾਂ ਗੱਲਬਾਤ ਕੀਤੇ ਬਿਨਾਂ ਕਿਸੇ ਵੀ ਦਸਤਾਵੇਜ਼ 'ਤੇ ਹਸਤਾਖਰ ਨਾ ਕਰੋ। ਤੁਹਾਨੂੰ ਵਕੀਲ ਨਾਲ ਗੱਲ ਕਰਨ ਦਾ ਅਧਿਕਾਰ ਹੈ।"
+                },
+                {
+                  "id": "bullet_4",
+                  "text": "ਜੇਕਰ ਤੁਸੀਂ ਆਪਣੇ ਘਰ ਤੋਂ ਬਾਹਰ ਹੋ, ਤਾਂ ਏਜੰਟ ਤੋਂ ਪੁੱਛੋ ਕਿ ਕੀ ਤੁਸੀਂ ਜਾਣ ਲਈ ਆਜ਼ਾਦ ਹੋ। ਜੇਕਰ ਉਹ \"ਹਾਂ\" ਕਹਿੰਦੇ ਹਨ, ਤਾਂ ਸ਼ਾਂਤੀ ਨਾਲ ਚਲੇ ਜਾਓ।"
+                },
+                {
+                  "id": "bullet_5",
+                  "text": "ਇਹ ਕਾਰਡ ਏਜੰਟ ਨੂੰ ਦਿਓ। ਜੇਕਰ ਤੁਸੀਂ ਆਪਣੇ ਘਰ ਦੇ ਅੰਦਰ ਹੋ, ਤਾਂ ਇਹ ਕਾਰਡ ਖਿੜਕੀ ਰਾਹੀਂ ਦਿਖਾਓ ਜਾਂ ਦਰਵਾਜ਼ੇ ਹੇਠਾਂ ਸਿਰਕਾ ਦਿਓ।"
+                }
+              ]
+            }
+          },
+
+          "ro": {
+            "name": "Romanian",
+            "native": "Română",
+            "code": "ro",
+            "rtl": false,
+            "official": true,
+            "front": {
+              "header": "Aveți drepturi constituționale:",
+              "bullets": [
+                {
+                  "id": "bullet_1",
+                  "text": "NU DESCHIDEȚI UȘA dacă un ofițer de imigrare sună la ușă."
+                },
+                {
+                  "id": "bullet_2",
+                  "text": "NU RĂSPUNDEȚI LA NICIO ÎNTREBARE a unui ofițer de imigrare dacă încearcă să vorbească cu dumneavoastră. Aveți dreptul să păstrați tăcerea."
+                },
+                {
+                  "id": "bullet_3",
+                  "text": "NU SEMNAȚI NIMIC înainte de a vorbi cu un avocat. Aveți dreptul de a consulta un avocat."
+                },
+                {
+                  "id": "bullet_4",
+                  "text": "Dacă sunteți în afara casei, întrebați ofițerul dacă sunteți liber să plecați, iar dacă spune „da”, plecați calm."
+                },
+                {
+                  "id": "bullet_5",
+                  "text": "DAȚI ACEST CARD OFIȚERULUI. Dacă vă aflați în casă, arătați cardul prin fereastră sau pe sub ușă."
+                }
+              ]
+            }
+          }, 
+
+      "ru": {
+          "name": "Russian",
+          "native": "Русский",
+          "code": "ru",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "У вас есть конституционные права:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "НЕ ОТКРЫВАЙТЕ ДВЕРЬ, если в дверь стучится иммиграционный агент."
+              },
+              {
+                "id": "bullet_2",
+                "text": "НЕ ОТВЕЧАЙТЕ НА ВОПРОСЫ иммиграционного агента, если они попытаются с вами поговорить. Вы имеете право хранить молчание."
+              },
+              {
+                "id": "bullet_3",
+                "text": "НЕ ПОДПИСЫВАЙТЕ НИЧЕГО, не посоветовавшись предварительно с юристом. У вас есть право поговорить с юристом."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Если вы находитесь вне дома, спросите агента, можете ли вы уйти, и если он скажет «да», спокойно уйдите."
+              },
+              {
+                "id": "bullet_5",
+                "text": "ОТДАЙТЕ ЭТУ КАРТУ АГЕНТУ. Если вы находитесь в своем доме, покажите карточку через окно или просуньте ее под дверь."
+              }
+            ]
+          }
+        },
+
+        "sm": {
+          "name": "Samoan",
+          "native": "Gagana Samoa",
+          "code": "sm",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "E i ai au aia tau le faavae:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "‘AUA NE’I TATALAINA LE FAITOTO’A pe a tu’itu’i mai se tagata o le ofisa o femalagaiga."
+              },
+              {
+                "id": "bullet_2",
+                "text": "‘AUA NE’I TALIINA SOO SE FESILI mai se tagata ofisa o femalagaiga pe a taumafai e talanoa atu ia te oe. E i ai lau aia tatau e te fifilemu ai."
+              },
+              {
+                "id": "bullet_3",
+                "text": "‘AUA NE’I E SAINIA SOO SE MEA e aunoa ma le talanoa muamua i se loia. E i ai lau aia tatau e te talanoa ai i se loia."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Afai o e i tua atu o lou fale, fesili i le tagata ofisa pe ua e sa’oloto e te alu ese ma afai e fai mai ua lelei, alu ese lemu."
+              },
+              {
+                "id": "bullet_5",
+                "text": "TUU ATU LE CARD LEA I LE TAGATA O LE OFISA. Afai o e i ai i totonu o lou fale, fa’aali atu i ai le card i le faamalama pe faasee atu i lalo o le faitoto’a."
+              }
+            ]
+          }
+        },
+
+        "so": {
+          "name": "Somali",
+          "native": "Soomaali",
+          "code": "so",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "Dastuurka wuxu ku siinaya xaq:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "Hadii wakiil ka socda hay’adda laanta socdaalka albaabkaaga kugu soo garaaco, waxaad xaq u leedahay inaandan ka furin"
+              },
+              {
+                "id": "bullet_2",
+                "text": "Hadii wakiilkaas su’aalo ku weydiiyo, waxaas xaq u leedahay inaandan hadlin oo su’aalo aandan ka jawaabin"
+              },
+              {
+                "id": "bullet_3",
+                "text": "Waxaad xaq u leedahay qareen. Adigoo qareen la hadlin, wax- bana ha saxiixin."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Hadii wakiilku gurigaaga banaankiisa kugu qabto waxaad weydiisa hadii aad xaq u leedahay in aad ka dhaqaaqdid. Hadii u yiraahdo haa, si tartiib ah uga dhaqaaq."
+              },
+              {
+                "id": "bullet_5",
+                "text": "Wakiilka kaarkaan tus. Hadii aad guriga ku jirtid, darishada ka sii ama albaabka hoostiista."
+              }
+            ]
+          }
+        },
+
+        "es": {
+          "name": "Spanish",
+          "native": "Español",
+          "code": "es",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "Usted tiene derechos constitucionales:",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "NO ABRA LA PUERTA si un agente de inmigración está tocando la puerta."
+              },
+              {
+                "id": "bullet_2",
+                "text": "NO CONTESTE NINGUNA PREGUNTA de un agente de inmigración si trata de hablar con usted. Usted tiene el derecho a guardar silencio."
+              },
+              {
+                "id": "bullet_3",
+                "text": "NO FIRME NADA sin antes hablar con un abogado. Usted tiene el derecho de hablar con un abogado."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Si usted está fuera de su casa, pregúntele al agente si tiene la libertad de irse y si le dice que sí, váyase con tranquilidad."
+              },
+              {
+                "id": "bullet_5",
+                "text": "ENTRÉGUELE ESTA TARJETA EL AGENTE. Si usted está dentro de su casa, muestre la tarjeta por la ventana o pásela debajo de la puerta."
+              }
+            ]
+          }
+        },
+
+        "sw": {
+          "name": "Swahili",
+          "native": "Kiswahili",
+          "code": "sw",
+          "rtl": false,
+          "official": true,
+          "front": {
+            "header": "Una haki ya kisheria.",
+            "bullets": [
+              {
+                "id": "bullet_1",
+                "text": "USIFUNGULIE MLANGO afisa wa uhamiaji atkapobisha mlango wako"
+              },
+              {
+                "id": "bullet_2",
+                "text": "USIJIBU SWALI LOLOTE kutoka afisa wa uhamiaji(Immigration agent) watakapo jaribu kukuongelesha. Una haki ya kukaa kimya"
+              },
+              {
+                "id": "bullet_3",
+                "text": "USITIE SAINI POPOTE bila kuongea na wakili. Una haki ya kuongea na wakili."
+              },
+              {
+                "id": "bullet_4",
+                "text": "Utakapo kuwa mbali na kwako, uliza afisa kama unaweza ondo- ka na wakikubali ujiondoe kipolepole"
+              },
+              {
+                "id": "bullet_5",
+                "text": "PEANA KADI HII KWA AFISA. Ukiwa nyumbani kwako, waonye- she kupitia dirisha ama wapitishie na chini ya mlangp"
+              }
+            ]
+          }
+        },
+
+
+ "tl": {
+    "name": "Tagalog",
+    "native": "Tagalog",
+    "code": "tl",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "Mayroon kang mga karapatan sa konstitusyon:",
+      "bullets": [
+        { "id": "bullet_1", "text": "HUWAG BUKSAN ANG PINTO kung may ahente ng imigrasyon na kumakatok." },
+        { "id": "bullet_2", "text": "HUWAG SAGUTIN ANG ANUMANG MGA TANONG mula sa isang ahente ng imigrasyon kung sinusubukan nilang makipag-usap sa iyo. May karapatan kang manahimik." },
+        { "id": "bullet_3", "text": "HUWAG PUMIRMA NG KAHIT ANO nang hindi muna nakikipag-usap sa isang abogado. Mayroon kang karapatan na makipag-usap sa isang abogado." },
+        { "id": "bullet_4", "text": "Kung ikaw ay nasa labas ng iyong bahay, tanungin ang ahente kung ikaw ay maari ng umalis at kung sabihin nila na pwede, umalis ka nang kalmado." },
+        { "id": "bullet_5", "text": "IPAKITA ANG CARD NA ITO SA AHENTE. Kung nasa loob ka ng iyong bahay, ipakita ang card sa bintana o ilusot sa ilalim ng pinto." }
+      ]
+    }
+  },
+
+  "ta": {
+    "name": "Tamil",
+    "native": "தமிழ்",
+    "code": "ta",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "உங்களுக்கு அரசி யலமைை ப்பு அளி த்துள்ள உரி மைை கள் உள்ளன:",
+      "bullets": [
+        { "id": "bullet_1", "text": "ஒரு குடிவரவு முகவர் கதமைவ த் தட்டினா ல் கதமைவ த் தி றக்க வேவ ண்டாா ம்." },
+        { "id": "bullet_2", "text": "குடிவரவு முகவர் ஒருவர் உங்களுடான் வேே ச முயற்சி த்தா ல் அவர்களி ன் எந்தக்வேக" },
+        { "id": "bullet_3", "text": "ள்வி களுக்கும் ேதி லளி க்க வேவ ண்டாா ம். நீங்கள் அமைை தி யா க இருக்க உரி மைை" },
+        { "id": "bullet_4", "text": "முதலில் ஒரு வழக்கறி ஞரி டாம் வேே சா ைல் எதி லும் மைக யெய ழுத்தி டா வேவ ண்டாா ம்." },
+        { "id": "bullet_5", "text": "ஒருவழக்கறி ஞருடான் வேே சுவதற்கு உங்களுக்கு உரி மைை உண்டு." }
+      ]
+    }
+  },
+
+  "th": {
+    "name": "Thai",
+    "native": "ภาษาไทย",
+    "code": "th",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "คุณมีสิทธิตามรัฐธรรมนูญ:",
+      "bullets": [
+        { "id": "bullet_1", "text": "ห้ามเปิดประตูหากเจ้าหน้าที่ตรวจคนเข้าเมืองมาเคาะหน้าประตูบ้าน" },
+        { "id": "bullet_2", "text": "ห้ามตอบคำาถามใด ๆ กับเจ้าหน้าที่ตรวจคนเข้าเมือง หากเจ้าหน้าที่" },
+        { "id": "bullet_3", "text": "เหล่านั้นต้องการพูดคุยกับท่าน ท่านมีสิทธิที่จะไม่พูด" },
+        { "id": "bullet_4", "text": "ห้ามเซ็นเอกสารใด ๆ หากท่านยังไม่ได้พูดคุยกับทนายความ ท่านมีสิทธิ" },
+        { "id": "bullet_5", "text": "หากท่านอยู่นอกบ้าน โปรดถามเจ้าหน้าที่ว่าท่านสามารถออกไปจาก" }
+      ]
+    }
+  },
+
+  "ti": {
+    "name": "Tigrinya",
+    "native": "ትግርኛ",
+    "code": "ti",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "ኣቱ ኮርሞ: ስዓሀም ንዝተጠንቐሱ ቁዋማዊ [ሕገ.መንግስታዊ] መስላት ከምዛለኩም ይገልጽ።",
+      "bullets": [
+        { "id": "bullet_1", "text": "ወኪላት ኢሚግሬሽን ማዕጾ ናይ ቤትኩም እንተ ኳሕኲሑም: ማዕጾ ከይተኸፍ፡፡" },
+        { "id": "bullet_2", "text": "ብወኪላት ኢምግሬሽን ዝኾነ ሕቶ እንተቀሪብልኩም: ንቲ ሕቶ ናይ ዘይምምላስ ወይ ስቕ ናይ ምባል መስልልኩም ሕሉው'ዩ።" },
+        { "id": "bullet_3", "text": "ምስ ናይ ሕጊ ጠበቓ ከይተዘራረብኩም: ዝኾነ ነገር ከይትፈርሙ። ምስ ጠበቓ ናይ ምምኻር መስልውን ኣለኩም።" },
+        { "id": "bullet_4", "text": "ካብ መንበረ ቤት ወጻኢ ከለኹም: ብወኪላት ኢምግሬሽን ሕቶ እንተ ተላዒትኩም: ካብተ ስናይ ምኽንት'ዩ ብእተ ስታ በጽሒ ከምዛለኹም ማብትዲ ስትንት ግበሩ።" },
+        { "id": "bullet_5", "text": "ካብ መንበር ቤት ወጻኢ ካለኩም ንወኪላት ኢምግሬሽን እዚ ካርድ ሃቡዎም: ምስትዳ፤ዩ ድልኩም ካብተ ስታ ኢጻ ከዱ።" }
+      ]
+    }
+  },
+
+  "tzo": {
+    "name": "Tsotsil",
+    "native": "Bats'i k'op",
+    "code": "tzo",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "Stak’ jech cha pas lie:",
+      "bullets": [
+        { "id": "bullet_1", "text": "MU XA JAM LI STI’ A NAE ti mi tal stij sti’ a na ti yaj amteltak yu-un ti ajbalile." },
+        { "id": "bullet_2", "text": "MU XA TA’K’BE TI K’USI TA SJAK’BOT ti yaj amteltak yu-un ajbalile ti mi ta xa sk’oponoxuké. St’ak tsijil ta xa com." },
+        { "id": "bullet_3", "text": "MU XA BAK’ A FIRMA ti mi ch’ab’al a chi’noj ta loil tu bu’chu ta sk’oltaote. Xu’ cha chi-in ta lo’il junuk ti b’uch’u ta xa sk’oltaote." },
+        { "id": "bullet_4", "text": "ti mi la lok’ batel ta nae, Jak’bo, ti yaj amteltak yu-un ajbalile mi xu’ ta xa b’at mi laj yal ti xu’e, b’atan mu xa bul a bonton." },
+        { "id": "bullet_5", "text": "AK’BO LI TARGETA LI’E TI YAJ AMTELTAK YU-UN AJBALI- LE. Ti mi te oyot ta nae, ak’bo yil li tarjetae ti b’uy xu’ ta sta ta sk’elelé mi mo’oje ak’bo lok’el ta yolon ti’ná" }
+      ]
+    }
+  },
+
+
+    
+"tr": {
+  "name": "Turkish",
+  "native": "Türkçe",
+  "code": "tr",
+  "rtl": false,
+  "official": true,
+  "front": {
+    "header": "Anayasal haklarınız bulunmaktadır:",
+    "bullets": [
+      {
+        "id": "bullet_1",
+        "text": "Bir göçmenlik görevlisi kapıyı çalıyorsa KAPIYI AÇMAYIN."
+      },
+      {
+        "id": "bullet_2",
+        "text": "Bir göçmenlik görevlisi sizinle konuşmaya çalışırsa HİÇBİR SORUYA CEVAP VERMEYİN. Sessiz kalma hakkına sahipsiniz."
+      },
+      {
+        "id": "bullet_3",
+        "text": "Bir avukatla konuşmadan önce HİÇBİR ŞEY İMZALAMAYIN. Bir avukatla konuşma hakkına sahipsiniz."
+      },
+      {
+        "id": "bullet_4",
+        "text": "Evinizin dışındaysanız, görevliye ayrılmakta serbest olup ol- madığınızı sorun ve evet derlerse sakince ayrılın."
+      },
+      {
+        "id": "bullet_5",
+        "text": "BU KARTI GÖREVLİYE VERİN. Evinizin içindeyseniz, karW\npencereden gösterin veya kapının alWndan geçirin."
+      }
+    ]
+  }
+},
+
+  "uk": {
+  "name": "Ukrainian",
+  "native": "Українська",
+  "code": "uk",
+  "rtl": false,
+  "official": true,
+  "front": {
+    "header": "Ви маєте конституційні права:",
+    "bullets": [
+      {
+        "id": "bullet_1",
+        "text": "НЕ ВІДКРИВАЙТЕ ДВЕРЕЙ, якщо імміграційний агент стукає у двері."
+      },
+      {
+        "id": "bullet_2",
+        "text": "НЕ ВІДПОВІДАЙТЕ НА ЯКІ НЕБУДЬ ЗАПИТАННЯ від імміграційного агента, якщо вони намагаються поговорити з вами. Ви маєте право мовчати."
+      },
+      {
+        "id": "bullet_3",
+        "text": "НІЧОГО НЕ ПІДПИСУЙТЕ, не звернувшись до адвоката. Ви маєте право поговорити з адвокатом."
+      },
+      {
+        "id": "bullet_4",
+        "text": "Якщо ви знаходитесь за межами свого будинку, попросіть агента, чи можете ви вільні іти, і якщо вони скажуть «так», ви можете іти спокійно."
+      },
+      {
+        "id": "bullet_5",
+        "text": "ДАЙТЕ ЦЮ КАРТКУ АГЕНТУ. Якщо ви перебуваєте всередині свого будинку, покажіть картку через вікно або посуньте її під двері."
+      }
+    ]
+  }
+},
+
+ "ur": {
+  "name": "Urdu",
+  "native": "اردو",
+  "code": "ur",
+  "rtl": true,
+  "official": true,
+  "front": {
+    "header": "آپ کے آئینی حقوق ہیں:",
+    "bullets": [
+      {
+        "id": "bullet_1",
+        "text": "دروازہ مت کھولیں اگر امیگریشن ایجنٹ دروازہ کھٹکھٹا رہا ہو۔"
+      },
+      {
+        "id": "bullet_2",
+        "text": "کسی بھی سوال کا جواب نہ دیں اگر امیگریشن ایجنٹ آپ سے بات کرنے کی کوشش کرے۔ آپ کو خاموش رہنے کا حق حاصل ہے۔"
+      },
+      {
+        "id": "bullet_3",
+        "text": "کسی بھی چیز پر دستخط نہ کریں بغیر کسی وکیل سے مشورہ کیے۔ آپ کو وکیل سے بات کرنے کا حق حاصل ہے۔"
+      },
+      {
+        "id": "bullet_4",
+        "text": "اگر آپ اپنے گھر کے باہر ہیں، تو ایجنٹ سے پوچھیں کہ کیا آپ جانے کے لیے آزاد ہیں، اور اگر وہ ہاں کہیں، تو پرسکون انداز میں وہاں سے چلے جائیں۔"
+      },
+      {
+        "id": "bullet_5",
+        "text": "یہ کارڈ ایجنٹ کو دیں۔ اگر آپ گھر کے اندر ہیں، تو کارڈ کھڑکی سے دکھائیں یا دروازے کے نیچے سے سرکا دیں۔"
+      }
+    ]
+  }
+},
+
+
+  "vi": {
+    "name": "Vietnamese",
+    "native": "Tiếng Việt",
+    "code": "vi",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "Ông/Bà có quyền lợi theo Hiến Pháp Hoa Kỳ:",
+      "bullets": [
+        {
+          "id": "bullet_1",
+          "text": "Không mở cửa khi nhân viên di trú gõ cửa."
+        },
+        {
+          "id": "bullet_2",
+          "text": "Không trả lời câu hỏi nào của nhân viên di trú nếu họ muổn nói chuyện với Ông/Bà. Ông/Bà có quyền giữ im lặng."
+        },
+        {
+          "id": "bullet_3",
+          "text": "Không ký một tờ giấy nào trước khi gặp luật sư. Ông/Bà có quyền nói chuyện với luật sư."
+        },
+        {
+          "id": "bullet_4",
+          "text": "Nếu Ông/Bà đang đứng bên ngoài nhà mình, hãy hỏi nhân viên di trú xem Ông/Bà có quyền rời chỗ đó hay không, và nếu có, hãy bình tĩnh rời đi."
+        },
+        {
+          "id": "bullet_5",
+          "text": "Đưa thẻ này cho nhân viên di trú. Nếu đang ở trong nhà, đưa cho họ coi qua cửa kiểng hoặc luồn thẻ dưới cửa ra vào."
+        }
+      ]
+    }
+  },
+
+  "yo": {
+    "name": "Yoruba",
+    "native": "Yorùbá",
+    "code": "yo",
+    "rtl": false,
+    "official": true,
+    "front": {
+      "header": "O ní ẹ̀tọ́ lábẹ́ òfin orílẹ̀-èdè:",
+      "bullets": [
+        {
+          "id": "bullet_1",
+          "text": "Maṣe ṣi ìlẹ̀kùn ti asojú ìjọba fun ìwọlé-wọdé orílẹ̀-èdè (ọlọpa imigiréṣàn) ba n kan ìlẹ̀kùn."
+        },
+        {
+          "id": "bullet_2",
+          "text": "Maṣe dahun ibeere lati ọdọ aṣojú ìjọba fun ìwọlé-wọdé orílẹ̀-èdè ti won ba n gbiyanju lati ba ọ sọrọ. O ni ẹ̀tọ́ lati dakẹ́."
+        },
+        {
+          "id": "bullet_3",
+          "text": "Ma fi ọwọ́ si iwe kankan lai bá agbẹjọ́rò (lọ́yà) sọrọ. O ni ẹ̀tọ́ lati ba agbẹjọ́rò re sọrọ."
+        },
+        {
+          "id": "bullet_4",
+          "text": "Ti won bá ba ọ ni ìta ilé rẹ, beère lowo aṣojú ìjọba ti o ba le maa lọ? Ti wọn ba dahun wipe, bẹẹni, rọra kuro niwaju wọn."
+        },
+        {
+          "id": "bullet_5",
+          "text": "Fun aṣojú ìjọba fun ìwọlé-wọdé orílẹ̀-èdè ni iwe pélébé yii. Ti o ba wa ninu ile, fi iwe pélébé naa han lati oju fèrèsé tabi ki o rọra nãa lati abẹ ìlẹ̀kùn si wọn."
+        }
+      ]
+    }
+  }
+},
+
+
+  "back": {
+    "note": "Same for all languages - always in English",
+    "statements": [
+      {
+        "id": "5th_amendment",
+        "text": "I do not wish to speak with you, answer your questions, or sign or hand you any documents based on my 5th Amendment rights under the United States Constitution."
+      },
+      {
+        "id": "4th_amendment_entry",
+        "text": "I do not give you permission to enter my home based on my 4th Amendment rights under the United States Constitution unless you have a warrant to enter, signed by a judge or magistrate with my name on it that you slide under the door."
+      },
+      {
+        "id": "4th_amendment_search",
+        "text": "I do not give you permission to search any of my belongings based on my 4th Amendment rights."
+      },
+      {
+        "id": "exercise_rights",
+        "text": "I choose to exercise my constitutional rights."
+      }
+    ],
+    "footer": "These cards are available to citizens and noncitizens alike."
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "total_languages": 56,
+    "description": "Constitutional Rights Red Card - Multi-language Database",
+    "source": "ILRC Red Cards (ilrc.org/red-cards)",
+    "extraction_date": "2026-01-30",
+    "rtl_languages": [
+      "ar",
+      "prs",
+      "fa",
+      "he",
+      "ps",
+      "ur"
+    ]
+  }
+}
+
