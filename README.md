@@ -38,6 +38,7 @@ This backend generates printable PDF cards that display constitutional rights in
 - **56+ Languages**: Support for Latin, Cyrillic, Arabic, Hebrew, CJK, South Asian, Southeast Asian, and more
 - **22 Unicode Scripts**: Each script uses optimized Noto Sans fonts
 - **RTL Support**: Full right-to-left rendering for Arabic and Hebrew with proper text reshaping
+- **CJK Text Wrapping**: Intelligent character-by-character wrapping for Chinese, Japanese, and Korean
 - **Flexible Layouts**: 4, 6, 8, or 12 cards per page
 - **Font Availability Checking**: API reports which languages have fonts installed
 - **Flexible JSON Parsing**: Accepts multiple translation file formats
@@ -57,7 +58,22 @@ Request Flow:
        └── script_detector.detect_script(code) → Script enum
            └── FontManager.get_font_for_script(script)
                └── pdf_renderer.render_print_sheet_pdf()
-                   └── ReportLab canvas → PDF bytes
+                   └── text.wrap_text() → CJK-aware line wrapping
+                       └── ReportLab canvas → PDF bytes
+```
+
+### Text Wrapping Flow
+
+The text wrapping system handles different scripts intelligently:
+
+```
+Text Input → CJK Detection → Appropriate Wrapper → Wrapped Lines
+    │              │                 │
+    │              ├─ CJK detected → Character-by-character wrapping
+    │              │                 (Chinese, Japanese, Korean have no spaces)
+    │              │
+    │              └─ Non-CJK ────→ Word-boundary wrapping (simpleSplit)
+    │                               (Latin, Cyrillic, Arabic, etc.)
 ```
 
 ## Installation
@@ -260,6 +276,46 @@ Language Code → Script Detection → Font Family → Font Files
      "ar"     →   Script.ARABIC  → NotoSansArabic → NotoSansArabic-*.ttf
 ```
 
+## Text Wrapping (CJK Support)
+
+### The Problem
+
+CJK (Chinese, Japanese, Korean) text has no spaces between characters, unlike European languages. Standard word-boundary wrapping (like ReportLab's `simpleSplit()`) cannot determine where to break lines, causing text to overflow horizontally past card boundaries.
+
+### The Solution
+
+The `app/text/` module provides intelligent text wrapping:
+
+| Text Type | Wrapping Method | Break Points |
+|-----------|-----------------|--------------|
+| English/Latin | Word-boundary | Spaces between words |
+| Chinese | Character-by-character | Any character |
+| Japanese | Character-by-character | Any character |
+| Korean | Character-by-character | Any character |
+| Arabic/Hebrew | Word-boundary + RTL | Spaces (with RTL reorder) |
+
+### How It Works
+
+```python
+from app.text import wrap_text
+
+# Automatic CJK detection based on text content
+lines = wrap_text("你好世界", font_name, font_size, max_width)
+
+# Or with language hint for more reliable detection
+lines = wrap_text(text, font_name, font_size, max_width, lang_code="zh-TW")
+```
+
+### Unicode Ranges Detected as CJK
+
+- `0x4E00-0x9FFF`: CJK Unified Ideographs (Chinese characters)
+- `0x3400-0x4DBF`: CJK Extension A
+- `0x3000-0x303F`: CJK Punctuation
+- `0xFF00-0xFFEF`: Fullwidth Forms
+- `0x3040-0x309F`: Hiragana (Japanese)
+- `0x30A0-0x30FF`: Katakana (Japanese)
+- `0xAC00-0xD7AF`: Hangul Syllables (Korean)
+
 ## Adding New Languages
 
 ### 1. Add Translation Data
@@ -352,11 +408,14 @@ redcard-backend/
 │   ├── layout.py               # Card positioning calculations
 │   ├── back_content.py         # English back card content
 │   ├── logging_config.py       # Logging configuration
-│   └── fonts/
-│       ├── __init__.py         # Font module exports
-│       ├── font_manager.py     # Font registration & lookup singleton
-│       ├── font_config.py      # Font family definitions
-│       └── script_detector.py  # Language → Unicode script detection
+│   ├── fonts/
+│   │   ├── __init__.py         # Font module exports
+│   │   ├── font_manager.py     # Font registration & lookup singleton
+│   │   ├── font_config.py      # Font family definitions
+│   │   └── script_detector.py  # Language → Unicode script detection
+│   └── text/
+│       ├── __init__.py         # Text module exports
+│       └── text_wrapper.py     # CJK-aware text wrapping
 ├── assets/
 │   └── fonts/                  # TTF font files (Noto Sans families)
 ├── data/

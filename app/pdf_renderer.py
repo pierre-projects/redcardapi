@@ -13,6 +13,7 @@ two-page documents where:
 The PDFs support:
 - Multiple cards per page (4, 6, 8, or 12)
 - Right-to-left (RTL) languages (Arabic, Hebrew, etc.)
+- CJK text wrapping (Chinese, Japanese, Korean character-by-character)
 - Multiple Unicode scripts via custom font selection
 - Cut guides and fold lines for printing
 
@@ -57,7 +58,8 @@ RENDERING FLOW
    │   │   ├── _draw_cut_lines()               <- Dotted card border
    │   │   └── _draw_front()                   <- Card content
    │   │       ├── _get_font()                 <- Select font for language
-   │   │       ├── _wrap_lines()               <- Text wrapping
+   │   │       ├── _wrap_lines()               <- Text wrapping (CJK-aware)
+   │   │       │   └── wrap_text()             <- Detects CJK, wraps appropriately
    │   │       ├── Draw header (bold)
    │   │       └── Draw bullet points
    │   └── _draw_footer()                      <- Printing instructions
@@ -84,12 +86,37 @@ Example RTL transformation:
    Visual order:  D-C-B-A  (as displayed on screen/paper)
 
 =============================================================================
+CJK (CHINESE/JAPANESE/KOREAN) TEXT WRAPPING
+=============================================================================
+
+CJK languages have no spaces between characters, so standard word-boundary
+wrapping (simpleSplit) cannot determine where to break lines. This would
+cause text to overflow horizontally past card boundaries.
+
+Solution: The app.text module provides intelligent wrapping:
+- Detects CJK characters by Unicode range
+- Wraps character-by-character instead of word-by-word
+- Measures character widths and breaks lines at box boundaries
+
+Text wrapping flow:
+   Text → is_cjk_text() → CJK? → _wrap_cjk() (char-by-char)
+                           │
+                           └─→ No → simpleSplit() (word boundaries)
+
+Supported CJK scripts:
+- Chinese Simplified (zh-CN)
+- Chinese Traditional (zh-TW)
+- Japanese (ja)
+- Korean (ko)
+
+=============================================================================
 DEPENDENCIES
 =============================================================================
 
 - reportlab: Core PDF generation library
 - arabic-reshaper: Arabic letter shaping (optional, for RTL)
 - python-bidi: Bidirectional text algorithm (optional, for RTL)
+- app.text: CJK-aware text wrapping (internal module)
 
 =============================================================================
 """
@@ -99,12 +126,12 @@ from typing import Dict, Any, List, Optional
 
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
-from reportlab.lib.utils import simpleSplit
 from reportlab.pdfbase import pdfmetrics
 
 from .logging_config import get_logger
 from .layout import CardLayout, get_default_layout
 from .fonts import get_font_manager, is_rtl_language
+from .text import wrap_text
 
 logger = get_logger("pdf_renderer")
 
@@ -244,7 +271,9 @@ def _wrap_lines(text: str, font_name: str, font_size: int, max_width: float, rtl
     ALGORITHM:
     1. If RTL, preprocess text with _prepare_rtl_text()
     2. Split input on newlines (preserve paragraphs)
-    3. For each paragraph, use ReportLab's simpleSplit() to wrap
+    3. For each paragraph, use CJK-aware wrap_text() to wrap
+       - CJK text: wraps character-by-character
+       - Other text: wraps at word boundaries
 
     PARAMETERS:
         text: Text to wrap (may contain newlines)
@@ -271,9 +300,10 @@ def _wrap_lines(text: str, font_name: str, font_size: int, max_width: float, rtl
             lines.append("")
             continue
 
-        # Use ReportLab's simpleSplit for word wrapping
-        # This calculates text width using the font metrics and wraps at word boundaries
-        lines.extend(simpleSplit(paragraph, font_name, font_size, max_width))
+        # Use CJK-aware text wrapping
+        # wrap_text automatically detects CJK characters and uses character-by-character
+        # wrapping instead of word-boundary wrapping (which doesn't work for CJK)
+        lines.extend(wrap_text(paragraph, font_name, font_size, max_width))
 
     return lines
 
