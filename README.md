@@ -507,24 +507,27 @@ redcard-backend/
 
 ### Missing Fonts
 
-The following scripts are configured in `font_config.py` but their font files are **not yet included** in `assets/fonts/`. Languages using these scripts will report `fontSupported: false` via the API and return a `400` error if rendering is attempted.
+The following 13 languages produce **blank or broken front cards** when rendered. Their dedicated font files are not yet included in `assets/fonts/`, and the base NotoSans fallback cannot render their scripts. Verified manually via `dev/test_all_languages.py` output.
 
-| Missing Font | Script | Affected Languages |
-|-------------|--------|-------------------|
-| NotoSansHebrew | Hebrew | Hebrew (`he`) |
-| NotoSansDevanagari | Devanagari | Hindi (`hi`), Nepali (`ne`), Marathi (`mr`) |
-| NotoSansBengali | Bengali | Bengali (`bn`) |
-| NotoSansTamil | Tamil | Tamil (`ta`) |
-| NotoSansGurmukhi | Gurmukhi | Punjabi (`pa`) |
-| NotoSansThai | Thai | Thai (`th`) |
-| NotoSansLao | Lao | Lao (`lo`) |
-| NotoSansKhmer | Khmer | Khmer (`km`) |
-| NotoSansMyanmar | Myanmar | Burmese (`my`), Karen (`kar`) |
-| NotoSansEthiopic | Ethiopic | Amharic (`am`), Tigrinya (`ti`) |
-| NotoSansArmenian | Armenian | Armenian (`hy`) |
-| NotoSansGeorgian | Georgian | Georgian (`ka`) |
+| # | Language | Code | Script | Required Font |
+|---|----------|------|--------|---------------|
+| 1 | Amharic | `am` | Ethiopic | NotoSansEthiopic |
+| 2 | Armenian | `hy` | Armenian | NotoSansArmenian |
+| 3 | Bangla | `bn` | Bengali | NotoSansBengali |
+| 4 | Burmese | `my` | Myanmar | NotoSansMyanmar |
+| 5 | Georgian | `ka` | Georgian | NotoSansGeorgian |
+| 6 | Hebrew | `he` | Hebrew | NotoSansHebrew |
+| 7 | Karen | `kar` | Myanmar | NotoSansMyanmar |
+| 8 | Khmer | `km` | Khmer | NotoSansKhmer |
+| 9 | Lao | `lo` | Lao | NotoSansLao |
+| 10 | Punjabi | `pa` | Gurmukhi | NotoSansGurmukhi |
+| 11 | Tamil | `ta` | Tamil | NotoSansTamil |
+| 12 | Thai | `th` | Thai | NotoSansThai |
+| 13 | Tigrinya | `ti` | Ethiopic | NotoSansEthiopic |
 
-**Currently installed fonts cover ~18 of ~56 configured languages.** The remaining ~38 languages need their Noto Sans font files downloaded from [Google Fonts](https://fonts.google.com/noto) and placed in `assets/fonts/`.
+**Note:** Hindi (`hi`) and Nepali (`ne`) use the Devanagari script but render correctly via the base NotoSans font, so NotoSansDevanagari is not required.
+
+To fix, download the required Noto Sans fonts from [Google Fonts](https://fonts.google.com/noto) and place the Regular + Bold `.ttf` files in `assets/fonts/`.
 
 ### Card Size Scaling Does Not Scale Up
 
