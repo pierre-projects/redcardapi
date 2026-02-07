@@ -1,4 +1,4 @@
-# Contributing to RedCardGenerator Backend
+# Contributing to RedCardAPI
 
 Thank you for your interest in contributing! This project generates "Know Your
 Rights" red cards in multiple languages to help people understand their rights.
