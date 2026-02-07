@@ -14,6 +14,7 @@ A FastAPI backend for generating multi-language "Know Your Rights" PDF cards wit
 - [Adding New Languages](#adding-new-languages)
 - [Testing](#testing)
 - [Project Structure](#project-structure)
+- [Known Issues / In Progress](#known-issues--in-progress)
 
 ## Overview
 
@@ -45,21 +46,64 @@ This backend generates printable PDF cards that display constitutional rights in
 
 ## Architecture
 
+### Startup
+
 ```
-Request Flow:
-─────────────
+1. FastAPI app starts via lifespan context manager
+2. TranslationsStore loads Translations_with_sources.json
+3. TranslationsStore._normalize() parses & normalizes language entries
+4. FontManager initializes lazily on first use (registers fonts from assets/fonts/)
+```
 
-1. GET /api/languages
-   └── TranslationsStore.list_languages()
-       └── FontManager.is_script_supported() → fontSupported flag
+### Request Flow
 
-2. GET /api/render/{code}
-   └── TranslationsStore.get_language(code)
-       └── script_detector.detect_script(code) → Script enum
-           └── FontManager.get_font_for_script(script)
-               └── pdf_renderer.render_print_sheet_pdf()
-                   └── text.wrap_text() → CJK-aware line wrapping
-                       └── ReportLab canvas → PDF bytes
+```
+GET /api/languages
+└── TranslationsStore.list_languages()
+    └── FontManager.is_script_supported() → fontSupported flag per language
+
+GET /api/render/{code}?cards_per_page=4
+│
+├── 1. VALIDATION
+│   ├── Check store initialized (503 if not)
+│   ├── Look up language by code (404 if not found)
+│   └── Validate cards_per_page (defaults to 4 if invalid)
+│
+├── 2. LAYOUT CALCULATION
+│   └── CardLayout.from_cards_per_page()
+│       ├── Determine grid (2x2, 2x3, 2x4, or 3x4)
+│       ├── Calculate card dimensions (width/height in points)
+│       ├── Calculate font_scale based on card area ratio
+│       └── Generate positions list [(x, y, w, h), ...]
+│
+├── 3. CONTENT PREPARATION
+│   ├── Front content from TranslationsStore (translated)
+│   └── Back content from back_content.py (English)
+│
+├── 4. PDF RENDERING — render_print_sheet_pdf()
+│   ├── Detect script from language code
+│   ├── Select font via FontManager.pick()
+│   ├── PAGE 1 (Front):
+│   │   ├── Draw fold guides (dashed lines)
+│   │   ├── For each card position:
+│   │   │   ├── Draw cut lines (dotted border)
+│   │   │   └── _draw_front()
+│   │   │       ├── Find optimal font scale (adaptive sizing)
+│   │   │       ├── Wrap text (CJK-aware if needed)
+│   │   │       ├── Process RTL text (Arabic/Hebrew reshaping)
+│   │   │       └── Draw header + bullets
+│   │   └── Draw footer (printing instructions)
+│   ├── PAGE 2 (Back):
+│   │   ├── Draw fold guides
+│   │   ├── For each card position:
+│   │   │   ├── Draw cut lines
+│   │   │   └── _draw_back() (English paragraphs)
+│   │   └── Draw footer
+│   └── Return PDF bytes
+│
+└── 5. RESPONSE
+    └── Content-Type: application/pdf
+        Filename: know-your-rights-{code}-{count}up.pdf
 ```
 
 ### Text Wrapping Flow
@@ -67,13 +111,31 @@ Request Flow:
 The text wrapping system handles different scripts intelligently:
 
 ```
-Text Input → CJK Detection → Appropriate Wrapper → Wrapped Lines
-    │              │                 │
-    │              ├─ CJK detected → Character-by-character wrapping
-    │              │                 (Chinese, Japanese, Korean have no spaces)
-    │              │
-    │              └─ Non-CJK ────→ Word-boundary wrapping (simpleSplit)
-    │                               (Latin, Cyrillic, Arabic, etc.)
+Text Input
+    │
+    ├─→ Has lang_code? ─YES─→ detect_script(lang_code) → Script enum
+    │                         │
+    │                         └─→ is_cjk_script()? ─YES─→ _wrap_cjk() (char-by-char)
+    │                                               │
+    │                                               └─NO─→ simpleSplit() (word-boundary)
+    │
+    └─→ No lang_code ──→ is_cjk_text()? ─YES─→ _wrap_cjk()
+                         │
+                         └─NO─→ simpleSplit() (word-boundary wrapping)
+```
+
+### Font Scaling Flow
+
+Two-level scaling ensures text fits within card boundaries:
+
+```
+1. Layout-level scale: font_scale = sqrt(card_area / base_card_area)
+   └── Clamped between 0.6 and 1.0
+
+2. Adaptive content scale: _find_optimal_font_scale()
+   └── Start at layout's base font_scale
+       └── Measure content height → too tall? → reduce by 0.05 → repeat
+           └── Stops at 50% of base scale or 6pt minimum
 ```
 
 ## Installation
@@ -440,6 +502,37 @@ redcard-backend/
 | `reportlab` | PDF generation |
 | `arabic-reshaper` | Arabic text shaping |
 | `python-bidi` | Bidirectional text support |
+
+## Known Issues / In Progress
+
+### Missing Fonts
+
+The following scripts are configured in `font_config.py` but their font files are **not yet included** in `assets/fonts/`. Languages using these scripts will report `fontSupported: false` via the API and return a `400` error if rendering is attempted.
+
+| Missing Font | Script | Affected Languages |
+|-------------|--------|-------------------|
+| NotoSansHebrew | Hebrew | Hebrew (`he`) |
+| NotoSansDevanagari | Devanagari | Hindi (`hi`), Nepali (`ne`), Marathi (`mr`) |
+| NotoSansBengali | Bengali | Bengali (`bn`) |
+| NotoSansTamil | Tamil | Tamil (`ta`) |
+| NotoSansGurmukhi | Gurmukhi | Punjabi (`pa`) |
+| NotoSansThai | Thai | Thai (`th`) |
+| NotoSansLao | Lao | Lao (`lo`) |
+| NotoSansKhmer | Khmer | Khmer (`km`) |
+| NotoSansMyanmar | Myanmar | Burmese (`my`), Karen (`kar`) |
+| NotoSansEthiopic | Ethiopic | Amharic (`am`), Tigrinya (`ti`) |
+| NotoSansArmenian | Armenian | Armenian (`hy`) |
+| NotoSansGeorgian | Georgian | Georgian (`ka`) |
+
+**Currently installed fonts cover ~18 of ~56 configured languages.** The remaining ~38 languages need their Noto Sans font files downloaded from [Google Fonts](https://fonts.google.com/noto) and placed in `assets/fonts/`.
+
+### Card Size Scaling Does Not Scale Up
+
+The adaptive font scaling in `pdf_renderer.py` currently only **shrinks** text to fit within card boundaries — it does not **scale up** to maximize the use of available card space.
+
+- **Current behavior:** If the translated text is short (e.g., a language with brief bullet points), the font stays at the base size even when there is significant empty space on the card. The text appears small relative to the cut-out area.
+- **Desired behavior:** The renderer should also attempt to scale text *up* (beyond the base `font_scale`) when there is room, so that shorter content fills more of the card and is easier to read.
+- **Where:** `_find_optimal_font_scale()` in `app/pdf_renderer.py` — the loop currently only reduces scale; it needs a complementary upward pass.
 
 ## License
 
