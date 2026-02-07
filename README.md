@@ -539,8 +539,11 @@ The adaptive font scaling in `pdf_renderer.py` currently only **shrinks** text t
 
 ## License
 
-[Add your license here]
+This project is licensed under the MIT License. See `LICENSE` for details.
+
+Attribution: The 56 language translations were sourced from the Immigration
+Legal Resource Center (ILRC), who created the original red cards.
 
 ## Contributing
 
-[Add contribution guidelines here]
+See `CONTRIBUTING.md` for guidelines.
