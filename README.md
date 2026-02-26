@@ -39,7 +39,7 @@ This backend generates printable PDF cards that display constitutional rights in
 - **56+ Languages**: Support for Latin, Cyrillic, Arabic, Hebrew, CJK, South Asian, Southeast Asian, and more
 - **22 Unicode Scripts**: Each script uses optimized Noto Sans fonts
 - **RTL Support**: Full right-to-left rendering for Arabic and Hebrew with proper text reshaping
-- **CJK Text Wrapping**: Intelligent character-by-character wrapping for Chinese, Japanese, and Korean
+- **No-Space Script Wrapping**: Character-safe wrapping for CJK, Thai, Lao, Khmer, and Myanmar scripts
 - **Flexible Layouts**: 4, 6, 8, or 12 cards per page
 - **Font Availability Checking**: API reports which languages have fonts installed
 - **Flexible JSON Parsing**: Accepts multiple translation file formats
@@ -89,7 +89,7 @@ GET /api/render/{code}?cards_per_page=4
 │   │   │   ├── Draw cut lines (dotted border)
 │   │   │   └── _draw_front()
 │   │   │       ├── Find optimal font scale (adaptive sizing)
-│   │   │       ├── Wrap text (CJK-aware if needed)
+│   │   │       ├── Wrap text (script-aware + overflow-safe)
 │   │   │       ├── Process RTL text (Arabic/Hebrew reshaping)
 │   │   │       └── Draw header + bullets
 │   │   └── Draw footer (printing instructions)
@@ -115,13 +115,15 @@ Text Input
     │
     ├─→ Has lang_code? ─YES─→ detect_script(lang_code) → Script enum
     │                         │
-    │                         └─→ is_cjk_script()? ─YES─→ _wrap_cjk() (char-by-char)
-    │                                               │
-    │                                               └─NO─→ simpleSplit() (word-boundary)
+    │                         └─→ is_no_space_script()? ─YES─→ character-wrap
+    │                                                     │
+    │                                                     └─NO─→ simpleSplit()
     │
-    └─→ No lang_code ──→ is_cjk_text()? ─YES─→ _wrap_cjk()
-                         │
-                         └─NO─→ simpleSplit() (word-boundary wrapping)
+    ├─→ No lang_code ──→ is_cjk_text()? ─YES─→ character-wrap
+    │                    │
+    │                    └─NO─→ simpleSplit()
+    │
+    └─→ Final safety pass: any over-width line ─→ character-wrap fallback
 ```
 
 ### Font Scaling Flow
@@ -338,38 +340,45 @@ Language Code → Script Detection → Font Family → Font Files
      "ar"     →   Script.ARABIC  → NotoSansArabic → NotoSansArabic-*.ttf
 ```
 
-## Text Wrapping (CJK Support)
+## Text Wrapping (No-Space Script Support)
 
 ### The Problem
 
-CJK (Chinese, Japanese, Korean) text has no spaces between characters, unlike European languages. Standard word-boundary wrapping (like ReportLab's `simpleSplit()`) cannot determine where to break lines, causing text to overflow horizontally past card boundaries.
+Several scripts do not reliably use spaces as word boundaries for line wrapping.  
+If wrapping is done only with whitespace-based splitting (like ReportLab's `simpleSplit()`), long runs can overflow card boundaries.
 
 ### The Solution
 
-The `app/text/` module provides intelligent text wrapping:
+The `app/text/` module now uses a two-stage strategy:
 
-| Text Type | Wrapping Method | Break Points |
-|-----------|-----------------|--------------|
-| English/Latin | Word-boundary | Spaces between words |
-| Chinese | Character-by-character | Any character |
-| Japanese | Character-by-character | Any character |
-| Korean | Character-by-character | Any character |
-| Arabic/Hebrew | Word-boundary + RTL | Spaces (with RTL reorder) |
+1. **Script-aware primary wrapping**
+   - Character-level wrapping for: CJK, Thai, Lao, Khmer, Myanmar
+   - Word-boundary wrapping for: Latin/Cyrillic/Arabic/Hebrew/etc.
+2. **Overflow safety pass**
+   - Any line still wider than `max_width` is re-wrapped character-by-character.
+
+| Script Type | Primary Wrapping | Overflow Safety |
+|-------------|------------------|-----------------|
+| Latin/Cyrillic/Greek/Vietnamese | Word-boundary (`simpleSplit`) | Character fallback if needed |
+| Arabic/Hebrew (RTL) | Word-boundary + RTL processing | Character fallback if needed |
+| CJK | Character-by-character | Built-in |
+| Thai/Lao/Khmer/Myanmar | Character-by-character | Built-in |
 
 ### How It Works
 
 ```python
 from app.text import wrap_text
 
-# Automatic CJK detection based on text content
-lines = wrap_text("你好世界", font_name, font_size, max_width)
+# With language hint (recommended, uses script mapping)
+lines = wrap_text(text, font_name, font_size, max_width, lang_code="km")
 
-# Or with language hint for more reliable detection
-lines = wrap_text(text, font_name, font_size, max_width, lang_code="zh-TW")
+# Without language hint (falls back to CJK character detection)
+lines = wrap_text("你好世界", font_name, font_size, max_width)
 ```
 
-### Unicode Ranges Detected as CJK
+### Unicode Ranges Auto-Detected (No `lang_code`)
 
+When `lang_code` is not provided, the wrapper can still auto-detect CJK text via Unicode ranges:
 - `0x4E00-0x9FFF`: CJK Unified Ideographs (Chinese characters)
 - `0x3400-0x4DBF`: CJK Extension A
 - `0x3000-0x303F`: CJK Punctuation
@@ -445,6 +454,19 @@ This will:
 - Report which languages succeed/fail
 - Identify "supported but failed" issues (font mapping bugs)
 
+### Generate Visual QA PDF (All Languages, Front Only)
+
+Generate one merged PDF with a labeled **front page** per language (back pages skipped):
+
+```bash
+python dev/test_all_languages.py --cards 12
+```
+
+This will:
+- Render all language front sides
+- Add `Language: <code> (<name>)` label to each output page
+- Merge pages into a single review PDF in `dev/`
+
 ### Run API Tests
 
 ```bash
@@ -466,7 +488,17 @@ redcard-backend/
 │   ├── schemas.py              # Pydantic models for API validation
 │   ├── exceptions.py           # Custom exception classes
 │   ├── translations_store.py   # Translation JSON loader/parser
-│   ├── pdf_renderer.py         # ReportLab PDF generation
+│   ├── pdf_renderer.py         # Compatibility facade (legacy imports)
+│   ├── pdf/
+│   │   ├── __init__.py         # PDF package exports
+│   │   ├── renderer.py         # Main PDF orchestration
+│   │   ├── front.py            # Front card rendering + adaptive sizing
+│   │   ├── back.py             # Back card rendering
+│   │   ├── guides.py           # Cut lines, fold guides, footer, text helpers
+│   │   ├── wrapping.py         # RTL-aware line wrapping adapter
+│   │   ├── rtl.py              # RTL shaping/reordering support
+│   │   ├── fonts.py            # Font pick/registration helpers
+│   │   └── constants.py        # Shared typography/scaling constants
 │   ├── layout.py               # Card positioning calculations
 │   ├── back_content.py         # English back card content
 │   ├── logging_config.py       # Logging configuration
@@ -477,7 +509,7 @@ redcard-backend/
 │   │   └── script_detector.py  # Language → Unicode script detection
 │   └── text/
 │       ├── __init__.py         # Text module exports
-│       └── text_wrapper.py     # CJK-aware text wrapping
+│       └── text_wrapper.py     # Script-aware + overflow-safe text wrapping
 ├── assets/
 │   └── fonts/                  # TTF font files (Noto Sans families)
 ├── data/
@@ -505,37 +537,23 @@ redcard-backend/
 
 ## Known Issues / In Progress
 
-### Missing Fonts
+### Font File Naming Is Strict
 
-The following 13 languages produce **blank or broken front cards** when rendered. Their dedicated font files are not yet included in `assets/fonts/`, and the base NotoSans fallback cannot render their scripts. Verified manually via `dev/test_all_languages.py` output.
+Font loading is based on exact filenames defined in `app/fonts/font_config.py`.  
+For each configured family, both files must exist in `assets/fonts/`:
 
-| # | Language | Code | Script | Required Font |
-|---|----------|------|--------|---------------|
-| 1 | Amharic | `am` | Ethiopic | NotoSansEthiopic |
-| 2 | Armenian | `hy` | Armenian | NotoSansArmenian |
-| 3 | Bangla | `bn` | Bengali | NotoSansBengali |
-| 4 | Burmese | `my` | Myanmar | NotoSansMyanmar |
-| 5 | Georgian | `ka` | Georgian | NotoSansGeorgian |
-| 6 | Hebrew | `he` | Hebrew | NotoSansHebrew |
-| 7 | Karen | `kar` | Myanmar | NotoSansMyanmar |
-| 8 | Khmer | `km` | Khmer | NotoSansKhmer |
-| 9 | Lao | `lo` | Lao | NotoSansLao |
-| 10 | Punjabi | `pa` | Gurmukhi | NotoSansGurmukhi |
-| 11 | Tamil | `ta` | Tamil | NotoSansTamil |
-| 12 | Thai | `th` | Thai | NotoSansThai |
-| 13 | Tigrinya | `ti` | Ethiopic | NotoSansEthiopic |
+- `NotoSans{Script}-Regular.ttf`
+- `NotoSans{Script}-Bold.ttf`
 
-**Note:** Hindi (`hi`) and Nepali (`ne`) use the Devanagari script but render correctly via the base NotoSans font, so NotoSansDevanagari is not required.
-
-To fix, download the required Noto Sans fonts from [Google Fonts](https://fonts.google.com/noto) and place the Regular + Bold `.ttf` files in `assets/fonts/`.
+If names do not match exactly, the renderer may fall back to another font (or fail for scripts with no usable fallback).
 
 ### Card Size Scaling Does Not Scale Up
 
-The adaptive font scaling in `pdf_renderer.py` currently only **shrinks** text to fit within card boundaries — it does not **scale up** to maximize the use of available card space.
+The adaptive font scaling in `app/pdf/front.py` currently only **shrinks** text to fit within card boundaries — it does not **scale up** to maximize the use of available card space.
 
 - **Current behavior:** If the translated text is short (e.g., a language with brief bullet points), the font stays at the base size even when there is significant empty space on the card. The text appears small relative to the cut-out area.
 - **Desired behavior:** The renderer should also attempt to scale text *up* (beyond the base `font_scale`) when there is room, so that shorter content fills more of the card and is easier to read.
-- **Where:** `_find_optimal_font_scale()` in `app/pdf_renderer.py` — the loop currently only reduces scale; it needs a complementary upward pass.
+- **Where:** `_find_optimal_font_scale()` in `app/pdf/front.py` — the loop currently only reduces scale; it needs a complementary upward pass.
 
 ## License
 

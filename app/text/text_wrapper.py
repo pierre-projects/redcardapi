@@ -7,7 +7,7 @@ MODULE OVERVIEW
 
 Provides intelligent text wrapping that handles:
 - Latin/European text: word-boundary wrapping (via simpleSplit)
-- CJK text: character-boundary wrapping (Chinese/Japanese/Korean)
+- No-space scripts: character-boundary wrapping (CJK, Thai, Lao, Khmer, Myanmar)
 - Mixed text: hybrid approach
 
 Integrates with existing Script enum from fonts.script_detector.
@@ -60,6 +60,19 @@ CJK_SCRIPTS = frozenset({
     Script.KOREAN,
 })
 
+# Scripts where whitespace-based wrapping is unreliable and character
+# wrapping is safer as a default.
+NO_SPACE_SCRIPTS = frozenset({
+    Script.CJK_SIMPLIFIED,
+    Script.CJK_TRADITIONAL,
+    Script.JAPANESE,
+    Script.KOREAN,
+    Script.THAI,
+    Script.LAO,
+    Script.KHMER,
+    Script.MYANMAR,
+})
+
 
 def is_cjk_script(script: Script) -> bool:
     """
@@ -72,6 +85,19 @@ def is_cjk_script(script: Script) -> bool:
         True if the script is CJK (Chinese, Japanese, or Korean)
     """
     return script in CJK_SCRIPTS
+
+
+def is_no_space_script(script: Script) -> bool:
+    """
+    Check if script should use character-level wrapping by default.
+
+    Args:
+        script: Script enum value from script_detector
+
+    Returns:
+        True if the script generally does not rely on spaces for safe wrapping
+    """
+    return script in NO_SPACE_SCRIPTS
 
 
 def is_cjk_char(char: str) -> bool:
@@ -154,6 +180,21 @@ def _wrap_cjk(
     Returns:
         List of wrapped lines
     """
+    return _wrap_by_character(text, font_name, font_size, max_width)
+
+
+def _wrap_by_character(
+    text: str,
+    font_name: str,
+    font_size: int,
+    max_width: float
+) -> List[str]:
+    """
+    Wrap text by character boundaries.
+
+    This is used for scripts where whitespace wrapping is unreliable and as a
+    fallback safety mechanism for any line that still overflows.
+    """
     if not text:
         return []
 
@@ -163,9 +204,7 @@ def _wrap_cjk(
 
     for char in text:
         char_width = pdfmetrics.stringWidth(char, font_name, font_size)
-
         if current_width + char_width > max_width and current_line:
-            # Line full, start new line
             lines.append(current_line)
             current_line = char
             current_width = char_width
@@ -173,11 +212,42 @@ def _wrap_cjk(
             current_line += char
             current_width += char_width
 
-    # Don't forget the last line
     if current_line:
         lines.append(current_line)
 
     return lines
+
+
+def _line_width(text: str, font_name: str, font_size: int) -> float:
+    """Measure rendered width for a single line."""
+    return pdfmetrics.stringWidth(text, font_name, font_size)
+
+
+def _enforce_max_width(
+    lines: List[str],
+    font_name: str,
+    font_size: int,
+    max_width: float,
+) -> List[str]:
+    """
+    Ensure every returned line is within max_width whenever possible.
+
+    If a line from simpleSplit still overflows (typically long no-space runs),
+    split that line with character-level wrapping.
+    """
+    safe_lines: List[str] = []
+    for line in lines:
+        if not line:
+            safe_lines.append(line)
+            continue
+
+        if _line_width(line, font_name, font_size) <= max_width:
+            safe_lines.append(line)
+            continue
+
+        safe_lines.extend(_wrap_by_character(line, font_name, font_size, max_width))
+
+    return safe_lines
 
 
 def wrap_text(
@@ -188,11 +258,12 @@ def wrap_text(
     lang_code: Optional[str] = None
 ) -> List[str]:
     """
-    Wrap text to fit within max_width, with CJK support.
+    Wrap text to fit within max_width, with support for no-space scripts.
 
-    Automatically detects CJK text and uses appropriate wrapping:
-    - CJK: character-by-character (no spaces to break on)
-    - Other: word-by-word via ReportLab's simpleSplit
+    Strategy:
+    - No-space scripts: character-by-character wrapping
+    - Other scripts: word-by-word via ReportLab's simpleSplit
+    - Safety pass: if any line still overflows, split it by characters
 
     Args:
         text: Text to wrap
@@ -216,17 +287,19 @@ def wrap_text(
     if not text:
         return []
 
-    # Determine if CJK wrapping is needed
-    use_cjk = False
+    # Determine if character-based wrapping is needed
+    use_char_wrap = False
     if lang_code:
-        # Use language code for reliable detection
+        # Use language code for reliable script detection
         script = detect_script(lang_code)
-        use_cjk = is_cjk_script(script)
+        use_char_wrap = is_no_space_script(script)
     else:
-        # Fall back to text content detection
-        use_cjk = is_cjk_text(text)
+        # Fall back to CJK content detection when language hint isn't available
+        use_char_wrap = is_cjk_text(text)
 
-    if use_cjk:
-        return _wrap_cjk(text, font_name, font_size, max_width)
+    if use_char_wrap:
+        lines = _wrap_by_character(text, font_name, font_size, max_width)
     else:
-        return simpleSplit(text, font_name, font_size, max_width)
+        lines = simpleSplit(text, font_name, font_size, max_width)
+
+    return _enforce_max_width(lines, font_name, font_size, max_width)
