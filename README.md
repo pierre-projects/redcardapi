@@ -647,6 +647,57 @@ Fold header behavior in `mode=fold`:
 - Source formatting includes origin/type plus verification flag and compact domain when available.
 - Instruction copy is split into explicit lines to avoid truncation in the header text area.
 
+### Language Expansion Audit (Future Work)
+
+#### Current State (JSON-Backed)
+
+Translations are currently loaded from `CARD_TRANSLATIONS_JSON_PATH` at startup via `TranslationsStore` (default: `data/Translations_with_sources.json`).
+
+Current strengths:
+- Simple deployment model with no external data service dependency
+- Portable translation dataset that can be reviewed in plain files
+- Easy contributor workflow via PR-based JSON edits
+
+Current constraints:
+- No concurrent editorial workflow (review states/locking/permissions)
+- No built-in revision history or audit trail per translation change
+- Content updates are coupled to deploy/restart cycles
+
+#### When To Move From JSON To DB
+
+Recommendation: keep JSON as source of truth until clear operational triggers justify migration.
+
+Migration triggers:
+- Runtime translation updates are needed without deploy/restart
+- Multi-editor workflow is required (with approval/review states)
+- Version history and audit trail are required per language/field
+- Per-language draft/publish lifecycle is needed
+- Search/filter/reporting over translation metadata becomes a core requirement
+
+Decision rule: **If 2+ triggers become active, prioritize phased DB migration.**
+
+#### DB Migration Shape (Future)
+
+Planned migration shape (high-level):
+- **Phase 1:** Define schema and import pipeline; achieve read parity with current JSON-backed behavior
+- **Phase 2:** Run dual-read validation and add admin-only write paths
+- **Phase 3:** Promote DB as primary source; keep JSON export as backup/interchange format
+
+Minimal model concept (not final schema):
+- `languages`
+- `front_content`
+- `source_metadata`
+- `revisions`
+
+### Future Ideas
+
+- Translation ingestion/validation CLI (schema lint + script/font compatibility checks)
+- Automated visual regression snapshots for PDF output by language
+- Translation version endpoint/checksum for frontend cache invalidation
+- Quality gates for source trust levels (for example, `official` vs `community`)
+- Observability for render failures by language/script/font family
+- Optional auth/rate limiting for expensive render operations
+
 ## License
 
 This project is licensed under the MIT License. See `LICENSE` for details.
