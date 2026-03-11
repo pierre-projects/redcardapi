@@ -98,6 +98,14 @@ from reportlab.lib.units import inch
 
 
 # =============================================================================
+# FOLD MODE CONSTANTS
+# =============================================================================
+
+FOLD_VALID_LAYOUTS = [4, 5, 6]
+FOLD_DEFAULT_ROWS = 4
+
+
+# =============================================================================
 # LAYOUT PRESETS
 # =============================================================================
 
@@ -190,6 +198,8 @@ class CardLayout:
     margin: float                                      # Page margin in points
     gutter: float                                      # Space between cards in points
     footer_height: float                               # Footer area height in points
+    mode: str = "legacy"                               # "legacy" or "fold"
+    header_height: float = 0.0                         # Top header area (fold mode)
 
     @property
     def cards_per_page(self) -> int:
@@ -331,6 +341,78 @@ class CardLayout:
             margin=margin,
             gutter=gutter,
             footer_height=footer_h,
+        )
+
+    @classmethod
+    def from_fold_rows(
+        cls,
+        rows: int,
+        page_size: str = "letter",
+        margin_inches: float = 0.5,
+        header_height_inches: float = 0.80,
+    ) -> "CardLayout":
+        """
+        Create a fold-mode CardLayout with front|back side-by-side per row.
+
+        Official fold format: always 2 columns (front left, back right),
+        variable number of rows. No horizontal gutter between columns
+        (the shared edge is the fold line). No vertical gutter between
+        rows (shared borders act as cut lines).
+
+        PARAMETERS:
+            rows: Number of card rows (4, 5, or 6)
+            page_size: Paper size - "letter" or "a4"
+            margin_inches: Page margin on all sides (default: 0.5")
+            header_height_inches: Top header with instructions (default: 0.80")
+
+        RETURNS:
+            CardLayout configured for fold mode
+        """
+        if page_size.lower() == "a4":
+            page_w, page_h = A4
+        else:
+            page_w, page_h = letter
+
+        margin = margin_inches * inch
+        header_h = header_height_inches * inch
+
+        cols = 2
+        card_w = (page_w - 2 * margin) / cols
+        available_h = page_h - 2 * margin - header_h
+        card_h = available_h / rows
+
+        # Font scale: area ratio vs base 2x2 card at same page size
+        base_card_area = (
+            (page_w - 2 * margin - 0.25 * inch) / 2 *
+            (page_h - 2 * margin - 0.25 * inch - 0.55 * inch) / 2
+        )
+        current_card_area = card_w * card_h
+        font_scale = min(1.0, (current_card_area / base_card_area) ** 0.5)
+        font_scale = max(0.6, font_scale)
+
+        # Positions: for each row, front (left col) then back (right col).
+        # Row 0 is at the bottom of the card grid; row (rows-1) is at the
+        # top, just below the header section.
+        positions = []
+        for r in range(rows):
+            y = margin + r * card_h
+            positions.append((margin, y, card_w, card_h))
+            positions.append((margin + card_w, y, card_w, card_h))
+
+        return cls(
+            cols=cols,
+            rows=rows,
+            card_width=card_w,
+            card_height=card_h,
+            font_scale=font_scale,
+            positions=positions,
+            page_width=page_w,
+            page_height=page_h,
+            margin=margin,
+            gutter=0.0,
+            footer_height=0.0,
+            mode="fold",
+            header_height=header_h,
         )
 
     def get_scaled_font_size(self, base_size: int) -> int:

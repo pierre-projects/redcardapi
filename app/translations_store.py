@@ -183,6 +183,54 @@ def _first_obj(d: Dict[str, Any], keys: Tuple[str, ...]) -> Any:
     return {}
 
 
+def _normalize_source_value(source: Any) -> Optional[Dict[str, Any]]:
+    """
+    Normalize source values into a consistent dict shape.
+
+    Accepts:
+    - dict objects with source fields
+    - plain strings (stored as origin)
+    """
+    if isinstance(source, dict):
+        if not source:
+            return None
+
+        has_known_source_field = any(key in source for key in ("type", "origin", "url", "verified"))
+        if not has_known_source_field:
+            return None
+
+        source_type = str(source.get("type") or "unknown").strip().lower()
+        origin = str(source.get("origin") or "unknown").strip()
+        url = source.get("url")
+        if not isinstance(url, str):
+            url = None
+
+        verified_raw = source.get("verified", False)
+        if isinstance(verified_raw, bool):
+            verified = verified_raw
+        elif isinstance(verified_raw, str):
+            verified = verified_raw.strip().lower() in ("true", "1", "yes", "verified")
+        else:
+            verified = bool(verified_raw)
+
+        return {
+            "type": source_type or "unknown",
+            "origin": origin or "unknown",
+            "url": url,
+            "verified": verified,
+        }
+
+    if isinstance(source, str) and source.strip():
+        return {
+            "type": "unknown",
+            "origin": source.strip(),
+            "url": None,
+            "verified": False,
+        }
+
+    return None
+
+
 def _looks_like_lang_item(x: Any) -> bool:
     """
     Heuristic check: Does this dict look like a language entry?
@@ -411,6 +459,7 @@ class TranslationsStore:
         """
         raw = self._raw
         langs: Optional[List[Dict[str, Any]]] = None
+        default_source: Optional[Dict[str, Any]] = None
 
         # === STRATEGY 1: Top-level list ===
         if isinstance(raw, list):
@@ -418,6 +467,13 @@ class TranslationsStore:
 
         # === STRATEGY 2: Known container key ===
         if langs is None and isinstance(raw, dict):
+            # Optional top-level source metadata fallback.
+            default_source = _normalize_source_value(_first_obj(raw, SOURCE_KEYS))
+            if default_source is None:
+                metadata = raw.get("metadata")
+                if isinstance(metadata, dict):
+                    default_source = _normalize_source_value(_first_obj(metadata, SOURCE_KEYS))
+
             # Look for known keys (case-insensitive)
             for k in list(raw.keys()):
                 if isinstance(k, str) and k.strip().lower() in KNOWN_LANG_KEYS:
@@ -488,14 +544,9 @@ class TranslationsStore:
                 front_obj = {"value": front}
 
             # Normalize source to dict format (or None if not present)
-            source_obj: Optional[Dict[str, Any]] = None
-            if isinstance(source, dict) and source:
-                source_obj = {
-                    "type": source.get("type", "unknown"),
-                    "origin": source.get("origin", "unknown"),
-                    "url": source.get("url"),
-                    "verified": bool(source.get("verified", False)),
-                }
+            source_obj = _normalize_source_value(source)
+            if source_obj is None and default_source is not None:
+                source_obj = dict(default_source)
 
             # Skip items without a code
             if not code:

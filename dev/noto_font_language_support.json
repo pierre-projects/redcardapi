@@ -1,0 +1,4240 @@
+{
+  "generated_from": "https://fonts.google.com/metadata/fonts/<family>",
+  "font_count": 17,
+  "fonts": [
+    {
+      "font": "Noto Sans",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans",
+      "primary_script": "",
+      "primary_language": "",
+      "language_count": 852,
+      "languages": [
+        {
+          "tag": "aa_Latn",
+          "name": "Afar (Latin)"
+        },
+        {
+          "tag": "ab_Cyrl",
+          "name": "Abkhazian (Cyrillic)"
+        },
+        {
+          "tag": "abq_Cyrl",
+          "name": "Abaza (Cyrillic)"
+        },
+        {
+          "tag": "abr_Latn",
+          "name": "Abron (Latin)"
+        },
+        {
+          "tag": "ace_Latn",
+          "name": "Achinese (Latin)"
+        },
+        {
+          "tag": "acf_Latn",
+          "name": "Saint Lucian Creole French (Latin)"
+        },
+        {
+          "tag": "ach_Latn",
+          "name": "Acoli (Latin)"
+        },
+        {
+          "tag": "acu_Latn",
+          "name": "Achuar-Shiwiar (Latin)"
+        },
+        {
+          "tag": "ada_Latn",
+          "name": "Adangme (Latin)"
+        },
+        {
+          "tag": "ady_Cyrl",
+          "name": "Adyghe (Cyrillic)"
+        },
+        {
+          "tag": "af_Latn",
+          "name": "Afrikaans (Latin)"
+        },
+        {
+          "tag": "agq_Latn",
+          "name": "Aghem (Latin)"
+        },
+        {
+          "tag": "agr_Latn",
+          "name": "Aguaruna (Latin)"
+        },
+        {
+          "tag": "aii_Cyrl",
+          "name": "Assyrian Neo-Aramaic (Cyrillic)"
+        },
+        {
+          "tag": "aii_Latn",
+          "name": "Assyrian Neo-Aramaic (Latin)"
+        },
+        {
+          "tag": "ain_Latn",
+          "name": "Ainu (Japan) (Latin)"
+        },
+        {
+          "tag": "ajg_Latn",
+          "name": "Aja (Benin) (Latin)"
+        },
+        {
+          "tag": "ak_Latn",
+          "name": "Akan (Latin)"
+        },
+        {
+          "tag": "akz_Latn",
+          "name": "Alabama (Latin)"
+        },
+        {
+          "tag": "ale_Latn",
+          "name": "Aleut (Latin)"
+        },
+        {
+          "tag": "aln_Latn",
+          "name": "Gheg Albanian (Latin)"
+        },
+        {
+          "tag": "alt_Cyrl",
+          "name": "Southern Altai (Cyrillic)"
+        },
+        {
+          "tag": "amc_Latn",
+          "name": "Amahuaca (Latin)"
+        },
+        {
+          "tag": "ame_Latn",
+          "name": "Yanesha' (Latin)"
+        },
+        {
+          "tag": "ami_Latn",
+          "name": "Amis (Latin)"
+        },
+        {
+          "tag": "amo_Latn",
+          "name": "Amo (Latin)"
+        },
+        {
+          "tag": "amr_Latn",
+          "name": "Amarakaeri (Latin)"
+        },
+        {
+          "tag": "an_Latn",
+          "name": "Aragonese (Latin)"
+        },
+        {
+          "tag": "ang_Latn",
+          "name": "Old English (ca. 450-1100) (Latin)"
+        },
+        {
+          "tag": "anp_Deva",
+          "name": "Angika (Devanagari)"
+        },
+        {
+          "tag": "aoz_Latn",
+          "name": "Uab Meto (Latin)"
+        },
+        {
+          "tag": "arl_Latn",
+          "name": "Arabela (Latin)"
+        },
+        {
+          "tag": "arn_Latn",
+          "name": "Mapudungun (Latin)"
+        },
+        {
+          "tag": "aro_Latn",
+          "name": "Araona (Latin)"
+        },
+        {
+          "tag": "arp_Latn",
+          "name": "Arapaho (Latin)"
+        },
+        {
+          "tag": "art_Latn",
+          "name": "Artificial languages (Latin)"
+        },
+        {
+          "tag": "arw_Latn",
+          "name": "Arawak (Latin)"
+        },
+        {
+          "tag": "asa_Latn",
+          "name": "Asu (Tanzania) (Latin)"
+        },
+        {
+          "tag": "ast_Latn",
+          "name": "Asturian (Latin)"
+        },
+        {
+          "tag": "atj_Latn",
+          "name": "Atikamekw (Latin)"
+        },
+        {
+          "tag": "auc_Latn",
+          "name": "Waorani (Latin)"
+        },
+        {
+          "tag": "av_Cyrl",
+          "name": "Avaric (Cyrillic)"
+        },
+        {
+          "tag": "avk_Latn",
+          "name": "Kotava (Latin)"
+        },
+        {
+          "tag": "awa_Deva",
+          "name": "Awadhi (Devanagari)"
+        },
+        {
+          "tag": "ay_Latn",
+          "name": "Aymara (Latin)"
+        },
+        {
+          "tag": "az_Cyrl",
+          "name": "Azerbaijani (Cyrillic)"
+        },
+        {
+          "tag": "az_Latn",
+          "name": "Azerbaijani (Latin)"
+        },
+        {
+          "tag": "azj_Cyrl",
+          "name": "North Azerbaijani (Cyrillic)"
+        },
+        {
+          "tag": "ba_Cyrl",
+          "name": "Bashkir (Cyrillic)"
+        },
+        {
+          "tag": "ba_Latn",
+          "name": "Bashkir (Latin)"
+        },
+        {
+          "tag": "bal_Latn",
+          "name": "Baluchi (Latin)"
+        },
+        {
+          "tag": "ban_Latn",
+          "name": "Balinese (Latin)"
+        },
+        {
+          "tag": "bap_Deva",
+          "name": "Bantawa (Devanagari)"
+        },
+        {
+          "tag": "bar_Latn",
+          "name": "Bavarian (Latin)"
+        },
+        {
+          "tag": "bas_Latn",
+          "name": "Basa (Cameroon) (Latin)"
+        },
+        {
+          "tag": "bax_Latn",
+          "name": "Bamun (Latin)"
+        },
+        {
+          "tag": "bba_Latn",
+          "name": "Baatonum (Latin)"
+        },
+        {
+          "tag": "bbc_Latn",
+          "name": "Batak Toba (Latin)"
+        },
+        {
+          "tag": "bbj_Latn",
+          "name": "Ghomálá' (Latin)"
+        },
+        {
+          "tag": "bci_Latn",
+          "name": "Baoulé (Latin)"
+        },
+        {
+          "tag": "be_Cyrl",
+          "name": "Belarusian (Cyrillic)"
+        },
+        {
+          "tag": "be_Latn",
+          "name": "Belarusian (Latin)"
+        },
+        {
+          "tag": "bem_Latn",
+          "name": "Bemba (Zambia) (Latin)"
+        },
+        {
+          "tag": "ber_Latn",
+          "name": "Berber languages (Latin)"
+        },
+        {
+          "tag": "bew_Latn",
+          "name": "Betawi (Latin)"
+        },
+        {
+          "tag": "bez_Latn",
+          "name": "Bena (Tanzania) (Latin)"
+        },
+        {
+          "tag": "bfa_Latn",
+          "name": "Bari (Latin)"
+        },
+        {
+          "tag": "bfd_Latn",
+          "name": "Bafut (Latin)"
+        },
+        {
+          "tag": "bfy_Deva",
+          "name": "Bagheli (Devanagari)"
+        },
+        {
+          "tag": "bg_Cyrl",
+          "name": "Bulgarian (Cyrillic)"
+        },
+        {
+          "tag": "bgc_Deva",
+          "name": "Haryanvi (Devanagari)"
+        },
+        {
+          "tag": "bgx_Grek",
+          "name": "Balkan Gagauz Turkish (Greek)"
+        },
+        {
+          "tag": "bhb_Deva",
+          "name": "Bhili (Devanagari)"
+        },
+        {
+          "tag": "bhi_Deva",
+          "name": "Bhilali (Devanagari)"
+        },
+        {
+          "tag": "bhk_Latn",
+          "name": "Albay Bicolano (Latin)"
+        },
+        {
+          "tag": "bho_Deva",
+          "name": "Bhojpuri (Devanagari)"
+        },
+        {
+          "tag": "bi_Latn",
+          "name": "Bislama (Latin)"
+        },
+        {
+          "tag": "bik_Latn",
+          "name": "Bikol (Latin)"
+        },
+        {
+          "tag": "bin_Latn",
+          "name": "Bini (Latin)"
+        },
+        {
+          "tag": "bjj_Deva",
+          "name": "Kanauji (Devanagari)"
+        },
+        {
+          "tag": "bjn_Latn",
+          "name": "Banjar (Latin)"
+        },
+        {
+          "tag": "bjt_Latn",
+          "name": "Balanta-Ganja (Latin)"
+        },
+        {
+          "tag": "bkm_Latn",
+          "name": "Kom (Cameroon) (Latin)"
+        },
+        {
+          "tag": "bku_Latn",
+          "name": "Buhid (Latin)"
+        },
+        {
+          "tag": "bla_Latn",
+          "name": "Siksika (Latin)"
+        },
+        {
+          "tag": "bm_Latn",
+          "name": "Bambara (Latin)"
+        },
+        {
+          "tag": "bmq_Latn",
+          "name": "Bomu (Latin)"
+        },
+        {
+          "tag": "boa_Latn",
+          "name": "Bora (Latin)"
+        },
+        {
+          "tag": "bqv_Latn",
+          "name": "Koro Wachi (Latin)"
+        },
+        {
+          "tag": "br_Latn",
+          "name": "Breton (Latin)"
+        },
+        {
+          "tag": "bra_Deva",
+          "name": "Braj (Devanagari)"
+        },
+        {
+          "tag": "brh_Latn",
+          "name": "Brahui (Latin)"
+        },
+        {
+          "tag": "brx_Deva",
+          "name": "Bodo (India) (Devanagari)"
+        },
+        {
+          "tag": "brx_Latn",
+          "name": "Bodo (India) (Latin)"
+        },
+        {
+          "tag": "bs_Cyrl",
+          "name": "Bosnian (Cyrillic)"
+        },
+        {
+          "tag": "bs_Latn",
+          "name": "Bosnian (Latin)"
+        },
+        {
+          "tag": "bsc_Latn",
+          "name": "Bassari (Latin)"
+        },
+        {
+          "tag": "bss_Latn",
+          "name": "Akoose (Latin)"
+        },
+        {
+          "tag": "bto_Latn",
+          "name": "Rinconada Bikol (Latin)"
+        },
+        {
+          "tag": "btv_Deva",
+          "name": "Bateri (Devanagari)"
+        },
+        {
+          "tag": "bua_Cyrl",
+          "name": "Buriat (Cyrillic)"
+        },
+        {
+          "tag": "buc_Latn",
+          "name": "Bushi (Latin)"
+        },
+        {
+          "tag": "bug_Latn",
+          "name": "Buginese (Latin)"
+        },
+        {
+          "tag": "bum_Latn",
+          "name": "Bulu (Cameroon) (Latin)"
+        },
+        {
+          "tag": "bvb_Latn",
+          "name": "Bube (Latin)"
+        },
+        {
+          "tag": "bvi_Latn",
+          "name": "Belanda Viri (Latin)"
+        },
+        {
+          "tag": "byh_Deva",
+          "name": "Bhujel (Devanagari)"
+        },
+        {
+          "tag": "byv_Latn",
+          "name": "Medumba (Latin)"
+        },
+        {
+          "tag": "bze_Latn",
+          "name": "Jenaama Bozo (Latin)"
+        },
+        {
+          "tag": "bzx_Latn",
+          "name": "Kɛlɛngaxo Bozo (Latin)"
+        },
+        {
+          "tag": "ca_Latn",
+          "name": "Catalan (Latin)"
+        },
+        {
+          "tag": "cab_Latn",
+          "name": "Garifuna (Latin)"
+        },
+        {
+          "tag": "cad_Latn",
+          "name": "Caddo (Latin)"
+        },
+        {
+          "tag": "cak_Latn",
+          "name": "Kaqchikel (Latin)"
+        },
+        {
+          "tag": "car_Latn",
+          "name": "Galibi Carib (Latin)"
+        },
+        {
+          "tag": "cay_Latn",
+          "name": "Cayuga (Latin)"
+        },
+        {
+          "tag": "cbi_Latn",
+          "name": "Chachi (Latin)"
+        },
+        {
+          "tag": "cbk_Latn",
+          "name": "Chavacano (Latin)"
+        },
+        {
+          "tag": "cbr_Latn",
+          "name": "Cashibo-Cacataibo (Latin)"
+        },
+        {
+          "tag": "cbs_Latn",
+          "name": "Cashinahua (Latin)"
+        },
+        {
+          "tag": "cbt_Latn",
+          "name": "Chayahuita (Latin)"
+        },
+        {
+          "tag": "cbu_Latn",
+          "name": "Candoshi-Shapra (Latin)"
+        },
+        {
+          "tag": "cch_Latn",
+          "name": "Atsam (Latin)"
+        },
+        {
+          "tag": "ce_Cyrl",
+          "name": "Chechen (Cyrillic)"
+        },
+        {
+          "tag": "ceb_Latn",
+          "name": "Cebuano (Latin)"
+        },
+        {
+          "tag": "cfm_Latn",
+          "name": "Falam Chin (Latin)"
+        },
+        {
+          "tag": "cgg_Latn",
+          "name": "Chiga (Latin)"
+        },
+        {
+          "tag": "ch_Latn",
+          "name": "Chamorro (Latin)"
+        },
+        {
+          "tag": "chj_Latn",
+          "name": "Ojitlán Chinantec (Latin)"
+        },
+        {
+          "tag": "chk_Latn",
+          "name": "Chuukese (Latin)"
+        },
+        {
+          "tag": "chm_Cyrl",
+          "name": "Mari (Russia) (Cyrillic)"
+        },
+        {
+          "tag": "chn_Latn",
+          "name": "Chinook jargon (Latin)"
+        },
+        {
+          "tag": "cho_Latn",
+          "name": "Choctaw (Latin)"
+        },
+        {
+          "tag": "chp_Latn",
+          "name": "Chipewyan (Latin)"
+        },
+        {
+          "tag": "chx_Deva",
+          "name": "Chantyal (Devanagari)"
+        },
+        {
+          "tag": "chy_Latn",
+          "name": "Cheyenne (Latin)"
+        },
+        {
+          "tag": "cic_Latn",
+          "name": "Chickasaw (Latin)"
+        },
+        {
+          "tag": "cjk_Latn",
+          "name": "Chokwe (Latin)"
+        },
+        {
+          "tag": "cjs_Cyrl",
+          "name": "Shor (Cyrillic)"
+        },
+        {
+          "tag": "ckt_Cyrl",
+          "name": "Chukot (Cyrillic)"
+        },
+        {
+          "tag": "cnh_Latn",
+          "name": "Hakha Chin (Latin)"
+        },
+        {
+          "tag": "cni_Latn",
+          "name": "Asháninka (Latin)"
+        },
+        {
+          "tag": "co_Latn",
+          "name": "Corsican (Latin)"
+        },
+        {
+          "tag": "cof_Latn",
+          "name": "Colorado (Latin)"
+        },
+        {
+          "tag": "con_Latn",
+          "name": "Cofán (Latin)"
+        },
+        {
+          "tag": "cop_Grek",
+          "name": "Coptic (Greek)"
+        },
+        {
+          "tag": "cot_Latn",
+          "name": "Caquinte (Latin)"
+        },
+        {
+          "tag": "cpf_Latn",
+          "name": "French-based creoles and pidgins (Latin)"
+        },
+        {
+          "tag": "cps_Latn",
+          "name": "Capiznon (Latin)"
+        },
+        {
+          "tag": "cpu_Latn",
+          "name": "Pichis Ashéninka (Latin)"
+        },
+        {
+          "tag": "cr_Latn",
+          "name": "Cree (Latin)"
+        },
+        {
+          "tag": "crh_Cyrl",
+          "name": "Crimean Tatar (Cyrillic)"
+        },
+        {
+          "tag": "crh_Latn",
+          "name": "Crimean Tatar (Latin)"
+        },
+        {
+          "tag": "cri_Latn",
+          "name": "Sãotomense (Latin)"
+        },
+        {
+          "tag": "crj_Latn",
+          "name": "Southern East Cree (Latin)"
+        },
+        {
+          "tag": "crl_Latn",
+          "name": "Northern East Cree (Latin)"
+        },
+        {
+          "tag": "crs_Latn",
+          "name": "Seselwa Creole French (Latin)"
+        },
+        {
+          "tag": "cs_Latn",
+          "name": "Czech (Latin)"
+        },
+        {
+          "tag": "csa_Latn",
+          "name": "Chiltepec Chinantec (Latin)"
+        },
+        {
+          "tag": "csb_Latn",
+          "name": "Kashubian (Latin)"
+        },
+        {
+          "tag": "ctd_Latn",
+          "name": "Tedim Chin (Latin)"
+        },
+        {
+          "tag": "cu_Cyrl",
+          "name": "Church Slavic (Cyrillic)"
+        },
+        {
+          "tag": "cv_Cyrl",
+          "name": "Chuvash (Cyrillic)"
+        },
+        {
+          "tag": "cy_Latn",
+          "name": "Welsh (Latin)"
+        },
+        {
+          "tag": "cyo_Latn",
+          "name": "Cuyonon (Latin)"
+        },
+        {
+          "tag": "da_Latn",
+          "name": "Danish (Latin)"
+        },
+        {
+          "tag": "dag_Latn",
+          "name": "Dagbani (Latin)"
+        },
+        {
+          "tag": "dak_Latn",
+          "name": "Dakota (Latin)"
+        },
+        {
+          "tag": "dar_Cyrl",
+          "name": "Dargwa (Cyrillic)"
+        },
+        {
+          "tag": "dav_Latn",
+          "name": "Taita (Latin)"
+        },
+        {
+          "tag": "ddn_Latn",
+          "name": "Dendi (Benin) (Latin)"
+        },
+        {
+          "tag": "de_Latn",
+          "name": "German (Latin)"
+        },
+        {
+          "tag": "del_Latn",
+          "name": "Delaware (Latin)"
+        },
+        {
+          "tag": "den_Latn",
+          "name": "Slave (Athapascan) (Latin)"
+        },
+        {
+          "tag": "dga_Latn",
+          "name": "Southern Dagaare (Latin)"
+        },
+        {
+          "tag": "dgr_Latn",
+          "name": "Tlicho (Latin)"
+        },
+        {
+          "tag": "dhi_Deva",
+          "name": "Dhimal (Devanagari)"
+        },
+        {
+          "tag": "dhw_Deva",
+          "name": "Dhanwar (Nepal) (Devanagari)"
+        },
+        {
+          "tag": "din_Latn",
+          "name": "Dinka (Latin)"
+        },
+        {
+          "tag": "dip_Latn",
+          "name": "Northeastern Dinka (Latin)"
+        },
+        {
+          "tag": "dje_Latn",
+          "name": "Zarma (Latin)"
+        },
+        {
+          "tag": "dng_Cyrl",
+          "name": "Dungan (Cyrillic)"
+        },
+        {
+          "tag": "dnj_Latn",
+          "name": "Dan (Latin)"
+        },
+        {
+          "tag": "doi_Deva",
+          "name": "Dogri (macrolanguage) (Devanagari)"
+        },
+        {
+          "tag": "dsb_Latn",
+          "name": "Lower Sorbian (Latin)"
+        },
+        {
+          "tag": "dtm_Latn",
+          "name": "Tomo Kan Dogon (Latin)"
+        },
+        {
+          "tag": "dtp_Latn",
+          "name": "Kadazan Dusun (Latin)"
+        },
+        {
+          "tag": "dty_Deva",
+          "name": "Dotyali (Devanagari)"
+        },
+        {
+          "tag": "dua_Latn",
+          "name": "Duala (Latin)"
+        },
+        {
+          "tag": "dum_Latn",
+          "name": "Middle Dutch (ca. 1050-1350) (Latin)"
+        },
+        {
+          "tag": "duu_Latn",
+          "name": "Drung (Latin)"
+        },
+        {
+          "tag": "dyo_Latn",
+          "name": "Jola-Fonyi (Latin)"
+        },
+        {
+          "tag": "dyu_Latn",
+          "name": "Dyula (Latin)"
+        },
+        {
+          "tag": "ebu_Latn",
+          "name": "Embu (Latin)"
+        },
+        {
+          "tag": "ee_Latn",
+          "name": "Ewe (Latin)"
+        },
+        {
+          "tag": "efi_Latn",
+          "name": "Efik (Latin)"
+        },
+        {
+          "tag": "egl_Latn",
+          "name": "Emilian (Latin)"
+        },
+        {
+          "tag": "eka_Latn",
+          "name": "Ekajuk (Latin)"
+        },
+        {
+          "tag": "el_Grek",
+          "name": "Modern Greek (1453-) (Greek)"
+        },
+        {
+          "tag": "emk_Latn",
+          "name": "Eastern Maninkakan (Latin)"
+        },
+        {
+          "tag": "en_Latn",
+          "name": "English (Latin)"
+        },
+        {
+          "tag": "enm_Latn",
+          "name": "Middle English (1100-1500) (Latin)"
+        },
+        {
+          "tag": "eo_Latn",
+          "name": "Esperanto (Latin)"
+        },
+        {
+          "tag": "es_Latn",
+          "name": "Spanish (Latin)"
+        },
+        {
+          "tag": "ese_Latn",
+          "name": "Ese Ejja (Latin)"
+        },
+        {
+          "tag": "esu_Latn",
+          "name": "Central Yupik (Latin)"
+        },
+        {
+          "tag": "et_Latn",
+          "name": "Estonian (Latin)"
+        },
+        {
+          "tag": "ett_Latn",
+          "name": "Etruscan (Latin)"
+        },
+        {
+          "tag": "eu_Latn",
+          "name": "Basque (Latin)"
+        },
+        {
+          "tag": "eve_Cyrl",
+          "name": "Even (Cyrillic)"
+        },
+        {
+          "tag": "evn_Cyrl",
+          "name": "Evenki (Cyrillic)"
+        },
+        {
+          "tag": "evn_Latn",
+          "name": "Evenki (Latin)"
+        },
+        {
+          "tag": "ewo_Latn",
+          "name": "Ewondo (Latin)"
+        },
+        {
+          "tag": "ext_Latn",
+          "name": "Extremaduran (Latin)"
+        },
+        {
+          "tag": "fan_Latn",
+          "name": "Fang (Equatorial Guinea) (Latin)"
+        },
+        {
+          "tag": "fbl_Latn",
+          "name": "West Albay Bikol (Latin)"
+        },
+        {
+          "tag": "ff_Latn",
+          "name": "Fulah (Latin)"
+        },
+        {
+          "tag": "ffm_Latn",
+          "name": "Maasina Fulfulde (Latin)"
+        },
+        {
+          "tag": "fi_Latn",
+          "name": "Finnish (Latin)"
+        },
+        {
+          "tag": "fil_Latn",
+          "name": "Filipino (Latin)"
+        },
+        {
+          "tag": "fit_Latn",
+          "name": "Tornedalen Finnish (Latin)"
+        },
+        {
+          "tag": "fj_Latn",
+          "name": "Fijian (Latin)"
+        },
+        {
+          "tag": "fkv_Latn",
+          "name": "Kven Finnish (Latin)"
+        },
+        {
+          "tag": "fo_Latn",
+          "name": "Faroese (Latin)"
+        },
+        {
+          "tag": "fon_Latn",
+          "name": "Fon (Latin)"
+        },
+        {
+          "tag": "fr_Latn",
+          "name": "French (Latin)"
+        },
+        {
+          "tag": "frc_Latn",
+          "name": "Cajun French (Latin)"
+        },
+        {
+          "tag": "frm_Latn",
+          "name": "Middle French (ca. 1400-1600) (Latin)"
+        },
+        {
+          "tag": "fro_Latn",
+          "name": "Old French (842-ca. 1400) (Latin)"
+        },
+        {
+          "tag": "frp_Latn",
+          "name": "Arpitan (Latin)"
+        },
+        {
+          "tag": "frr_Latn",
+          "name": "Northern Frisian (Latin)"
+        },
+        {
+          "tag": "frs_Latn",
+          "name": "Eastern Frisian (Latin)"
+        },
+        {
+          "tag": "fuc_Latn",
+          "name": "Pulaar (Latin)"
+        },
+        {
+          "tag": "fud_Latn",
+          "name": "East Futuna (Latin)"
+        },
+        {
+          "tag": "fuf_Latn",
+          "name": "Pular (Latin)"
+        },
+        {
+          "tag": "fuq_Latn",
+          "name": "Central-Eastern Niger Fulfulde (Latin)"
+        },
+        {
+          "tag": "fur_Latn",
+          "name": "Friulian (Latin)"
+        },
+        {
+          "tag": "fuv_Latn",
+          "name": "Nigerian Fulfulde (Latin)"
+        },
+        {
+          "tag": "fvr_Latn",
+          "name": "Fur (Latin)"
+        },
+        {
+          "tag": "fy_Latn",
+          "name": "Western Frisian (Latin)"
+        },
+        {
+          "tag": "ga_Latn",
+          "name": "Irish (Latin)"
+        },
+        {
+          "tag": "gaa_Latn",
+          "name": "Ga (Latin)"
+        },
+        {
+          "tag": "gag_Cyrl",
+          "name": "Gagauz (Cyrillic)"
+        },
+        {
+          "tag": "gag_Latn",
+          "name": "Gagauz (Latin)"
+        },
+        {
+          "tag": "gay_Latn",
+          "name": "Gayo (Latin)"
+        },
+        {
+          "tag": "gba_Latn",
+          "name": "Gbaya (Central African Republic) (Latin)"
+        },
+        {
+          "tag": "gbm_Deva",
+          "name": "Garhwali (Devanagari)"
+        },
+        {
+          "tag": "gcf_Latn",
+          "name": "Guadeloupean Creole French (Latin)"
+        },
+        {
+          "tag": "gcr_Latn",
+          "name": "Guianese Creole French (Latin)"
+        },
+        {
+          "tag": "gd_Latn",
+          "name": "Scottish Gaelic (Latin)"
+        },
+        {
+          "tag": "gem_Latn",
+          "name": "Germanic languages (Latin)"
+        },
+        {
+          "tag": "ggn_Deva",
+          "name": "Eastern Gurung (Devanagari)"
+        },
+        {
+          "tag": "ggn_Latn",
+          "name": "Eastern Gurung (Latin)"
+        },
+        {
+          "tag": "gil_Latn",
+          "name": "Gilbertese (Latin)"
+        },
+        {
+          "tag": "giw_Latn",
+          "name": "White Gelao (Latin)"
+        },
+        {
+          "tag": "gjn_Latn",
+          "name": "Gonja (Latin)"
+        },
+        {
+          "tag": "gju_Deva",
+          "name": "Gujari (Devanagari)"
+        },
+        {
+          "tag": "gkp_Latn",
+          "name": "Guinea Kpelle (Latin)"
+        },
+        {
+          "tag": "gl_Latn",
+          "name": "Galician (Latin)"
+        },
+        {
+          "tag": "gld_Cyrl",
+          "name": "Nanai (Cyrillic)"
+        },
+        {
+          "tag": "gmh_Latn",
+          "name": "Middle High German (ca. 1050-1500) (Latin)"
+        },
+        {
+          "tag": "gn_Latn",
+          "name": "Guarani (Latin)"
+        },
+        {
+          "tag": "goh_Latn",
+          "name": "Old High German (ca. 750-1050) (Latin)"
+        },
+        {
+          "tag": "gom_Deva",
+          "name": "Goan Konkani (Devanagari)"
+        },
+        {
+          "tag": "gon_Deva",
+          "name": "Gondi (Devanagari)"
+        },
+        {
+          "tag": "gor_Latn",
+          "name": "Gorontalo (Latin)"
+        },
+        {
+          "tag": "gos_Latn",
+          "name": "Gronings (Latin)"
+        },
+        {
+          "tag": "grb_Latn",
+          "name": "Grebo (Latin)"
+        },
+        {
+          "tag": "grc_Grek",
+          "name": "Ancient Greek (to 1453) (Greek)"
+        },
+        {
+          "tag": "gsw_Latn",
+          "name": "Swiss German (Latin)"
+        },
+        {
+          "tag": "gub_Latn",
+          "name": "Guajajára (Latin)"
+        },
+        {
+          "tag": "guc_Latn",
+          "name": "Wayuu (Latin)"
+        },
+        {
+          "tag": "gur_Latn",
+          "name": "Farefare (Latin)"
+        },
+        {
+          "tag": "guu_Latn",
+          "name": "Yanomamö (Latin)"
+        },
+        {
+          "tag": "guz_Latn",
+          "name": "Gusii (Latin)"
+        },
+        {
+          "tag": "gv_Latn",
+          "name": "Manx (Latin)"
+        },
+        {
+          "tag": "gvr_Deva",
+          "name": "Gurung (Devanagari)"
+        },
+        {
+          "tag": "gwi_Latn",
+          "name": "Gwichʼin (Latin)"
+        },
+        {
+          "tag": "gyr_Latn",
+          "name": "Guarayu (Latin)"
+        },
+        {
+          "tag": "ha_Latn",
+          "name": "Hausa (Latin)"
+        },
+        {
+          "tag": "hai_Latn",
+          "name": "Haida (Latin)"
+        },
+        {
+          "tag": "hak_Latn",
+          "name": "Hakka Chinese (Latin)"
+        },
+        {
+          "tag": "haw_Latn",
+          "name": "Hawaiian (Latin)"
+        },
+        {
+          "tag": "hea_Latn",
+          "name": "Northern Qiandong Miao (Latin)"
+        },
+        {
+          "tag": "hi_Deva",
+          "name": "Hindi (Devanagari)"
+        },
+        {
+          "tag": "hi_Latn",
+          "name": "Hindi (Latin)"
+        },
+        {
+          "tag": "hif_Deva",
+          "name": "Fiji Hindi (Devanagari)"
+        },
+        {
+          "tag": "hif_Latn",
+          "name": "Fiji Hindi (Latin)"
+        },
+        {
+          "tag": "hil_Latn",
+          "name": "Hiligaynon (Latin)"
+        },
+        {
+          "tag": "hlt_Latn",
+          "name": "Matu Chin (Latin)"
+        },
+        {
+          "tag": "hmn_Latn",
+          "name": "Hmong (Latin)"
+        },
+        {
+          "tag": "hms_Latn",
+          "name": "Southern Qiandong Miao (Latin)"
+        },
+        {
+          "tag": "hna_Latn",
+          "name": "Mina (Cameroon) (Latin)"
+        },
+        {
+          "tag": "hne_Deva",
+          "name": "Chhattisgarhi (Devanagari)"
+        },
+        {
+          "tag": "hni_Latn",
+          "name": "Hani (Latin)"
+        },
+        {
+          "tag": "hnj_Latn",
+          "name": "Hmong Njua (Latin)"
+        },
+        {
+          "tag": "hnn_Latn",
+          "name": "Hanunoo (Latin)"
+        },
+        {
+          "tag": "hns_Latn",
+          "name": "Caribbean Hindustani (Latin)"
+        },
+        {
+          "tag": "ho_Latn",
+          "name": "Hiri Motu (Latin)"
+        },
+        {
+          "tag": "hoc_Deva",
+          "name": "Ho (Devanagari)"
+        },
+        {
+          "tag": "hoj_Deva",
+          "name": "Hadothi (Devanagari)"
+        },
+        {
+          "tag": "hop_Latn",
+          "name": "Hopi (Latin)"
+        },
+        {
+          "tag": "hr_Latn",
+          "name": "Croatian (Latin)"
+        },
+        {
+          "tag": "hsb_Latn",
+          "name": "Upper Sorbian (Latin)"
+        },
+        {
+          "tag": "ht_Latn",
+          "name": "Haitian (Latin)"
+        },
+        {
+          "tag": "hu_Latn",
+          "name": "Hungarian (Latin)"
+        },
+        {
+          "tag": "hup_Latn",
+          "name": "Hupa (Latin)"
+        },
+        {
+          "tag": "hus_Latn",
+          "name": "Huastec (Latin)"
+        },
+        {
+          "tag": "huu_Latn",
+          "name": "Murui Huitoto (Latin)"
+        },
+        {
+          "tag": "hz_Latn",
+          "name": "Herero (Latin)"
+        },
+        {
+          "tag": "ia_Latn",
+          "name": "Interlingua (International Auxiliary Language (Latin)"
+        },
+        {
+          "tag": "iba_Latn",
+          "name": "Iban (Latin)"
+        },
+        {
+          "tag": "ibb_Latn",
+          "name": "Ibibio (Latin)"
+        },
+        {
+          "tag": "id_Latn",
+          "name": "Indonesian (Latin)"
+        },
+        {
+          "tag": "idu_Latn",
+          "name": "Idoma (Latin)"
+        },
+        {
+          "tag": "ie_Latn",
+          "name": "Interlingue (Latin)"
+        },
+        {
+          "tag": "ife_Latn",
+          "name": "Ifè (Latin)"
+        },
+        {
+          "tag": "ig_Latn",
+          "name": "Igbo (Latin)"
+        },
+        {
+          "tag": "ii_Latn",
+          "name": "Sichuan Yi (Latin)"
+        },
+        {
+          "tag": "ijs_Latn",
+          "name": "Southeast Ijo (Latin)"
+        },
+        {
+          "tag": "ik_Latn",
+          "name": "Inupiaq (Latin)"
+        },
+        {
+          "tag": "ikt_Latn",
+          "name": "Inuinnaqtun (Latin)"
+        },
+        {
+          "tag": "ilo_Latn",
+          "name": "Iloko (Latin)"
+        },
+        {
+          "tag": "inh_Cyrl",
+          "name": "Ingush (Cyrillic)"
+        },
+        {
+          "tag": "inh_Latn",
+          "name": "Ingush (Latin)"
+        },
+        {
+          "tag": "io_Latn",
+          "name": "Ido (Latin)"
+        },
+        {
+          "tag": "is_Latn",
+          "name": "Icelandic (Latin)"
+        },
+        {
+          "tag": "it_Latn",
+          "name": "Italian (Latin)"
+        },
+        {
+          "tag": "iu_Latn",
+          "name": "Inuktitut (Latin)"
+        },
+        {
+          "tag": "izh_Latn",
+          "name": "Ingrian (Latin)"
+        },
+        {
+          "tag": "jam_Latn",
+          "name": "Jamaican Creole English (Latin)"
+        },
+        {
+          "tag": "jbo_Latn",
+          "name": "Lojban (Latin)"
+        },
+        {
+          "tag": "jgo_Latn",
+          "name": "Ngomba (Latin)"
+        },
+        {
+          "tag": "jiv_Latn",
+          "name": "Shuar (Latin)"
+        },
+        {
+          "tag": "jmc_Latn",
+          "name": "Machame (Latin)"
+        },
+        {
+          "tag": "jml_Deva",
+          "name": "Jumli (Devanagari)"
+        },
+        {
+          "tag": "jra_Latn",
+          "name": "Jarai (Latin)"
+        },
+        {
+          "tag": "jut_Latn",
+          "name": "Jutish (Latin)"
+        },
+        {
+          "tag": "jv_Latn",
+          "name": "Javanese (Latin)"
+        },
+        {
+          "tag": "kaa_Cyrl",
+          "name": "Kara-Kalpak (Cyrillic)"
+        },
+        {
+          "tag": "kab_Latn",
+          "name": "Kabyle (Latin)"
+        },
+        {
+          "tag": "kac_Latn",
+          "name": "Kachin (Latin)"
+        },
+        {
+          "tag": "kaj_Latn",
+          "name": "Jju (Latin)"
+        },
+        {
+          "tag": "kam_Latn",
+          "name": "Kamba (Kenya) (Latin)"
+        },
+        {
+          "tag": "kao_Latn",
+          "name": "Xaasongaxango (Latin)"
+        },
+        {
+          "tag": "kbd_Cyrl",
+          "name": "Kabardian (Cyrillic)"
+        },
+        {
+          "tag": "kbp_Latn",
+          "name": "Kabiyè (Latin)"
+        },
+        {
+          "tag": "kca_Cyrl",
+          "name": "Khanty (Cyrillic)"
+        },
+        {
+          "tag": "kcg_Latn",
+          "name": "Tyap (Latin)"
+        },
+        {
+          "tag": "kck_Latn",
+          "name": "Kalanga (Latin)"
+        },
+        {
+          "tag": "kde_Latn",
+          "name": "Makonde (Latin)"
+        },
+        {
+          "tag": "kdh_Latn",
+          "name": "Tem (Latin)"
+        },
+        {
+          "tag": "kea_Latn",
+          "name": "Kabuverdianu (Latin)"
+        },
+        {
+          "tag": "kek_Latn",
+          "name": "Kekchí (Latin)"
+        },
+        {
+          "tag": "kfo_Latn",
+          "name": "Koro (Côte d'Ivoire) (Latin)"
+        },
+        {
+          "tag": "kfr_Deva",
+          "name": "Kachhi (Devanagari)"
+        },
+        {
+          "tag": "kfy_Deva",
+          "name": "Kumaoni (Devanagari)"
+        },
+        {
+          "tag": "kg_Latn",
+          "name": "Kongo (Latin)"
+        },
+        {
+          "tag": "kge_Latn",
+          "name": "Komering (Latin)"
+        },
+        {
+          "tag": "kgj_Deva",
+          "name": "Gamale Kham (Devanagari)"
+        },
+        {
+          "tag": "kgp_Latn",
+          "name": "Kaingang (Latin)"
+        },
+        {
+          "tag": "kha_Latn",
+          "name": "Khasi (Latin)"
+        },
+        {
+          "tag": "khn_Deva",
+          "name": "Khandesi (Devanagari)"
+        },
+        {
+          "tag": "khq_Latn",
+          "name": "Koyra Chiini Songhay (Latin)"
+        },
+        {
+          "tag": "khr_Deva",
+          "name": "Kharia (Devanagari)"
+        },
+        {
+          "tag": "khw_Latn",
+          "name": "Khowar (Latin)"
+        },
+        {
+          "tag": "ki_Latn",
+          "name": "Kikuyu (Latin)"
+        },
+        {
+          "tag": "kiu_Latn",
+          "name": "Kirmanjki (individual language) (Latin)"
+        },
+        {
+          "tag": "kj_Latn",
+          "name": "Kuanyama (Latin)"
+        },
+        {
+          "tag": "kjg_Latn",
+          "name": "Khmu (Latin)"
+        },
+        {
+          "tag": "kjh_Cyrl",
+          "name": "Khakas (Cyrillic)"
+        },
+        {
+          "tag": "kk_Cyrl",
+          "name": "Kazakh (Cyrillic)"
+        },
+        {
+          "tag": "kk_Latn",
+          "name": "Kazakh (Latin)"
+        },
+        {
+          "tag": "kkj_Latn",
+          "name": "Kako (Latin)"
+        },
+        {
+          "tag": "kl_Latn",
+          "name": "Kalaallisut (Latin)"
+        },
+        {
+          "tag": "kln_Latn",
+          "name": "Kalenjin (Latin)"
+        },
+        {
+          "tag": "kmb_Latn",
+          "name": "Kimbundu (Latin)"
+        },
+        {
+          "tag": "knc_Latn",
+          "name": "Central Kanuri (Latin)"
+        },
+        {
+          "tag": "knf_Latn",
+          "name": "Mankanya (Latin)"
+        },
+        {
+          "tag": "koi_Cyrl",
+          "name": "Komi-Permyak (Cyrillic)"
+        },
+        {
+          "tag": "kok_Deva",
+          "name": "Konkani (macrolanguage) (Devanagari)"
+        },
+        {
+          "tag": "koo_Latn",
+          "name": "Konzo (Latin)"
+        },
+        {
+          "tag": "kos_Latn",
+          "name": "Kosraean (Latin)"
+        },
+        {
+          "tag": "kpe_Latn",
+          "name": "Kpelle (Latin)"
+        },
+        {
+          "tag": "kpy_Cyrl",
+          "name": "Koryak (Cyrillic)"
+        },
+        {
+          "tag": "kqn_Latn",
+          "name": "Kaonde (Latin)"
+        },
+        {
+          "tag": "kqs_Latn",
+          "name": "Northern Kissi (Latin)"
+        },
+        {
+          "tag": "kr_Latn",
+          "name": "Kanuri (Latin)"
+        },
+        {
+          "tag": "krc_Cyrl",
+          "name": "Karachay-Balkar (Cyrillic)"
+        },
+        {
+          "tag": "kri_Latn",
+          "name": "Krio (Latin)"
+        },
+        {
+          "tag": "krj_Latn",
+          "name": "Kinaray-A (Latin)"
+        },
+        {
+          "tag": "krl_Latn",
+          "name": "Karelian (Latin)"
+        },
+        {
+          "tag": "kru_Deva",
+          "name": "Kurukh (Devanagari)"
+        },
+        {
+          "tag": "ks_Deva",
+          "name": "Kashmiri (Devanagari)"
+        },
+        {
+          "tag": "ksb_Latn",
+          "name": "Shambala (Latin)"
+        },
+        {
+          "tag": "ksf_Latn",
+          "name": "Bafia (Latin)"
+        },
+        {
+          "tag": "ksh_Latn",
+          "name": "Kölsch (Latin)"
+        },
+        {
+          "tag": "ktu_Latn",
+          "name": "Kituba (Democratic Republic of Congo) (Latin)"
+        },
+        {
+          "tag": "ku_Cyrl",
+          "name": "Kurdish (Cyrillic)"
+        },
+        {
+          "tag": "ku_Latn",
+          "name": "Kurdish (Latin)"
+        },
+        {
+          "tag": "kum_Cyrl",
+          "name": "Kumyk (Cyrillic)"
+        },
+        {
+          "tag": "kut_Latn",
+          "name": "Kutenai (Latin)"
+        },
+        {
+          "tag": "kv_Cyrl",
+          "name": "Komi (Cyrillic)"
+        },
+        {
+          "tag": "kvr_Latn",
+          "name": "Kerinci (Latin)"
+        },
+        {
+          "tag": "kw_Latn",
+          "name": "Cornish (Latin)"
+        },
+        {
+          "tag": "kwi_Latn",
+          "name": "Awa-Cuaiquer (Latin)"
+        },
+        {
+          "tag": "ky_Cyrl",
+          "name": "Kirghiz (Cyrillic)"
+        },
+        {
+          "tag": "ky_Latn",
+          "name": "Kirghiz (Latin)"
+        },
+        {
+          "tag": "la_Latn",
+          "name": "Latin (Latin)"
+        },
+        {
+          "tag": "lad_Latn",
+          "name": "Ladino (Latin)"
+        },
+        {
+          "tag": "lag_Latn",
+          "name": "Rangi (Latin)"
+        },
+        {
+          "tag": "laj_Latn",
+          "name": "Lango (Uganda) (Latin)"
+        },
+        {
+          "tag": "lam_Latn",
+          "name": "Lamba (Latin)"
+        },
+        {
+          "tag": "lb_Latn",
+          "name": "Luxembourgish (Latin)"
+        },
+        {
+          "tag": "lbe_Cyrl",
+          "name": "Lak (Cyrillic)"
+        },
+        {
+          "tag": "lbw_Latn",
+          "name": "Tolaki (Latin)"
+        },
+        {
+          "tag": "lez_Cyrl",
+          "name": "Lezghian (Cyrillic)"
+        },
+        {
+          "tag": "lfn_Cyrl",
+          "name": "Lingua Franca Nova (Cyrillic)"
+        },
+        {
+          "tag": "lfn_Latn",
+          "name": "Lingua Franca Nova (Latin)"
+        },
+        {
+          "tag": "lg_Latn",
+          "name": "Ganda (Latin)"
+        },
+        {
+          "tag": "lhm_Deva",
+          "name": "Lhomi (Devanagari)"
+        },
+        {
+          "tag": "li_Latn",
+          "name": "Limburgan (Latin)"
+        },
+        {
+          "tag": "lia_Latn",
+          "name": "West-Central Limba (Latin)"
+        },
+        {
+          "tag": "lif_Deva",
+          "name": "Limbu (Devanagari)"
+        },
+        {
+          "tag": "lij_Latn",
+          "name": "Ligurian (Latin)"
+        },
+        {
+          "tag": "liv_Latn",
+          "name": "Liv (Latin)"
+        },
+        {
+          "tag": "ljp_Latn",
+          "name": "Lampung Api (Latin)"
+        },
+        {
+          "tag": "lkt_Latn",
+          "name": "Lakota (Latin)"
+        },
+        {
+          "tag": "lld_Latn",
+          "name": "Ladin (Latin)"
+        },
+        {
+          "tag": "lmo_Latn",
+          "name": "Lombard (Latin)"
+        },
+        {
+          "tag": "ln_Latn",
+          "name": "Lingala (Latin)"
+        },
+        {
+          "tag": "lns_Latn",
+          "name": "Lamnso' (Latin)"
+        },
+        {
+          "tag": "lob_Latn",
+          "name": "Lobi (Latin)"
+        },
+        {
+          "tag": "lol_Latn",
+          "name": "Mongo (Latin)"
+        },
+        {
+          "tag": "lot_Latn",
+          "name": "Otuho (Latin)"
+        },
+        {
+          "tag": "loz_Latn",
+          "name": "Lozi (Latin)"
+        },
+        {
+          "tag": "lt_Latn",
+          "name": "Lithuanian (Latin)"
+        },
+        {
+          "tag": "ltg_Latn",
+          "name": "Latgalian (Latin)"
+        },
+        {
+          "tag": "lu_Latn",
+          "name": "Luba-Katanga (Latin)"
+        },
+        {
+          "tag": "lua_Latn",
+          "name": "Luba-Lulua (Latin)"
+        },
+        {
+          "tag": "lue_Latn",
+          "name": "Luvale (Latin)"
+        },
+        {
+          "tag": "lui_Latn",
+          "name": "Luiseno (Latin)"
+        },
+        {
+          "tag": "lun_Latn",
+          "name": "Lunda (Latin)"
+        },
+        {
+          "tag": "luo_Latn",
+          "name": "Luo (Kenya and Tanzania) (Latin)"
+        },
+        {
+          "tag": "lus_Latn",
+          "name": "Lushai (Latin)"
+        },
+        {
+          "tag": "lut_Latn",
+          "name": "Lushootseed (Latin)"
+        },
+        {
+          "tag": "luy_Latn",
+          "name": "Luyia (Latin)"
+        },
+        {
+          "tag": "lv_Latn",
+          "name": "Latvian (Latin)"
+        },
+        {
+          "tag": "lzz_Latn",
+          "name": "Laz (Latin)"
+        },
+        {
+          "tag": "mad_Latn",
+          "name": "Madurese (Latin)"
+        },
+        {
+          "tag": "maf_Latn",
+          "name": "Mafa (Latin)"
+        },
+        {
+          "tag": "mag_Deva",
+          "name": "Magahi (Devanagari)"
+        },
+        {
+          "tag": "mai_Deva",
+          "name": "Maithili (Devanagari)"
+        },
+        {
+          "tag": "mak_Latn",
+          "name": "Makasar (Latin)"
+        },
+        {
+          "tag": "mam_Latn",
+          "name": "Mam (Latin)"
+        },
+        {
+          "tag": "man_Latn",
+          "name": "Mandingo (Latin)"
+        },
+        {
+          "tag": "mas_Latn",
+          "name": "Masai (Latin)"
+        },
+        {
+          "tag": "maz_Latn",
+          "name": "Central Mazahua (Latin)"
+        },
+        {
+          "tag": "mcd_Latn",
+          "name": "Sharanahua (Latin)"
+        },
+        {
+          "tag": "mcf_Latn",
+          "name": "Matsés (Latin)"
+        },
+        {
+          "tag": "mdf_Cyrl",
+          "name": "Moksha (Cyrillic)"
+        },
+        {
+          "tag": "mdh_Latn",
+          "name": "Maguindanaon (Latin)"
+        },
+        {
+          "tag": "mdr_Latn",
+          "name": "Mandar (Latin)"
+        },
+        {
+          "tag": "mdt_Latn",
+          "name": "Mbere (Latin)"
+        },
+        {
+          "tag": "men_Latn",
+          "name": "Mende (Sierra Leone) (Latin)"
+        },
+        {
+          "tag": "mer_Latn",
+          "name": "Meru (Latin)"
+        },
+        {
+          "tag": "mey_Latn",
+          "name": "Hassaniyya (Latin)"
+        },
+        {
+          "tag": "mfe_Latn",
+          "name": "Morisyen (Latin)"
+        },
+        {
+          "tag": "mfq_Latn",
+          "name": "Moba (Latin)"
+        },
+        {
+          "tag": "mfv_Latn",
+          "name": "Mandjak (Latin)"
+        },
+        {
+          "tag": "mg_Latn",
+          "name": "Malagasy (Latin)"
+        },
+        {
+          "tag": "mgh_Latn",
+          "name": "Makhuwa-Meetto (Latin)"
+        },
+        {
+          "tag": "mgo_Latn",
+          "name": "Meta' (Latin)"
+        },
+        {
+          "tag": "mgp_Deva",
+          "name": "Eastern Magar (Devanagari)"
+        },
+        {
+          "tag": "mgy_Latn",
+          "name": "Mbunga (Latin)"
+        },
+        {
+          "tag": "mh_Latn",
+          "name": "Marshallese (Latin)"
+        },
+        {
+          "tag": "mi_Latn",
+          "name": "Maori (Latin)"
+        },
+        {
+          "tag": "mic_Latn",
+          "name": "Mi'kmaq (Latin)"
+        },
+        {
+          "tag": "min_Latn",
+          "name": "Minangkabau (Latin)"
+        },
+        {
+          "tag": "miq_Latn",
+          "name": "Mískito (Latin)"
+        },
+        {
+          "tag": "mis_Latn",
+          "name": "Uncoded languages (Latin)"
+        },
+        {
+          "tag": "mk_Cyrl",
+          "name": "Macedonian (Cyrillic)"
+        },
+        {
+          "tag": "mls_Latn",
+          "name": "Masalit (Latin)"
+        },
+        {
+          "tag": "mn_Cyrl",
+          "name": "Mongolian (Cyrillic)"
+        },
+        {
+          "tag": "mns_Cyrl",
+          "name": "Mansi (Cyrillic)"
+        },
+        {
+          "tag": "moe_Latn",
+          "name": "Innu (Latin)"
+        },
+        {
+          "tag": "moh_Latn",
+          "name": "Mohawk (Latin)"
+        },
+        {
+          "tag": "mor_Latn",
+          "name": "Moro (Latin)"
+        },
+        {
+          "tag": "mos_Latn",
+          "name": "Mossi (Latin)"
+        },
+        {
+          "tag": "mr_Deva",
+          "name": "Marathi (Devanagari)"
+        },
+        {
+          "tag": "mrd_Deva",
+          "name": "Western Magar (Devanagari)"
+        },
+        {
+          "tag": "mrj_Cyrl",
+          "name": "Western Mari (Cyrillic)"
+        },
+        {
+          "tag": "mro_Latn",
+          "name": "Mru (Latin)"
+        },
+        {
+          "tag": "mrw_Latn",
+          "name": "Maranao (Latin)"
+        },
+        {
+          "tag": "mt_Latn",
+          "name": "Maltese (Latin)"
+        },
+        {
+          "tag": "mto_Latn",
+          "name": "Totontepec Mixe (Latin)"
+        },
+        {
+          "tag": "mtr_Deva",
+          "name": "Mewari (Devanagari)"
+        },
+        {
+          "tag": "mua_Latn",
+          "name": "Mundang (Latin)"
+        },
+        {
+          "tag": "mui_Latn",
+          "name": "Musi (Latin)"
+        },
+        {
+          "tag": "mus_Latn",
+          "name": "Creek (Latin)"
+        },
+        {
+          "tag": "mwk_Latn",
+          "name": "Kita Maninkakan (Latin)"
+        },
+        {
+          "tag": "mwl_Latn",
+          "name": "Mirandese (Latin)"
+        },
+        {
+          "tag": "mwr_Deva",
+          "name": "Marwari (Devanagari)"
+        },
+        {
+          "tag": "mwv_Latn",
+          "name": "Mentawai (Latin)"
+        },
+        {
+          "tag": "mxc_Latn",
+          "name": "Manyika (Latin)"
+        },
+        {
+          "tag": "mxi_Latn",
+          "name": "Mozarabic (Latin)"
+        },
+        {
+          "tag": "mxv_Latn",
+          "name": "Metlatónoc Mixtec (Latin)"
+        },
+        {
+          "tag": "myv_Cyrl",
+          "name": "Erzya (Cyrillic)"
+        },
+        {
+          "tag": "myx_Latn",
+          "name": "Masaaba (Latin)"
+        },
+        {
+          "tag": "mzi_Latn",
+          "name": "Ixcatlán Mazatec (Latin)"
+        },
+        {
+          "tag": "na_Latn",
+          "name": "Nauru (Latin)"
+        },
+        {
+          "tag": "nan_Latn",
+          "name": "Min Nan Chinese (Latin)"
+        },
+        {
+          "tag": "nap_Latn",
+          "name": "Neapolitan (Latin)"
+        },
+        {
+          "tag": "naq_Latn",
+          "name": "Khoekhoe (Latin)"
+        },
+        {
+          "tag": "nb_Latn",
+          "name": "Norwegian Bokmål (Latin)"
+        },
+        {
+          "tag": "nba_Latn",
+          "name": "Nyemba (Latin)"
+        },
+        {
+          "tag": "nch_Latn",
+          "name": "Central Huasteca Nahuatl (Latin)"
+        },
+        {
+          "tag": "nd_Latn",
+          "name": "North Ndebele (Latin)"
+        },
+        {
+          "tag": "ndc_Latn",
+          "name": "Ndau (Latin)"
+        },
+        {
+          "tag": "nds_Latn",
+          "name": "Low German (Latin)"
+        },
+        {
+          "tag": "ne_Deva",
+          "name": "Nepali (macrolanguage) (Devanagari)"
+        },
+        {
+          "tag": "new_Deva",
+          "name": "Nepal Bhasa (Devanagari)"
+        },
+        {
+          "tag": "ng_Latn",
+          "name": "Ndonga (Latin)"
+        },
+        {
+          "tag": "ngl_Latn",
+          "name": "Lomwe (Latin)"
+        },
+        {
+          "tag": "nhe_Latn",
+          "name": "Eastern Huasteca Nahuatl (Latin)"
+        },
+        {
+          "tag": "nhn_Latn",
+          "name": "Central Nahuatl (Latin)"
+        },
+        {
+          "tag": "nhw_Latn",
+          "name": "Western Huasteca Nahuatl (Latin)"
+        },
+        {
+          "tag": "nia_Latn",
+          "name": "Nias (Latin)"
+        },
+        {
+          "tag": "nij_Latn",
+          "name": "Ngaju (Latin)"
+        },
+        {
+          "tag": "nio_Cyrl",
+          "name": "Nganasan (Cyrillic)"
+        },
+        {
+          "tag": "niu_Latn",
+          "name": "Niuean (Latin)"
+        },
+        {
+          "tag": "njo_Latn",
+          "name": "Ao Naga (Latin)"
+        },
+        {
+          "tag": "nku_Latn",
+          "name": "Bouna Kulango (Latin)"
+        },
+        {
+          "tag": "nl_Latn",
+          "name": "Dutch (Latin)"
+        },
+        {
+          "tag": "nmg_Latn",
+          "name": "Kwasio (Latin)"
+        },
+        {
+          "tag": "nn_Latn",
+          "name": "Norwegian Nynorsk (Latin)"
+        },
+        {
+          "tag": "nnh_Latn",
+          "name": "Ngiemboon (Latin)"
+        },
+        {
+          "tag": "nnp_Deva",
+          "name": "Wancho Naga (Devanagari)"
+        },
+        {
+          "tag": "nnp_Latn",
+          "name": "Wancho Naga (Latin)"
+        },
+        {
+          "tag": "no_Latn",
+          "name": "Norwegian (Latin)"
+        },
+        {
+          "tag": "noe_Deva",
+          "name": "Nimadi (Devanagari)"
+        },
+        {
+          "tag": "nog_Cyrl",
+          "name": "Nogai (Cyrillic)"
+        },
+        {
+          "tag": "non_Latn",
+          "name": "Old Norse (Latin)"
+        },
+        {
+          "tag": "not_Latn",
+          "name": "Nomatsiguenga (Latin)"
+        },
+        {
+          "tag": "nov_Latn",
+          "name": "Novial (Latin)"
+        },
+        {
+          "tag": "nr_Latn",
+          "name": "South Ndebele (Latin)"
+        },
+        {
+          "tag": "nrf_Latn",
+          "name": "Jèrriais (Latin)"
+        },
+        {
+          "tag": "nsk_Latn",
+          "name": "Naskapi (Latin)"
+        },
+        {
+          "tag": "nso_Latn",
+          "name": "Pedi (Latin)"
+        },
+        {
+          "tag": "nus_Latn",
+          "name": "Nuer (Latin)"
+        },
+        {
+          "tag": "nv_Latn",
+          "name": "Navajo (Latin)"
+        },
+        {
+          "tag": "nxq_Latn",
+          "name": "Naxi (Latin)"
+        },
+        {
+          "tag": "ny_Latn",
+          "name": "Nyanja (Latin)"
+        },
+        {
+          "tag": "nym_Latn",
+          "name": "Nyamwezi (Latin)"
+        },
+        {
+          "tag": "nyn_Latn",
+          "name": "Nyankole (Latin)"
+        },
+        {
+          "tag": "nyo_Latn",
+          "name": "Nyoro (Latin)"
+        },
+        {
+          "tag": "nzi_Latn",
+          "name": "Nzima (Latin)"
+        },
+        {
+          "tag": "oaa_Cyrl",
+          "name": "Orok (Cyrillic)"
+        },
+        {
+          "tag": "oc_Latn",
+          "name": "Occitan (post 1500) (Latin)"
+        },
+        {
+          "tag": "oj_Latn",
+          "name": "Ojibwa (Latin)"
+        },
+        {
+          "tag": "oki_Latn",
+          "name": "Okiek (Latin)"
+        },
+        {
+          "tag": "om_Latn",
+          "name": "Oromo (Latin)"
+        },
+        {
+          "tag": "orh_Latn",
+          "name": "Oroqen (Latin)"
+        },
+        {
+          "tag": "orv_Cyrl",
+          "name": "Old Russian (Cyrillic)"
+        },
+        {
+          "tag": "os_Cyrl",
+          "name": "Ossetian (Cyrillic)"
+        },
+        {
+          "tag": "osa_Latn",
+          "name": "Osage (Latin)"
+        },
+        {
+          "tag": "osc_Latn",
+          "name": "Oscan (Latin)"
+        },
+        {
+          "tag": "ote_Latn",
+          "name": "Mezquital Otomi (Latin)"
+        },
+        {
+          "tag": "otn_Latn",
+          "name": "Tenango Otomi (Latin)"
+        },
+        {
+          "tag": "owl_Latn",
+          "name": "Old Welsh (Latin)"
+        },
+        {
+          "tag": "pag_Latn",
+          "name": "Pangasinan (Latin)"
+        },
+        {
+          "tag": "pam_Latn",
+          "name": "Pampanga (Latin)"
+        },
+        {
+          "tag": "pap_Latn",
+          "name": "Papiamento (Latin)"
+        },
+        {
+          "tag": "pau_Latn",
+          "name": "Palauan (Latin)"
+        },
+        {
+          "tag": "pbb_Latn",
+          "name": "Páez (Latin)"
+        },
+        {
+          "tag": "pcd_Latn",
+          "name": "Picard (Latin)"
+        },
+        {
+          "tag": "pck_Latn",
+          "name": "Paite Chin (Latin)"
+        },
+        {
+          "tag": "pcm_Latn",
+          "name": "Nigerian Pidgin (Latin)"
+        },
+        {
+          "tag": "pdc_Latn",
+          "name": "Pennsylvania German (Latin)"
+        },
+        {
+          "tag": "pdt_Latn",
+          "name": "Plautdietsch (Latin)"
+        },
+        {
+          "tag": "pfl_Latn",
+          "name": "Pfaelzisch (Latin)"
+        },
+        {
+          "tag": "pi_Deva",
+          "name": "Pali (Devanagari)"
+        },
+        {
+          "tag": "pis_Latn",
+          "name": "Pijin (Latin)"
+        },
+        {
+          "tag": "piu_Latn",
+          "name": "Pintupi-Luritja (Latin)"
+        },
+        {
+          "tag": "pko_Latn",
+          "name": "Pökoot (Latin)"
+        },
+        {
+          "tag": "pl_Latn",
+          "name": "Polish (Latin)"
+        },
+        {
+          "tag": "pms_Latn",
+          "name": "Piemontese (Latin)"
+        },
+        {
+          "tag": "pnt_Cyrl",
+          "name": "Pontic (Cyrillic)"
+        },
+        {
+          "tag": "pnt_Grek",
+          "name": "Pontic (Greek)"
+        },
+        {
+          "tag": "pnt_Latn",
+          "name": "Pontic (Latin)"
+        },
+        {
+          "tag": "pon_Latn",
+          "name": "Pohnpeian (Latin)"
+        },
+        {
+          "tag": "pov_Latn",
+          "name": "Upper Guinea Crioulo (Latin)"
+        },
+        {
+          "tag": "ppl_Latn",
+          "name": "Pipil (Latin)"
+        },
+        {
+          "tag": "prg_Latn",
+          "name": "Prussian (Latin)"
+        },
+        {
+          "tag": "pro_Latn",
+          "name": "Old Provençal (to 1500) (Latin)"
+        },
+        {
+          "tag": "prq_Latn",
+          "name": "Ashéninka Perené (Latin)"
+        },
+        {
+          "tag": "pt_Latn",
+          "name": "Portuguese (Latin)"
+        },
+        {
+          "tag": "puu_Latn",
+          "name": "Punu (Latin)"
+        },
+        {
+          "tag": "qu_Latn",
+          "name": "Quechua (Latin)"
+        },
+        {
+          "tag": "quc_Latn",
+          "name": "K'iche' (Latin)"
+        },
+        {
+          "tag": "qud_Latn",
+          "name": "Calderón Highland Quichua (Latin)"
+        },
+        {
+          "tag": "qug_Latn",
+          "name": "Chimborazo Highland Quichua (Latin)"
+        },
+        {
+          "tag": "quh_Latn",
+          "name": "South Bolivian Quechua (Latin)"
+        },
+        {
+          "tag": "quy_Latn",
+          "name": "Ayacucho Quechua (Latin)"
+        },
+        {
+          "tag": "quz_Latn",
+          "name": "Cusco Quechua (Latin)"
+        },
+        {
+          "tag": "qva_Latn",
+          "name": "Ambo-Pasco Quechua (Latin)"
+        },
+        {
+          "tag": "qvc_Latn",
+          "name": "Cajamarca Quechua (Latin)"
+        },
+        {
+          "tag": "qvh_Latn",
+          "name": "Huamalíes-Dos de Mayo Huánuco Quechua (Latin)"
+        },
+        {
+          "tag": "qvm_Latn",
+          "name": "Margos-Yarowilca-Lauricocha Quechua (Latin)"
+        },
+        {
+          "tag": "qvn_Latn",
+          "name": "North Junín Quechua (Latin)"
+        },
+        {
+          "tag": "qwh_Latn",
+          "name": "Huaylas Ancash Quechua (Latin)"
+        },
+        {
+          "tag": "qxn_Latn",
+          "name": "Northern Conchucos Ancash Quechua (Latin)"
+        },
+        {
+          "tag": "qxu_Latn",
+          "name": "Arequipa-La Unión Quechua (Latin)"
+        },
+        {
+          "tag": "rab_Deva",
+          "name": "Camling (Devanagari)"
+        },
+        {
+          "tag": "raj_Deva",
+          "name": "Rajasthani (Devanagari)"
+        },
+        {
+          "tag": "rap_Latn",
+          "name": "Rapanui (Latin)"
+        },
+        {
+          "tag": "rar_Latn",
+          "name": "Rarotongan (Latin)"
+        },
+        {
+          "tag": "ray_Latn",
+          "name": "Rapa (Latin)"
+        },
+        {
+          "tag": "rcf_Latn",
+          "name": "Réunion Creole French (Latin)"
+        },
+        {
+          "tag": "rej_Latn",
+          "name": "Rejang (Latin)"
+        },
+        {
+          "tag": "rgn_Latn",
+          "name": "Romagnol (Latin)"
+        },
+        {
+          "tag": "rhg_Latn",
+          "name": "Rohingya (Latin)"
+        },
+        {
+          "tag": "ria_Latn",
+          "name": "Riang (India) (Latin)"
+        },
+        {
+          "tag": "rif_Latn",
+          "name": "Tarifit (Latin)"
+        },
+        {
+          "tag": "rjs_Deva",
+          "name": "Rajbanshi (Devanagari)"
+        },
+        {
+          "tag": "rm_Latn",
+          "name": "Romansh (Latin)"
+        },
+        {
+          "tag": "rmf_Latn",
+          "name": "Kalo Finnish Romani (Latin)"
+        },
+        {
+          "tag": "rmn_Latn",
+          "name": "Balkan Romani (Latin)"
+        },
+        {
+          "tag": "rmo_Latn",
+          "name": "Sinte Romani (Latin)"
+        },
+        {
+          "tag": "rmu_Latn",
+          "name": "Tavringer Romani (Latin)"
+        },
+        {
+          "tag": "rn_Latn",
+          "name": "Rundi (Latin)"
+        },
+        {
+          "tag": "rng_Latn",
+          "name": "Ronga (Latin)"
+        },
+        {
+          "tag": "ro_Cyrl",
+          "name": "Romanian (Cyrillic)"
+        },
+        {
+          "tag": "ro_Latn",
+          "name": "Romanian (Latin)"
+        },
+        {
+          "tag": "rob_Latn",
+          "name": "Tae' (Latin)"
+        },
+        {
+          "tag": "rof_Latn",
+          "name": "Rombo (Latin)"
+        },
+        {
+          "tag": "rom_Cyrl",
+          "name": "Romany (Cyrillic)"
+        },
+        {
+          "tag": "rom_Latn",
+          "name": "Romany (Latin)"
+        },
+        {
+          "tag": "rtm_Latn",
+          "name": "Rotuman (Latin)"
+        },
+        {
+          "tag": "ru_Cyrl",
+          "name": "Russian (Cyrillic)"
+        },
+        {
+          "tag": "rue_Cyrl",
+          "name": "Rusyn (Cyrillic)"
+        },
+        {
+          "tag": "rug_Latn",
+          "name": "Roviana (Latin)"
+        },
+        {
+          "tag": "rup_Latn",
+          "name": "Macedo-Romanian (Latin)"
+        },
+        {
+          "tag": "rw_Latn",
+          "name": "Kinyarwanda (Latin)"
+        },
+        {
+          "tag": "rwk_Latn",
+          "name": "Rwa (Latin)"
+        },
+        {
+          "tag": "sa_Deva",
+          "name": "Sanskrit (Devanagari)"
+        },
+        {
+          "tag": "sad_Latn",
+          "name": "Sandawe (Latin)"
+        },
+        {
+          "tag": "saf_Latn",
+          "name": "Safaliba (Latin)"
+        },
+        {
+          "tag": "sah_Cyrl",
+          "name": "Yakut (Cyrillic)"
+        },
+        {
+          "tag": "saq_Latn",
+          "name": "Samburu (Latin)"
+        },
+        {
+          "tag": "sas_Latn",
+          "name": "Sasak (Latin)"
+        },
+        {
+          "tag": "sat_Deva",
+          "name": "Santali (Devanagari)"
+        },
+        {
+          "tag": "sat_Latn",
+          "name": "Santali (Latin)"
+        },
+        {
+          "tag": "sav_Latn",
+          "name": "Saafi-Saafi (Latin)"
+        },
+        {
+          "tag": "sbp_Latn",
+          "name": "Sangu (Tanzania) (Latin)"
+        },
+        {
+          "tag": "sc_Latn",
+          "name": "Sardinian (Latin)"
+        },
+        {
+          "tag": "sck_Deva",
+          "name": "Sadri (Devanagari)"
+        },
+        {
+          "tag": "scn_Latn",
+          "name": "Sicilian (Latin)"
+        },
+        {
+          "tag": "sco_Latn",
+          "name": "Scots (Latin)"
+        },
+        {
+          "tag": "scs_Latn",
+          "name": "North Slavey (Latin)"
+        },
+        {
+          "tag": "sd_Deva",
+          "name": "Sindhi (Devanagari)"
+        },
+        {
+          "tag": "sdc_Latn",
+          "name": "Sassarese Sardinian (Latin)"
+        },
+        {
+          "tag": "se_Cyrl",
+          "name": "Northern Sami (Cyrillic)"
+        },
+        {
+          "tag": "se_Latn",
+          "name": "Northern Sami (Latin)"
+        },
+        {
+          "tag": "see_Latn",
+          "name": "Seneca (Latin)"
+        },
+        {
+          "tag": "sef_Latn",
+          "name": "Cebaara Senoufo (Latin)"
+        },
+        {
+          "tag": "seh_Latn",
+          "name": "Sena (Latin)"
+        },
+        {
+          "tag": "sei_Latn",
+          "name": "Seri (Latin)"
+        },
+        {
+          "tag": "sel_Cyrl",
+          "name": "Selkup (Cyrillic)"
+        },
+        {
+          "tag": "ses_Latn",
+          "name": "Koyraboro Senni Songhai (Latin)"
+        },
+        {
+          "tag": "sey_Latn",
+          "name": "Secoya (Latin)"
+        },
+        {
+          "tag": "sg_Latn",
+          "name": "Sango (Latin)"
+        },
+        {
+          "tag": "sga_Latn",
+          "name": "Old Irish (to 900) (Latin)"
+        },
+        {
+          "tag": "sgs_Latn",
+          "name": "Samogitian (Latin)"
+        },
+        {
+          "tag": "shi_Latn",
+          "name": "Tachelhit (Latin)"
+        },
+        {
+          "tag": "shk_Latn",
+          "name": "Shilluk (Latin)"
+        },
+        {
+          "tag": "shp_Latn",
+          "name": "Shipibo-Conibo (Latin)"
+        },
+        {
+          "tag": "sid_Latn",
+          "name": "Sidamo (Latin)"
+        },
+        {
+          "tag": "sja_Latn",
+          "name": "Epena (Latin)"
+        },
+        {
+          "tag": "sk_Latn",
+          "name": "Slovak (Latin)"
+        },
+        {
+          "tag": "sl_Latn",
+          "name": "Slovenian (Latin)"
+        },
+        {
+          "tag": "sla_Latn",
+          "name": "Slavic languages (Latin)"
+        },
+        {
+          "tag": "sli_Latn",
+          "name": "Lower Silesian (Latin)"
+        },
+        {
+          "tag": "slr_Latn",
+          "name": "Salar (Latin)"
+        },
+        {
+          "tag": "sly_Latn",
+          "name": "Selayar (Latin)"
+        },
+        {
+          "tag": "sm_Latn",
+          "name": "Samoan (Latin)"
+        },
+        {
+          "tag": "sma_Latn",
+          "name": "Southern Sami (Latin)"
+        },
+        {
+          "tag": "smj_Latn",
+          "name": "Lule Sami (Latin)"
+        },
+        {
+          "tag": "smn_Latn",
+          "name": "Inari Sami (Latin)"
+        },
+        {
+          "tag": "sms_Latn",
+          "name": "Skolt Sami (Latin)"
+        },
+        {
+          "tag": "sn_Latn",
+          "name": "Shona (Latin)"
+        },
+        {
+          "tag": "snf_Latn",
+          "name": "Noon (Latin)"
+        },
+        {
+          "tag": "snk_Latn",
+          "name": "Soninke (Latin)"
+        },
+        {
+          "tag": "snn_Latn",
+          "name": "Siona (Latin)"
+        },
+        {
+          "tag": "so_Latn",
+          "name": "Somali (Latin)"
+        },
+        {
+          "tag": "sq_Latn",
+          "name": "Albanian (Latin)"
+        },
+        {
+          "tag": "sr_Cyrl",
+          "name": "Serbian (Cyrillic)"
+        },
+        {
+          "tag": "sr_Latn",
+          "name": "Serbian (Latin)"
+        },
+        {
+          "tag": "srb_Latn",
+          "name": "Sora (Latin)"
+        },
+        {
+          "tag": "srn_Latn",
+          "name": "Sranan Tongo (Latin)"
+        },
+        {
+          "tag": "srr_Latn",
+          "name": "Serer (Latin)"
+        },
+        {
+          "tag": "srx_Deva",
+          "name": "Sirmauri (Devanagari)"
+        },
+        {
+          "tag": "ss_Latn",
+          "name": "Swati (Latin)"
+        },
+        {
+          "tag": "ssy_Latn",
+          "name": "Saho (Latin)"
+        },
+        {
+          "tag": "st_Latn",
+          "name": "Southern Sotho (Latin)"
+        },
+        {
+          "tag": "stq_Latn",
+          "name": "Saterfriesisch (Latin)"
+        },
+        {
+          "tag": "str_Latn",
+          "name": "Straits Salish (Latin)"
+        },
+        {
+          "tag": "su_Latn",
+          "name": "Sundanese (Latin)"
+        },
+        {
+          "tag": "suk_Latn",
+          "name": "Sukuma (Latin)"
+        },
+        {
+          "tag": "sus_Latn",
+          "name": "Susu (Latin)"
+        },
+        {
+          "tag": "sv_Latn",
+          "name": "Swedish (Latin)"
+        },
+        {
+          "tag": "sw_Latn",
+          "name": "Swahili (macrolanguage) (Latin)"
+        },
+        {
+          "tag": "swb_Latn",
+          "name": "Maore Comorian (Latin)"
+        },
+        {
+          "tag": "swg_Latn",
+          "name": "Swabian (Latin)"
+        },
+        {
+          "tag": "swv_Deva",
+          "name": "Shekhawati (Devanagari)"
+        },
+        {
+          "tag": "sxn_Latn",
+          "name": "Sangir (Latin)"
+        },
+        {
+          "tag": "syi_Latn",
+          "name": "Seki (Latin)"
+        },
+        {
+          "tag": "szl_Latn",
+          "name": "Silesian (Latin)"
+        },
+        {
+          "tag": "tab_Cyrl",
+          "name": "Tabassaran (Cyrillic)"
+        },
+        {
+          "tag": "taj_Deva",
+          "name": "Eastern Tamang (Devanagari)"
+        },
+        {
+          "tag": "taq_Latn",
+          "name": "Tamasheq (Latin)"
+        },
+        {
+          "tag": "tbw_Latn",
+          "name": "Tagbanwa (Latin)"
+        },
+        {
+          "tag": "tbz_Latn",
+          "name": "Ditammari (Latin)"
+        },
+        {
+          "tag": "tca_Latn",
+          "name": "Ticuna (Latin)"
+        },
+        {
+          "tag": "tdg_Deva",
+          "name": "Western Tamang (Devanagari)"
+        },
+        {
+          "tag": "tdh_Deva",
+          "name": "Thulung (Devanagari)"
+        },
+        {
+          "tag": "tdt_Latn",
+          "name": "Tetun Dili (Latin)"
+        },
+        {
+          "tag": "tem_Latn",
+          "name": "Timne (Latin)"
+        },
+        {
+          "tag": "teo_Latn",
+          "name": "Teso (Latin)"
+        },
+        {
+          "tag": "ter_Latn",
+          "name": "Tereno (Latin)"
+        },
+        {
+          "tag": "tet_Latn",
+          "name": "Tetum (Latin)"
+        },
+        {
+          "tag": "tg_Cyrl",
+          "name": "Tajik (Cyrillic)"
+        },
+        {
+          "tag": "tg_Latn",
+          "name": "Tajik (Latin)"
+        },
+        {
+          "tag": "thf_Deva",
+          "name": "Thangmi (Devanagari)"
+        },
+        {
+          "tag": "thl_Deva",
+          "name": "Dangaura Tharu (Devanagari)"
+        },
+        {
+          "tag": "thq_Deva",
+          "name": "Kochila Tharu (Devanagari)"
+        },
+        {
+          "tag": "thr_Deva",
+          "name": "Rana Tharu (Devanagari)"
+        },
+        {
+          "tag": "ths_Deva",
+          "name": "Thakali (Devanagari)"
+        },
+        {
+          "tag": "tiv_Latn",
+          "name": "Tiv (Latin)"
+        },
+        {
+          "tag": "tiw_Latn",
+          "name": "Tiwi (Latin)"
+        },
+        {
+          "tag": "tjs_Latn",
+          "name": "Southern Tujia (Latin)"
+        },
+        {
+          "tag": "tk_Cyrl",
+          "name": "Turkmen (Cyrillic)"
+        },
+        {
+          "tag": "tk_Latn",
+          "name": "Turkmen (Latin)"
+        },
+        {
+          "tag": "tkl_Latn",
+          "name": "Tokelau (Latin)"
+        },
+        {
+          "tag": "tkr_Cyrl",
+          "name": "Tsakhur (Cyrillic)"
+        },
+        {
+          "tag": "tkr_Latn",
+          "name": "Tsakhur (Latin)"
+        },
+        {
+          "tag": "tkt_Deva",
+          "name": "Kathoriya Tharu (Devanagari)"
+        },
+        {
+          "tag": "tlh_Latn",
+          "name": "Klingon (Latin)"
+        },
+        {
+          "tag": "tli_Latn",
+          "name": "Tlingit (Latin)"
+        },
+        {
+          "tag": "tly_Cyrl",
+          "name": "Talysh (Cyrillic)"
+        },
+        {
+          "tag": "tly_Latn",
+          "name": "Talysh (Latin)"
+        },
+        {
+          "tag": "tmh_Latn",
+          "name": "Tamashek (Latin)"
+        },
+        {
+          "tag": "tn_Latn",
+          "name": "Tswana (Latin)"
+        },
+        {
+          "tag": "tnr_Latn",
+          "name": "Ménik (Latin)"
+        },
+        {
+          "tag": "to_Latn",
+          "name": "Tonga (Tonga Islands) (Latin)"
+        },
+        {
+          "tag": "tob_Latn",
+          "name": "Toba (Latin)"
+        },
+        {
+          "tag": "tog_Latn",
+          "name": "Tonga (Nyasa) (Latin)"
+        },
+        {
+          "tag": "toi_Latn",
+          "name": "Tonga (Zambia) (Latin)"
+        },
+        {
+          "tag": "toj_Latn",
+          "name": "Tojolabal (Latin)"
+        },
+        {
+          "tag": "top_Latn",
+          "name": "Papantla Totonac (Latin)"
+        },
+        {
+          "tag": "tpi_Latn",
+          "name": "Tok Pisin (Latin)"
+        },
+        {
+          "tag": "tr_Latn",
+          "name": "Turkish (Latin)"
+        },
+        {
+          "tag": "tru_Latn",
+          "name": "Turoyo (Latin)"
+        },
+        {
+          "tag": "trv_Latn",
+          "name": "Sediq (Latin)"
+        },
+        {
+          "tag": "ts_Latn",
+          "name": "Tsonga (Latin)"
+        },
+        {
+          "tag": "tsd_Grek",
+          "name": "Tsakonian (Greek)"
+        },
+        {
+          "tag": "tsf_Deva",
+          "name": "Southwestern Tamang (Devanagari)"
+        },
+        {
+          "tag": "tsg_Latn",
+          "name": "Tausug (Latin)"
+        },
+        {
+          "tag": "tsi_Latn",
+          "name": "Tsimshian (Latin)"
+        },
+        {
+          "tag": "tsz_Latn",
+          "name": "Purepecha (Latin)"
+        },
+        {
+          "tag": "tt_Cyrl",
+          "name": "Tatar (Cyrillic)"
+        },
+        {
+          "tag": "tt_Latn",
+          "name": "Tatar (Latin)"
+        },
+        {
+          "tag": "ttj_Latn",
+          "name": "Tooro (Latin)"
+        },
+        {
+          "tag": "ttt_Cyrl",
+          "name": "Muslim Tat (Cyrillic)"
+        },
+        {
+          "tag": "ttt_Latn",
+          "name": "Muslim Tat (Latin)"
+        },
+        {
+          "tag": "tum_Latn",
+          "name": "Tumbuka (Latin)"
+        },
+        {
+          "tag": "tvl_Latn",
+          "name": "Tuvalu (Latin)"
+        },
+        {
+          "tag": "twq_Latn",
+          "name": "Tasawaq (Latin)"
+        },
+        {
+          "tag": "ty_Latn",
+          "name": "Tahitian (Latin)"
+        },
+        {
+          "tag": "tyv_Cyrl",
+          "name": "Tuvinian (Cyrillic)"
+        },
+        {
+          "tag": "tzh_Latn",
+          "name": "Tzeltal (Latin)"
+        },
+        {
+          "tag": "tzm_Latn",
+          "name": "Central Atlas Tamazight (Latin)"
+        },
+        {
+          "tag": "tzo_Latn",
+          "name": "Tzotzil (Latin)"
+        },
+        {
+          "tag": "ude_Cyrl",
+          "name": "Udihe (Cyrillic)"
+        },
+        {
+          "tag": "udm_Cyrl",
+          "name": "Udmurt (Cyrillic)"
+        },
+        {
+          "tag": "udm_Latn",
+          "name": "Udmurt (Latin)"
+        },
+        {
+          "tag": "udu_Latn",
+          "name": "Uduk (Latin)"
+        },
+        {
+          "tag": "ug_Cyrl",
+          "name": "Uighur (Cyrillic)"
+        },
+        {
+          "tag": "ug_Latn",
+          "name": "Uighur (Latin)"
+        },
+        {
+          "tag": "uk_Cyrl",
+          "name": "Ukrainian (Cyrillic)"
+        },
+        {
+          "tag": "uli_Latn",
+          "name": "Ulithian (Latin)"
+        },
+        {
+          "tag": "umb_Latn",
+          "name": "Umbundu (Latin)"
+        },
+        {
+          "tag": "unr_Deva",
+          "name": "Mundari (Devanagari)"
+        },
+        {
+          "tag": "unx_Deva",
+          "name": "Munda (Devanagari)"
+        },
+        {
+          "tag": "ura_Latn",
+          "name": "Urarina (Latin)"
+        },
+        {
+          "tag": "uz_Cyrl",
+          "name": "Uzbek (Cyrillic)"
+        },
+        {
+          "tag": "uz_Latn",
+          "name": "Uzbek (Latin)"
+        },
+        {
+          "tag": "vai_Latn",
+          "name": "Vai (Latin)"
+        },
+        {
+          "tag": "ve_Latn",
+          "name": "Venda (Latin)"
+        },
+        {
+          "tag": "vec_Latn",
+          "name": "Venetian (Latin)"
+        },
+        {
+          "tag": "vep_Latn",
+          "name": "Veps (Latin)"
+        },
+        {
+          "tag": "vi_Latn",
+          "name": "Vietnamese (Latin)"
+        },
+        {
+          "tag": "vic_Latn",
+          "name": "Virgin Islands Creole English (Latin)"
+        },
+        {
+          "tag": "vls_Latn",
+          "name": "Vlaams (Latin)"
+        },
+        {
+          "tag": "vmf_Latn",
+          "name": "Mainfränkisch (Latin)"
+        },
+        {
+          "tag": "vmw_Latn",
+          "name": "Makhuwa (Latin)"
+        },
+        {
+          "tag": "vo_Latn",
+          "name": "Volapük (Latin)"
+        },
+        {
+          "tag": "vot_Latn",
+          "name": "Votic (Latin)"
+        },
+        {
+          "tag": "vro_Latn",
+          "name": "Võro (Latin)"
+        },
+        {
+          "tag": "vun_Latn",
+          "name": "Vunjo (Latin)"
+        },
+        {
+          "tag": "wa_Latn",
+          "name": "Walloon (Latin)"
+        },
+        {
+          "tag": "wae_Latn",
+          "name": "Walser (Latin)"
+        },
+        {
+          "tag": "war_Latn",
+          "name": "Waray (Philippines) (Latin)"
+        },
+        {
+          "tag": "was_Latn",
+          "name": "Washo (Latin)"
+        },
+        {
+          "tag": "wbp_Latn",
+          "name": "Warlpiri (Latin)"
+        },
+        {
+          "tag": "wbr_Deva",
+          "name": "Wagdi (Devanagari)"
+        },
+        {
+          "tag": "wls_Latn",
+          "name": "Wallisian (Latin)"
+        },
+        {
+          "tag": "wo_Latn",
+          "name": "Wolof (Latin)"
+        },
+        {
+          "tag": "wtm_Deva",
+          "name": "Mewati (Devanagari)"
+        },
+        {
+          "tag": "wwa_Latn",
+          "name": "Waama (Latin)"
+        },
+        {
+          "tag": "xal_Cyrl",
+          "name": "Kalmyk (Cyrillic)"
+        },
+        {
+          "tag": "xav_Latn",
+          "name": "Xavánte (Latin)"
+        },
+        {
+          "tag": "xh_Latn",
+          "name": "Xhosa (Latin)"
+        },
+        {
+          "tag": "xnr_Deva",
+          "name": "Kangri (Devanagari)"
+        },
+        {
+          "tag": "xog_Latn",
+          "name": "Soga (Latin)"
+        },
+        {
+          "tag": "xsm_Latn",
+          "name": "Kasem (Latin)"
+        },
+        {
+          "tag": "xsr_Deva",
+          "name": "Sherpa (Devanagari)"
+        },
+        {
+          "tag": "xum_Latn",
+          "name": "Umbrian (Latin)"
+        },
+        {
+          "tag": "yad_Latn",
+          "name": "Yagua (Latin)"
+        },
+        {
+          "tag": "yao_Latn",
+          "name": "Yao (Latin)"
+        },
+        {
+          "tag": "yap_Latn",
+          "name": "Yapese (Latin)"
+        },
+        {
+          "tag": "yav_Latn",
+          "name": "Yangben (Latin)"
+        },
+        {
+          "tag": "ybb_Latn",
+          "name": "Yemba (Latin)"
+        },
+        {
+          "tag": "ybh_Deva",
+          "name": "Yakha (Devanagari)"
+        },
+        {
+          "tag": "ykg_Cyrl",
+          "name": "Northern Yukaghir (Cyrillic)"
+        },
+        {
+          "tag": "yo_Latn",
+          "name": "Yoruba (Latin)"
+        },
+        {
+          "tag": "yrk_Cyrl",
+          "name": "Nenets (Cyrillic)"
+        },
+        {
+          "tag": "yrl_Latn",
+          "name": "Nhengatu (Latin)"
+        },
+        {
+          "tag": "yua_Latn",
+          "name": "Yucateco (Latin)"
+        },
+        {
+          "tag": "za_Latn",
+          "name": "Zhuang (Latin)"
+        },
+        {
+          "tag": "zag_Latn",
+          "name": "Zaghawa (Latin)"
+        },
+        {
+          "tag": "zam_Latn",
+          "name": "Miahuatlán Zapotec (Latin)"
+        },
+        {
+          "tag": "zap_Latn",
+          "name": "Zapotec (Latin)"
+        },
+        {
+          "tag": "zdj_Latn",
+          "name": "Ngazidja Comorian (Latin)"
+        },
+        {
+          "tag": "zea_Latn",
+          "name": "Zeeuws (Latin)"
+        },
+        {
+          "tag": "zlm_Latn",
+          "name": "Malay (individual language) (Latin)"
+        },
+        {
+          "tag": "zmi_Latn",
+          "name": "Negeri Sembilan Malay (Latin)"
+        },
+        {
+          "tag": "zro_Latn",
+          "name": "Záparo (Latin)"
+        },
+        {
+          "tag": "ztu_Latn",
+          "name": "Güilá Zapotec (Latin)"
+        },
+        {
+          "tag": "zu_Latn",
+          "name": "Zulu (Latin)"
+        },
+        {
+          "tag": "zun_Latn",
+          "name": "Zuni (Latin)"
+        },
+        {
+          "tag": "zza_Latn",
+          "name": "Zaza (Latin)"
+        }
+      ],
+      "local_family_id": "NotoSans"
+    },
+    {
+      "font": "Noto Sans Arabic",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Arabic",
+      "primary_script": "Arab",
+      "primary_language": "",
+      "language_count": 80,
+      "languages": [
+        {
+          "tag": "aeb_Arab",
+          "name": "Tunisian Arabic (Arabic)"
+        },
+        {
+          "tag": "ar_Arab",
+          "name": "Arabic (Arabic)"
+        },
+        {
+          "tag": "arb_Arab",
+          "name": "Standard Arabic (Arabic)"
+        },
+        {
+          "tag": "arq_Arab",
+          "name": "Algerian Arabic (Arabic)"
+        },
+        {
+          "tag": "ars_Arab",
+          "name": "Najdi Arabic (Arabic)"
+        },
+        {
+          "tag": "ary_Arab",
+          "name": "Moroccan Arabic (Arabic)"
+        },
+        {
+          "tag": "arz_Arab",
+          "name": "Egyptian Arabic (Arabic)"
+        },
+        {
+          "tag": "az_Arab",
+          "name": "Azerbaijani (Arabic)"
+        },
+        {
+          "tag": "azb_Arab",
+          "name": "South Azerbaijani (Arabic)"
+        },
+        {
+          "tag": "bal_Arab",
+          "name": "Baluchi (Arabic)"
+        },
+        {
+          "tag": "bej_Arab",
+          "name": "Beja (Arabic)"
+        },
+        {
+          "tag": "ber_Arab",
+          "name": "Berber languages (Arabic)"
+        },
+        {
+          "tag": "bft_Arab",
+          "name": "Balti (Arabic)"
+        },
+        {
+          "tag": "bgn_Arab",
+          "name": "Western Balochi (Arabic)"
+        },
+        {
+          "tag": "bqi_Arab",
+          "name": "Bakhtiari (Arabic)"
+        },
+        {
+          "tag": "brh_Arab",
+          "name": "Brahui (Arabic)"
+        },
+        {
+          "tag": "cja_Arab",
+          "name": "Western Cham (Arabic)"
+        },
+        {
+          "tag": "cjm_Arab",
+          "name": "Eastern Cham (Arabic)"
+        },
+        {
+          "tag": "ckb_Arab",
+          "name": "Central Kurdish (Arabic)"
+        },
+        {
+          "tag": "cop_Arab",
+          "name": "Coptic (Arabic)"
+        },
+        {
+          "tag": "dcc_Arab",
+          "name": "Deccan (Arabic)"
+        },
+        {
+          "tag": "doi_Arab",
+          "name": "Dogri (macrolanguage) (Arabic)"
+        },
+        {
+          "tag": "dyo_Arab",
+          "name": "Jola-Fonyi (Arabic)"
+        },
+        {
+          "tag": "fa_Arab",
+          "name": "Persian (Arabic)"
+        },
+        {
+          "tag": "fia_Arab",
+          "name": "Nobiin (Arabic)"
+        },
+        {
+          "tag": "gbz_Arab",
+          "name": "Zoroastrian Dari (Arabic)"
+        },
+        {
+          "tag": "gjk_Arab",
+          "name": "Kachi Koli (Arabic)"
+        },
+        {
+          "tag": "gju_Arab",
+          "name": "Gujari (Arabic)"
+        },
+        {
+          "tag": "glk_Arab",
+          "name": "Gilaki (Arabic)"
+        },
+        {
+          "tag": "ha_Arab",
+          "name": "Hausa (Arabic)"
+        },
+        {
+          "tag": "haz_Arab",
+          "name": "Hazaragi (Arabic)"
+        },
+        {
+          "tag": "hnd_Arab",
+          "name": "Southern Hindko (Arabic)"
+        },
+        {
+          "tag": "hno_Arab",
+          "name": "Northern Hindko (Arabic)"
+        },
+        {
+          "tag": "id_Arab",
+          "name": "Indonesian (Arabic)"
+        },
+        {
+          "tag": "inh_Arab",
+          "name": "Ingush (Arabic)"
+        },
+        {
+          "tag": "khw_Arab",
+          "name": "Khowar (Arabic)"
+        },
+        {
+          "tag": "kk_Arab",
+          "name": "Kazakh (Arabic)"
+        },
+        {
+          "tag": "kr_Arab",
+          "name": "Kanuri (Arabic)"
+        },
+        {
+          "tag": "ks_Arab",
+          "name": "Kashmiri (Arabic)"
+        },
+        {
+          "tag": "ku_Arab",
+          "name": "Kurdish (Arabic)"
+        },
+        {
+          "tag": "kvx_Arab",
+          "name": "Parkari Koli (Arabic)"
+        },
+        {
+          "tag": "kxp_Arab",
+          "name": "Wadiyara Koli (Arabic)"
+        },
+        {
+          "tag": "ky_Arab",
+          "name": "Kirghiz (Arabic)"
+        },
+        {
+          "tag": "lah_Arab",
+          "name": "Lahnda (Arabic)"
+        },
+        {
+          "tag": "lki_Arab",
+          "name": "Laki (Arabic)"
+        },
+        {
+          "tag": "lrc_Arab",
+          "name": "Northern Luri (Arabic)"
+        },
+        {
+          "tag": "luz_Arab",
+          "name": "Southern Luri (Arabic)"
+        },
+        {
+          "tag": "mfa_Arab",
+          "name": "Pattani Malay (Arabic)"
+        },
+        {
+          "tag": "min_Arab",
+          "name": "Minangkabau (Arabic)"
+        },
+        {
+          "tag": "mis_Arab",
+          "name": "Uncoded languages (Arabic)"
+        },
+        {
+          "tag": "mrw_Arab",
+          "name": "Maranao (Arabic)"
+        },
+        {
+          "tag": "mvy_Arab",
+          "name": "Indus Kohistani (Arabic)"
+        },
+        {
+          "tag": "mzn_Arab",
+          "name": "Mazanderani (Arabic)"
+        },
+        {
+          "tag": "ota_Arab",
+          "name": "Ottoman Turkish (1500-1928) (Arabic)"
+        },
+        {
+          "tag": "pa_Arab",
+          "name": "Panjabi (Arabic)"
+        },
+        {
+          "tag": "prd_Arab",
+          "name": "Parsi-Dari (Arabic)"
+        },
+        {
+          "tag": "prs_Arab",
+          "name": "Dari (Arabic)"
+        },
+        {
+          "tag": "ps_Arab",
+          "name": "Pushto (Arabic)"
+        },
+        {
+          "tag": "rmt_Arab",
+          "name": "Domari (Arabic)"
+        },
+        {
+          "tag": "sd_Arab",
+          "name": "Sindhi (Arabic)"
+        },
+        {
+          "tag": "sdh_Arab",
+          "name": "Southern Kurdish (Arabic)"
+        },
+        {
+          "tag": "shi_Arab",
+          "name": "Tachelhit (Arabic)"
+        },
+        {
+          "tag": "skr_Arab",
+          "name": "Saraiki (Arabic)"
+        },
+        {
+          "tag": "so_Arab",
+          "name": "Somali (Arabic)"
+        },
+        {
+          "tag": "sus_Arab",
+          "name": "Susu (Arabic)"
+        },
+        {
+          "tag": "swb_Arab",
+          "name": "Maore Comorian (Arabic)"
+        },
+        {
+          "tag": "tg_Arab",
+          "name": "Tajik (Arabic)"
+        },
+        {
+          "tag": "tk_Arab",
+          "name": "Turkmen (Arabic)"
+        },
+        {
+          "tag": "tly_Arab",
+          "name": "Talysh (Arabic)"
+        },
+        {
+          "tag": "tr_Arab",
+          "name": "Turkish (Arabic)"
+        },
+        {
+          "tag": "trw_Arab",
+          "name": "Torwali (Arabic)"
+        },
+        {
+          "tag": "tt_Arab",
+          "name": "Tatar (Arabic)"
+        },
+        {
+          "tag": "ttt_Arab",
+          "name": "Muslim Tat (Arabic)"
+        },
+        {
+          "tag": "ug_Arab",
+          "name": "Uighur (Arabic)"
+        },
+        {
+          "tag": "ur_Arab",
+          "name": "Urdu (Arabic)"
+        },
+        {
+          "tag": "uz_Arab",
+          "name": "Uzbek (Arabic)"
+        },
+        {
+          "tag": "wni_Arab",
+          "name": "Ndzwani Comorian (Arabic)"
+        },
+        {
+          "tag": "wo_Arab",
+          "name": "Wolof (Arabic)"
+        },
+        {
+          "tag": "zdj_Arab",
+          "name": "Ngazidja Comorian (Arabic)"
+        },
+        {
+          "tag": "zlm_Arab",
+          "name": "Malay (individual language) (Arabic)"
+        }
+      ],
+      "local_family_id": "NotoSansArabic"
+    },
+    {
+      "font": "Noto Sans Armenian",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Armenian",
+      "primary_script": "Armn",
+      "primary_language": "",
+      "language_count": 2,
+      "languages": [
+        {
+          "tag": "hy_Armn",
+          "name": "Armenian (Armenian)"
+        },
+        {
+          "tag": "hyw_Armn",
+          "name": "Western Armenian (Armenian)"
+        }
+      ],
+      "local_family_id": "NotoSansArmenian"
+    },
+    {
+      "font": "Noto Sans Bengali",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Bengali",
+      "primary_script": "Beng",
+      "primary_language": "",
+      "language_count": 17,
+      "languages": [
+        {
+          "tag": "as_Beng",
+          "name": "Assamese (Bengali)"
+        },
+        {
+          "tag": "bn_Beng",
+          "name": "Bengali (Bengali)"
+        },
+        {
+          "tag": "bpy_Beng",
+          "name": "Bishnupriya (Bengali)"
+        },
+        {
+          "tag": "brx_Beng",
+          "name": "Bodo (India) (Bengali)"
+        },
+        {
+          "tag": "ccp_Beng",
+          "name": "Chakma (Bengali)"
+        },
+        {
+          "tag": "grt_Beng",
+          "name": "Garo (Bengali)"
+        },
+        {
+          "tag": "kha_Beng",
+          "name": "Khasi (Bengali)"
+        },
+        {
+          "tag": "khr_Beng",
+          "name": "Kharia (Bengali)"
+        },
+        {
+          "tag": "kyw_Beng",
+          "name": "Kudmali (Bengali)"
+        },
+        {
+          "tag": "lus_Beng",
+          "name": "Lushai (Bengali)"
+        },
+        {
+          "tag": "mni_Beng",
+          "name": "Manipuri (Bengali)"
+        },
+        {
+          "tag": "rkt_Beng",
+          "name": "Rangpuri (Bengali)"
+        },
+        {
+          "tag": "sat_Beng",
+          "name": "Santali (Bengali)"
+        },
+        {
+          "tag": "syl_Beng",
+          "name": "Sylheti (Bengali)"
+        },
+        {
+          "tag": "trp_Beng",
+          "name": "Kok Borok (Bengali)"
+        },
+        {
+          "tag": "unr_Beng",
+          "name": "Mundari (Bengali)"
+        },
+        {
+          "tag": "unx_Beng",
+          "name": "Munda (Bengali)"
+        }
+      ],
+      "local_family_id": "NotoSansBengali"
+    },
+    {
+      "font": "Noto Sans Ethiopic",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Ethiopic",
+      "primary_script": "Ethi",
+      "primary_language": "",
+      "language_count": 7,
+      "languages": [
+        {
+          "tag": "am_Ethi",
+          "name": "Amharic (Ethiopic)"
+        },
+        {
+          "tag": "byn_Ethi",
+          "name": "Bilin (Ethiopic)"
+        },
+        {
+          "tag": "gez_Ethi",
+          "name": "Geez (Ethiopic)"
+        },
+        {
+          "tag": "om_Ethi",
+          "name": "Oromo (Ethiopic)"
+        },
+        {
+          "tag": "ti_Ethi",
+          "name": "Tigrinya (Ethiopic)"
+        },
+        {
+          "tag": "tig_Ethi",
+          "name": "Tigre (Ethiopic)"
+        },
+        {
+          "tag": "wal_Ethi",
+          "name": "Wolaytta (Ethiopic)"
+        }
+      ],
+      "local_family_id": "NotoSansEthiopic"
+    },
+    {
+      "font": "Noto Sans Georgian",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Georgian",
+      "primary_script": "Geor",
+      "primary_language": "",
+      "language_count": 3,
+      "languages": [
+        {
+          "tag": "ka_Geor",
+          "name": "Georgian (Georgian (Mkhedruli and Mtavruli))"
+        },
+        {
+          "tag": "lzz_Geor",
+          "name": "Laz (Georgian (Mkhedruli and Mtavruli))"
+        },
+        {
+          "tag": "xmf_Geor",
+          "name": "Mingrelian (Georgian (Mkhedruli and Mtavruli))"
+        }
+      ],
+      "local_family_id": "NotoSansGeorgian"
+    },
+    {
+      "font": "Noto Sans Gurmukhi",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Gurmukhi",
+      "primary_script": "Guru",
+      "primary_language": "",
+      "language_count": 1,
+      "languages": [
+        {
+          "tag": "pa_Guru",
+          "name": "Panjabi (Gurmukhi)"
+        }
+      ],
+      "local_family_id": "NotoSansGurmukhi"
+    },
+    {
+      "font": "Noto Sans Hebrew",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Hebrew",
+      "primary_script": "Hebr",
+      "primary_language": "",
+      "language_count": 7,
+      "languages": [
+        {
+          "tag": "he_Hebr",
+          "name": "Hebrew (Hebrew)"
+        },
+        {
+          "tag": "jpr_Hebr",
+          "name": "Judeo-Persian (Hebrew)"
+        },
+        {
+          "tag": "jrb_Hebr",
+          "name": "Judeo-Arabic (Hebrew)"
+        },
+        {
+          "tag": "lad_Hebr",
+          "name": "Ladino (Hebrew)"
+        },
+        {
+          "tag": "sam_Hebr",
+          "name": "Samaritan Aramaic (Hebrew)"
+        },
+        {
+          "tag": "yi_Hebr",
+          "name": "Yiddish (Hebrew)"
+        },
+        {
+          "tag": "zh_Hebr",
+          "name": "Chinese (Hebrew)"
+        }
+      ],
+      "local_family_id": "NotoSansHebrew"
+    },
+    {
+      "font": "Noto Sans JP",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+JP",
+      "primary_script": "Jpan",
+      "primary_language": "",
+      "language_count": 6,
+      "languages": [
+        {
+          "tag": "ain_Kana",
+          "name": "Ainu (Japan) (Katakana)"
+        },
+        {
+          "tag": "ja_Hira",
+          "name": "Japanese (Hiragana)"
+        },
+        {
+          "tag": "ja_Jpan",
+          "name": "Japanese (Japanese (alias for Han + Hiragana + Katakana))"
+        },
+        {
+          "tag": "ja_Kana",
+          "name": "Japanese (Katakana)"
+        },
+        {
+          "tag": "ryu_Jpan",
+          "name": "Central Okinawan (Japanese (alias for Han + Hiragana + Katakana))"
+        },
+        {
+          "tag": "ryu_Kana",
+          "name": "Central Okinawan (Katakana)"
+        }
+      ],
+      "local_family_id": "NotoSansJP"
+    },
+    {
+      "font": "Noto Sans KR",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+KR",
+      "primary_script": "Kore",
+      "primary_language": "",
+      "language_count": 1,
+      "languages": [
+        {
+          "tag": "ko_Kore",
+          "name": "Korean (Korean (alias for Hangul + Han))"
+        }
+      ],
+      "local_family_id": "NotoSansKR"
+    },
+    {
+      "font": "Noto Sans Khmer",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Khmer",
+      "primary_script": "Khmr",
+      "primary_language": "",
+      "language_count": 1,
+      "languages": [
+        {
+          "tag": "km_Khmr",
+          "name": "Khmer (Khmer)"
+        }
+      ],
+      "local_family_id": "NotoSansKhmer"
+    },
+    {
+      "font": "Noto Sans Lao",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Lao",
+      "primary_script": "Laoo",
+      "primary_language": "",
+      "language_count": 3,
+      "languages": [
+        {
+          "tag": "hnj_Laoo",
+          "name": "Hmong Njua (Lao)"
+        },
+        {
+          "tag": "kjg_Laoo",
+          "name": "Khmu (Lao)"
+        },
+        {
+          "tag": "lo_Laoo",
+          "name": "Lao (Lao)"
+        }
+      ],
+      "local_family_id": "NotoSansLao"
+    },
+    {
+      "font": "Noto Sans Myanmar",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Myanmar",
+      "primary_script": "Mymr",
+      "primary_language": "",
+      "language_count": 6,
+      "languages": [
+        {
+          "tag": "kht_Mymr",
+          "name": "Khamti (Myanmar)"
+        },
+        {
+          "tag": "ksw_Mymr",
+          "name": "S'gaw Karen (Myanmar)"
+        },
+        {
+          "tag": "mnw_Mymr",
+          "name": "Mon (Myanmar)"
+        },
+        {
+          "tag": "my_Mymr",
+          "name": "Burmese (Myanmar)"
+        },
+        {
+          "tag": "pwo_Mymr",
+          "name": "Pwo Western Karen (Myanmar)"
+        },
+        {
+          "tag": "shn_Mymr",
+          "name": "Shan (Myanmar)"
+        }
+      ],
+      "local_family_id": "NotoSansMyanmar"
+    },
+    {
+      "font": "Noto Sans SC",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+SC",
+      "primary_script": "Hans",
+      "primary_language": "zh_Hans",
+      "language_count": 10,
+      "languages": [
+        {
+          "tag": "cjy_Hans",
+          "name": "Jinyu Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "gan_Hans",
+          "name": "Gan Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "hak_Hans",
+          "name": "Hakka Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "hsn_Hans",
+          "name": "Xiang Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "lzh_Hans",
+          "name": "Literary Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "nan_Hans",
+          "name": "Min Nan Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "wuu_Hans",
+          "name": "Wu Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "yue_Hans",
+          "name": "Yue Chinese (Han (Simplified variant))"
+        },
+        {
+          "tag": "za_Hans",
+          "name": "Zhuang (Han (Simplified variant))"
+        },
+        {
+          "tag": "zh_Hans",
+          "name": "Chinese (Han (Simplified variant))"
+        }
+      ],
+      "local_family_id": "NotoSansSC"
+    },
+    {
+      "font": "Noto Sans TC",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+TC",
+      "primary_script": "Hant",
+      "primary_language": "zh_Hant",
+      "language_count": 10,
+      "languages": [
+        {
+          "tag": "cjy_Hant",
+          "name": "Jinyu Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "gan_Hant",
+          "name": "Gan Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "hak_Hant",
+          "name": "Hakka Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "hsn_Hant",
+          "name": "Xiang Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "lzh_Hant",
+          "name": "Literary Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "nan_Hant",
+          "name": "Min Nan Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "wuu_Hant",
+          "name": "Wu Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "yue_Hant",
+          "name": "Yue Chinese (Han (Traditional variant))"
+        },
+        {
+          "tag": "za_Hant",
+          "name": "Zhuang (Han (Traditional variant))"
+        },
+        {
+          "tag": "zh_Hant",
+          "name": "Chinese (Han (Traditional variant))"
+        }
+      ],
+      "local_family_id": "NotoSansTC"
+    },
+    {
+      "font": "Noto Sans Tamil",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Tamil",
+      "primary_script": "Taml",
+      "primary_language": "",
+      "language_count": 2,
+      "languages": [
+        {
+          "tag": "bfq_Taml",
+          "name": "Badaga (Tamil)"
+        },
+        {
+          "tag": "ta_Taml",
+          "name": "Tamil (Tamil)"
+        }
+      ],
+      "local_family_id": "NotoSansTamil"
+    },
+    {
+      "font": "Noto Sans Thai",
+      "source": "https://fonts.google.com/metadata/fonts/Noto+Sans+Thai",
+      "primary_script": "Thai",
+      "primary_language": "",
+      "language_count": 8,
+      "languages": [
+        {
+          "tag": "kdt_Thai",
+          "name": "Kuy (Thai)"
+        },
+        {
+          "tag": "kxm_Thai",
+          "name": "Northern Khmer (Thai)"
+        },
+        {
+          "tag": "lcp_Thai",
+          "name": "Western Lawa (Thai)"
+        },
+        {
+          "tag": "lwl_Thai",
+          "name": "Eastern Lawa (Thai)"
+        },
+        {
+          "tag": "pi_Thai",
+          "name": "Pali (Thai)"
+        },
+        {
+          "tag": "sou_Thai",
+          "name": "Southern Thai (Thai)"
+        },
+        {
+          "tag": "th_Thai",
+          "name": "Thai (Thai)"
+        },
+        {
+          "tag": "tts_Thai",
+          "name": "Northeastern Thai (Thai)"
+        }
+      ],
+      "local_family_id": "NotoSansThai"
+    }
+  ]
+}

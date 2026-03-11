@@ -1,6 +1,6 @@
 # RedCardGenerator Backend
 
-A FastAPI backend for generating multi-language "Know Your Rights" PDF cards with support for 56+ languages and 22 Unicode scripts.
+A FastAPI backend for generating multi-language "Know Your Rights" PDF cards with support for 56 languages and 22 Unicode scripts.
 
 ## Table of Contents
 
@@ -20,27 +20,47 @@ A FastAPI backend for generating multi-language "Know Your Rights" PDF cards wit
 
 This backend generates printable PDF cards that display constitutional rights information. The front of each card is translated into the user's language, while the back contains English text explaining 4th and 5th Amendment rights.
 
+Two render modes are available:
+
+**Legacy mode** (default) -- Two-page PDF with separate front and back grids:
+
 ```
-┌─────────────────────┐    ┌─────────────────────┐
-│       FRONT         │    │        BACK         │
-│                     │    │                     │
-│   KNOW YOUR RIGHTS  │    │  I do not wish to   │
-│   (Translated)      │    │  speak with you...  │
-│                     │    │  (English)          │
-│   • Right 1         │    │                     │
-│   • Right 2         │    │  Based on my 4th    │
-│   • Right 3         │    │  Amendment rights...│
-│                     │    │                     │
-└─────────────────────┘    └─────────────────────┘
+  Page 1 (Front)              Page 2 (Back)
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ FRONT 1  â”‚ FRONT 2  â”‚    â”‚ BACK 1   â”‚ BACK 2   â”‚
+â”‚(Translated)         â”‚    â”‚(English) â”‚(English) â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤    â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚ FRONT 3  â”‚ FRONT 4  â”‚    â”‚ BACK 3   â”‚ BACK 4   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+```
+
+**Fold mode** -- Single-page official fold format with front and back side-by-side per row:
+
+```
+  Instructions header          Cut / Fold legend
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+  â”‚   FRONT      â”‚     BACK     â”‚  Row 1
+  â”‚ (Translated) â”‚  (English)   â”‚
+  â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+  â”‚   FRONT      â”‚     BACK     â”‚  Row 2
+  â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+  â”‚   FRONT      â”‚     BACK     â”‚  Row 3
+  â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+  â”‚   FRONT      â”‚     BACK     â”‚  Row 4
+  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+              fold line
 ```
 
 ## Features
 
-- **56+ Languages**: Support for Latin, Cyrillic, Arabic, Hebrew, CJK, South Asian, Southeast Asian, and more
+- **56 Languages**: Support for Latin, Cyrillic, Arabic, Hebrew, CJK, South Asian, Southeast Asian, and more
 - **22 Unicode Scripts**: Each script uses optimized Noto Sans fonts
 - **RTL Support**: Full right-to-left rendering for Arabic and Hebrew with proper text reshaping
 - **No-Space Script Wrapping**: Character-safe wrapping for CJK, Thai, Lao, Khmer, and Myanmar scripts
-- **Flexible Layouts**: 4, 6, 8, or 12 cards per page
+- **Two Render Modes**: Legacy (2-page front/back grids) and fold (single-page front|back side-by-side per row)
+- **Official Fold Format**: Matches the ILRC red card fold sheet layout with max 2 columns, cut/fold guides, and instruction header
+- **Flexible Layouts**: Legacy supports 4, 6, 8, or 12 cards per page; fold supports 4, 5, or 6 rows
 - **Font Availability Checking**: API reports which languages have fonts installed
 - **Flexible JSON Parsing**: Accepts multiple translation file formats
 
@@ -59,50 +79,44 @@ This backend generates printable PDF cards that display constitutional rights in
 
 ```
 GET /api/languages
-└── TranslationsStore.list_languages()
-    └── FontManager.is_script_supported() → fontSupported flag per language
+â””â”€â”€ TranslationsStore.list_languages()
+    â””â”€â”€ FontManager.is_script_supported() â†’ fontSupported flag per language
 
-GET /api/render/{code}?cards_per_page=4
-│
-├── 1. VALIDATION
-│   ├── Check store initialized (503 if not)
-│   ├── Look up language by code (404 if not found)
-│   └── Validate cards_per_page (defaults to 4 if invalid)
-│
-├── 2. LAYOUT CALCULATION
-│   └── CardLayout.from_cards_per_page()
-│       ├── Determine grid (2x2, 2x3, 2x4, or 3x4)
-│       ├── Calculate card dimensions (width/height in points)
-│       ├── Calculate font_scale based on card area ratio
-│       └── Generate positions list [(x, y, w, h), ...]
-│
-├── 3. CONTENT PREPARATION
-│   ├── Front content from TranslationsStore (translated)
-│   └── Back content from back_content.py (English)
-│
-├── 4. PDF RENDERING — render_print_sheet_pdf()
-│   ├── Detect script from language code
-│   ├── Select font via FontManager.pick()
-│   ├── PAGE 1 (Front):
-│   │   ├── Draw fold guides (dashed lines)
-│   │   ├── For each card position:
-│   │   │   ├── Draw cut lines (dotted border)
-│   │   │   └── _draw_front()
-│   │   │       ├── Find optimal font scale (adaptive sizing)
-│   │   │       ├── Wrap text (script-aware + overflow-safe)
-│   │   │       ├── Process RTL text (Arabic/Hebrew reshaping)
-│   │   │       └── Draw header + bullets
-│   │   └── Draw footer (printing instructions)
-│   ├── PAGE 2 (Back):
-│   │   ├── Draw fold guides
-│   │   ├── For each card position:
-│   │   │   ├── Draw cut lines
-│   │   │   └── _draw_back() (English paragraphs)
-│   │   └── Draw footer
-│   └── Return PDF bytes
-│
-└── 5. RESPONSE
-    └── Content-Type: application/pdf
+GET /api/render/{code}?cards_per_page=4&mode=legacy
+â”‚
+â”œâ”€â”€ 1. VALIDATION
+â”‚   â”œâ”€â”€ Check store initialized (503 if not)
+â”‚   â”œâ”€â”€ Validate mode ("legacy" or "fold")
+â”‚   â”œâ”€â”€ Look up language by code (404 if not found)
+â”‚   â””â”€â”€ Validate cards_per_page per mode
+â”‚
+â”œâ”€â”€ 2. LAYOUT CALCULATION
+â”‚   â”œâ”€â”€ Legacy: CardLayout.from_cards_per_page()
+â”‚   â”‚   â”œâ”€â”€ Determine grid (2x2, 2x3, 2x4, or 3x4)
+â”‚   â”‚   â””â”€â”€ Generate positions list
+â”‚   â””â”€â”€ Fold: CardLayout.from_fold_rows()
+â”‚       â”œâ”€â”€ Always 2 columns (front|back)
+â”‚       â”œâ”€â”€ N rows (4, 5, or 6)
+â”‚       â””â”€â”€ Positions as front/back pairs per row
+â”‚
+â”œâ”€â”€ 3. CONTENT PREPARATION
+â”‚   â”œâ”€â”€ Front content from TranslationsStore (translated)
+â”‚   â””â”€â”€ Back content from back_content.py (English)
+â”‚
+â”œâ”€â”€ 4. PDF RENDERING
+â”‚   â”œâ”€â”€ Legacy: render_print_sheet_pdf()
+â”‚   â”‚   â”œâ”€â”€ PAGE 1 (Front): grid of translated cards
+â”‚   â”‚   â””â”€â”€ PAGE 2 (Back): grid of English cards
+â”‚   â””â”€â”€ Fold: render_fold_sheet_pdf()
+â”‚       â”œâ”€â”€ HEADER: instructions + cut/fold legend
+â”‚       â”œâ”€â”€ For each row:
+â”‚       â”‚   â”œâ”€â”€ Left cell: draw_front() (translated, RTL-aware)
+â”‚       â”‚   â””â”€â”€ Right cell: draw_back() (English, LTR)
+â”‚       â”œâ”€â”€ Cut borders around each cell
+â”‚       â””â”€â”€ Center fold guide line
+â”‚
+â””â”€â”€ 5. RESPONSE
+    â””â”€â”€ Content-Type: application/pdf
         Filename: know-your-rights-{code}-{count}up.pdf
 ```
 
@@ -112,18 +126,18 @@ The text wrapping system handles different scripts intelligently:
 
 ```
 Text Input
-    │
-    ├─→ Has lang_code? ─YES─→ detect_script(lang_code) → Script enum
-    │                         │
-    │                         └─→ is_no_space_script()? ─YES─→ character-wrap
-    │                                                     │
-    │                                                     └─NO─→ simpleSplit()
-    │
-    ├─→ No lang_code ──→ is_cjk_text()? ─YES─→ character-wrap
-    │                    │
-    │                    └─NO─→ simpleSplit()
-    │
-    └─→ Final safety pass: any over-width line ─→ character-wrap fallback
+    â”‚
+    â”œâ”€â†’ Has lang_code? â”€YESâ”€â†’ detect_script(lang_code) â†’ Script enum
+    â”‚                         â”‚
+    â”‚                         â””â”€â†’ is_no_space_script()? â”€YESâ”€â†’ character-wrap
+    â”‚                                                     â”‚
+    â”‚                                                     â””â”€NOâ”€â†’ simpleSplit()
+    â”‚
+    â”œâ”€â†’ No lang_code â”€â”€â†’ is_cjk_text()? â”€YESâ”€â†’ character-wrap
+    â”‚                    â”‚
+    â”‚                    â””â”€NOâ”€â†’ simpleSplit()
+    â”‚
+    â””â”€â†’ Final safety pass: any over-width line â”€â†’ character-wrap fallback
 ```
 
 ### Font Scaling Flow
@@ -132,12 +146,13 @@ Two-level scaling ensures text fits within card boundaries:
 
 ```
 1. Layout-level scale: font_scale = sqrt(card_area / base_card_area)
-   └── Clamped between 0.6 and 1.0
+   â””â”€â”€ Clamped between 0.6 and 1.0
 
-2. Adaptive content scale: _find_optimal_font_scale()
-   └── Start at layout's base font_scale
-       └── Measure content height → too tall? → reduce by 0.05 → repeat
-           └── Stops at 50% of base scale or 6pt minimum
+2. Adaptive content fit (front + back): find_best_fit_scale()
+   â””â”€â”€ Start at layout's base font_scale
+       â””â”€â”€ If content fits, search upward for larger readable text
+       â””â”€â”€ If content overflows, search downward for largest fitting scale
+       â””â”€â”€ Bounded by min/max scale factors + absolute font-size caps
 ```
 
 ## Installation
@@ -152,7 +167,7 @@ Two-level scaling ensures text fits within card boundaries:
 ```bash
 # Clone the repository
 git clone https://github.com/pierre-projects/redcardapi.git
-cd redcardapi
+cd redcardapi/redcard-backend
 
 # Create virtual environment
 python -m venv .venv
@@ -185,16 +200,22 @@ Configuration is managed via environment variables or a `.env` file. All variabl
 
 | Variable | Default | Description |
 |----------|---------|-------------|
+| `CARD_TRANSLATIONS_JSON_PATH` | `data/Translations_with_sources.json` | Path to translations JSON file |
+| `CARD_FONTS_DIR` | `assets/fonts` | Directory containing font files |
 | `CARD_LOG_LEVEL` | `INFO` | Logging level (DEBUG, INFO, WARNING, ERROR) |
 | `CARD_PAGE_SIZE` | `letter` | Page size (`letter` or `a4`) |
-| `CARD_DEFAULT_CARDS_PER_PAGE` | `4` | Default layout (4, 6, 8, or 12) |
-| `CARD_CORS_ORIGINS` | `localhost:5173` | Comma-separated allowed origins |
+| `CARD_DEFAULT_CARDS_PER_PAGE` | `4` | Default legacy layout (4, 6, 8, or 12) |
+| `CARD_DEFAULT_FOLD_CARDS_PER_PAGE` | `4` | Default fold mode rows (4, 5, or 6) |
+| `CARD_MARGIN_INCHES` | `0.5` | Page margin in inches |
+| `CARD_GUTTER_INCHES` | `0.25` | Space between cards in inches |
+| `CARD_FOOTER_HEIGHT_INCHES` | `0.55` | Reserved footer height in inches |
+| `CARD_CORS_ORIGINS` | `["http://localhost:5173","http://127.0.0.1:5173"]` | Allowed origins as a JSON string array |
 
 Example `.env` file:
 ```env
 CARD_LOG_LEVEL=DEBUG
 CARD_PAGE_SIZE=letter
-CARD_CORS_ORIGINS=http://localhost:5173,http://localhost:3000
+CARD_CORS_ORIGINS=["http://localhost:5173","http://127.0.0.1:5173","http://localhost:3000"]
 ```
 
 ## API Endpoints
@@ -224,7 +245,10 @@ Returns valid layout options for the frontend.
 {
   "valid_layouts": [4, 6, 8, 12],
   "default_cards_per_page": 4,
-  "page_size": "letter"
+  "page_size": "letter",
+  "render_modes": ["legacy", "fold"],
+  "fold_layouts": [4, 5, 6],
+  "default_fold_cards_per_page": 4
 }
 ```
 
@@ -249,10 +273,19 @@ Returns all available languages with font support status.
     "name": "Arabic",
     "rtl": true,
     "official": true,
-    "fontSupported": true
+    "fontSupported": true,
+    "source": {
+      "type": "official",
+      "origin": "ILRC",
+      "url": "https://www.ilrc.org/red-cards",
+      "verified": true
+    }
   }
 ]
 ```
+
+**Error Responses:**
+- `503`: Service not ready (translations store not initialized)
 
 ### Get Card Content
 ```
@@ -273,28 +306,46 @@ Returns card content for preview.
   "front": {
     "header": "CONOZCA SUS DERECHOS",
     "bullets": ["Punto 1", "Punto 2", "..."]
+  },
+  "source": {
+    "type": "official",
+    "origin": "ILRC",
+    "url": "https://www.ilrc.org/red-cards",
+    "verified": true
   }
 }
 ```
 
+**Error Responses:**
+- `404`: Language code not found
+- `503`: Service not ready (translations store not initialized)
+
 ### Render PDF
 ```
-GET /api/render/{code}?cards_per_page=4
+GET /api/render/{code}?cards_per_page=4&mode=legacy
 ```
 Generates and downloads a printable PDF.
 
 **Parameters:**
 - `code`: Language code (e.g., `en`, `es`, `zh-cn`)
-- `cards_per_page`: Optional, one of 4, 6, 8, or 12 (default: 4)
+- `cards_per_page`: Optional layout count
+  - Legacy mode: one of 4, 6, 8, or 12 (default: 4)
+  - Fold mode: one of 4, 5, or 6 rows (default: 4)
+  - Fold mode normalization: if `cards_per_page` is within query bounds (`4-12`) but not in `{4,5,6}` (e.g., `8`), it is normalized to the fold default.
+- `mode`: Optional render mode (default: `legacy`)
+  - `legacy` -- Two-page PDF. Page 1 = translated front grid, Page 2 = English back grid.
+  - `fold` -- Single-page official fold format. Each row has front (left) and back (right) side-by-side, max 2 columns. Matches the official red card sheet layout.
 
 **Response:**
 - Content-Type: `application/pdf`
-- Filename: `know-your-rights-{code}-{count}up.pdf`
+- Legacy filename: `know-your-rights-{code}-{language-name-slug}-{count}up.pdf`
+- Fold filename: `know-your-rights-{code}-{language-name-slug}-{count}up-fold.pdf`
 
 **Error Responses:**
-- `400`: Font not available for requested language
+- `400`: Invalid mode or font not available for requested language
 - `404`: Language code not found
 - `500`: PDF generation failed
+- `503`: Service not ready (translations store not initialized)
 
 ## Font System
 
@@ -302,15 +353,15 @@ Generates and downloads a printable PDF.
 
 | Script | Languages | Font |
 |--------|-----------|------|
-| Latin | English, Spanish, French, etc. (39) | NotoSans |
-| Cyrillic | Russian, Ukrainian, etc. (5) | NotoSans |
-| Arabic | Arabic, Persian, Urdu, etc. (6) | NotoSansArabic |
+| Latin | English, Spanish, French, etc. (26) | NotoSans |
+| Cyrillic | Russian, Ukrainian, etc. (2) | NotoSans |
+| Arabic | Arabic, Persian, Urdu, etc. (5) | NotoSansArabic |
 | Hebrew | Hebrew (1) | NotoSansHebrew |
 | CJK Simplified | Chinese Simplified (1) | NotoSansSC |
 | CJK Traditional | Chinese Traditional, Cantonese (2) | NotoSansTC |
 | Japanese | Japanese (1) | NotoSansJP |
 | Korean | Korean (1) | NotoSansKR |
-| Devanagari | Hindi, Nepali, Marathi (3) | NotoSansDevanagari |
+| Devanagari | Hindi, Nepali (2) | NotoSans (fallback when NotoSansDevanagari files are absent) |
 | Bengali | Bengali (1) | NotoSansBengali |
 | Tamil | Tamil (1) | NotoSansTamil |
 | Gurmukhi | Punjabi (1) | NotoSansGurmukhi |
@@ -325,6 +376,8 @@ Generates and downloads a printable PDF.
 | Vietnamese | Vietnamese (1) | NotoSans |
 | Mongolian | Mongolian (1) | NotoSans |
 
+Current script distribution in `data/Translations_with_sources.json`: LATIN (26), ARABIC (5), CYRILLIC (2), DEVANAGARI (2), ETHIOPIC (2), CJK_TRADITIONAL (2), MYANMAR (2), and 1 each for ARMENIAN, BENGALI, CJK_SIMPLIFIED, GEORGIAN, GREEK, GURMUKHI, HEBREW, JAPANESE, KHMER, KOREAN, LAO, MONGOLIAN, TAMIL, THAI, and VIETNAMESE.
+
 ### Installing Fonts
 
 1. Download Noto Sans fonts from [Google Fonts](https://fonts.google.com/noto)
@@ -336,8 +389,8 @@ Generates and downloads a printable PDF.
 ### Font Selection Flow
 
 ```
-Language Code → Script Detection → Font Family → Font Files
-     "ar"     →   Script.ARABIC  → NotoSansArabic → NotoSansArabic-*.ttf
+Language Code â†’ Script Detection â†’ Font Family â†’ Font Files
+     "ar"     â†’   Script.ARABIC  â†’ NotoSansArabic â†’ NotoSansArabic-*.ttf
 ```
 
 ## Text Wrapping (No-Space Script Support)
@@ -373,7 +426,7 @@ from app.text import wrap_text
 lines = wrap_text(text, font_name, font_size, max_width, lang_code="km")
 
 # Without language hint (falls back to CJK character detection)
-lines = wrap_text("你好世界", font_name, font_size, max_width)
+lines = wrap_text("ä½ å¥½ä¸–ç•Œ", font_name, font_size, max_width)
 ```
 
 ### Unicode Ranges Auto-Detected (No `lang_code`)
@@ -391,12 +444,18 @@ When `lang_code` is not provided, the wrapper can still auto-detect CJK text via
 
 ### 1. Add Translation Data
 
-Add the language to `Translations.json`:
+Add the language to `Translations_with_sources.json` (or the file configured by `CARD_TRANSLATIONS_JSON_PATH`):
 ```json
 {
   "code": "new",
   "name": "New Language",
   "rtl": false,
+  "source": {
+    "type": "official",
+    "origin": "ILRC",
+    "url": "https://www.ilrc.org/red-cards",
+    "verified": true
+  },
   "front": {
     "header": "TRANSLATED HEADER",
     "bullets": ["Bullet 1", "Bullet 2"]
@@ -454,73 +513,84 @@ This will:
 - Report which languages succeed/fail
 - Identify "supported but failed" issues (font mapping bugs)
 
-### Generate Visual QA PDF (All Languages, Front Only)
+### Generate Visual QA PDF (All Languages)
 
-Generate one merged PDF with a labeled **front page** per language (back pages skipped):
+Generate one merged PDF with a labeled page per language for visual review:
+
+Install optional dev dependency first (required by `dev/test_all_languages.py`):
 
 ```bash
+pip install PyPDF2
+```
+
+```bash
+# Legacy mode (default) -- front page only per language
 python dev/test_all_languages.py --cards 12
+
+# Fold mode -- full fold sheet (front|back side-by-side) per language
+python dev/test_all_languages.py --mode fold --cards 4
+
+# Custom output path
+python dev/test_all_languages.py --mode fold --cards 6 --output fold_review.pdf
 ```
 
 This will:
-- Render all language front sides
-- Add `Language: <code> (<name>)` label to each output page
+- Render all languages in the selected mode
+- Add `Language: <code> (<name>) [mode]` label to each output page
+- Use `settings.translations_json_path` (default: `data/Translations_with_sources.json`)
+- Include per-language `source` metadata in fold header rendering
 - Merge pages into a single review PDF in `dev/`
 
-### Run API Tests
+### API Tests
 
-```bash
-# Install test dependencies
-pip install pytest pytest-asyncio httpx
-
-# Run tests
-pytest tests/
-```
+Automated API tests are not currently checked into this repository (`tests/` does not exist yet).  
+If tests are added later, document and run them from this section.
 
 ## Project Structure
 
 ```
 redcard-backend/
-├── app/
-│   ├── __init__.py
-│   ├── main.py                 # FastAPI app, endpoints, lifespan
-│   ├── config.py               # Settings & path management (pydantic-settings)
-│   ├── schemas.py              # Pydantic models for API validation
-│   ├── exceptions.py           # Custom exception classes
-│   ├── translations_store.py   # Translation JSON loader/parser
-│   ├── pdf_renderer.py         # Compatibility facade (legacy imports)
-│   ├── pdf/
-│   │   ├── __init__.py         # PDF package exports
-│   │   ├── renderer.py         # Main PDF orchestration
-│   │   ├── front.py            # Front card rendering + adaptive sizing
-│   │   ├── back.py             # Back card rendering
-│   │   ├── guides.py           # Cut lines, fold guides, footer, text helpers
-│   │   ├── wrapping.py         # RTL-aware line wrapping adapter
-│   │   ├── rtl.py              # RTL shaping/reordering support
-│   │   ├── fonts.py            # Font pick/registration helpers
-│   │   └── constants.py        # Shared typography/scaling constants
-│   ├── layout.py               # Card positioning calculations
-│   ├── back_content.py         # English back card content
-│   ├── logging_config.py       # Logging configuration
-│   ├── fonts/
-│   │   ├── __init__.py         # Font module exports
-│   │   ├── font_manager.py     # Font registration & lookup singleton
-│   │   ├── font_config.py      # Font family definitions
-│   │   └── script_detector.py  # Language → Unicode script detection
-│   └── text/
-│       ├── __init__.py         # Text module exports
-│       └── text_wrapper.py     # Script-aware + overflow-safe text wrapping
-├── assets/
-│   └── fonts/                  # TTF font files (Noto Sans families)
-├── data/
-│   ├── Translations.json
-│   └── Translations_with_sources.json
-├── .env.example                # Environment variable template
-├── .gitignore
-├── requirements.txt            # Python dependencies
-├── test_font_coverage.py       # Font coverage validation script
-└── README.md                   # Project documentation
-
+â”œâ”€â”€ app/
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ main.py                 # FastAPI app, endpoints, lifespan (legacy + fold routing)
+â”‚   â”œâ”€â”€ config.py               # Settings & path management (includes fold defaults)
+â”‚   â”œâ”€â”€ schemas.py              # Pydantic models for API validation
+â”‚   â”œâ”€â”€ exceptions.py           # Custom exception classes
+â”‚   â”œâ”€â”€ translations_store.py   # Translation JSON loader/parser
+â”‚   â”œâ”€â”€ pdf_renderer.py         # Compatibility facade (legacy + fold exports)
+â”‚   â”œâ”€â”€ pdf/
+â”‚   â”‚   â”œâ”€â”€ __init__.py         # PDF package exports
+â”‚   â”‚   â”œâ”€â”€ renderer.py         # PDF orchestration (render_print_sheet_pdf + render_fold_sheet_pdf)
+â”‚   â”‚   â”œâ”€â”€ front.py            # Front card rendering + adaptive sizing
+â”‚   â”‚   â”œâ”€â”€ back.py             # Back card rendering
+â”‚   â”‚   â”œâ”€â”€ guides.py           # Cut lines, fold guides, fold header, footer, text helpers
+â”‚   â”‚   â”œâ”€â”€ wrapping.py         # RTL-aware line wrapping adapter
+â”‚   â”‚   â”œâ”€â”€ rtl.py              # RTL shaping/reordering support
+â”‚   â”‚   â”œâ”€â”€ fonts.py            # Font pick/registration helpers
+â”‚   â”‚   â””â”€â”€ constants.py        # Shared typography/scaling constants
+â”‚   â”œâ”€â”€ layout.py               # Card positioning (legacy grids + fold rows)
+â”‚   â”œâ”€â”€ back_content.py         # English back card content
+â”‚   â”œâ”€â”€ logging_config.py       # Logging configuration
+â”‚   â”œâ”€â”€ fonts/
+â”‚   â”‚   â”œâ”€â”€ __init__.py         # Font module exports
+â”‚   â”‚   â”œâ”€â”€ font_manager.py     # Font registration & lookup singleton
+â”‚   â”‚   â”œâ”€â”€ font_config.py      # Font family definitions
+â”‚   â”‚   â””â”€â”€ script_detector.py  # Language â†’ Unicode script detection
+â”‚   â””â”€â”€ text/
+â”‚       â”œâ”€â”€ __init__.py         # Text module exports
+â”‚       â””â”€â”€ text_wrapper.py     # Script-aware + overflow-safe text wrapping
+â”œâ”€â”€ assets/
+â”‚   â””â”€â”€ fonts/                  # TTF font files (Noto Sans families)
+â”œâ”€â”€ data/
+â”‚   â”œâ”€â”€ Translations.json
+â”‚   â””â”€â”€ Translations_with_sources.json
+â”œâ”€â”€ dev/
+â”‚   â””â”€â”€ test_all_languages.py   # Visual QA: all languages in legacy or fold mode
+â”œâ”€â”€ .env.example                # Environment variable template
+â”œâ”€â”€ .gitignore
+â”œâ”€â”€ requirements.txt            # Python dependencies
+â”œâ”€â”€ test_font_coverage.py       # Font coverage validation script
+â””â”€â”€ README.md                   # Project documentation
 ```
 
 ## Dependencies
@@ -529,11 +599,12 @@ redcard-backend/
 |---------|---------|
 | `fastapi` | Web framework |
 | `uvicorn` | ASGI server |
-| `pydantic` | Data validation |
 | `pydantic-settings` | Configuration management |
 | `reportlab` | PDF generation |
+| `pillow` | Image processing support used by PDF tooling |
 | `arabic-reshaper` | Arabic text shaping |
 | `python-bidi` | Bidirectional text support |
+| `charset-normalizer` | Text encoding normalization utilities |
 
 ## Known Issues / In Progress
 
@@ -547,13 +618,21 @@ For each configured family, both files must exist in `assets/fonts/`:
 
 If names do not match exactly, the renderer may fall back to another font (or fail for scripts with no usable fallback).
 
-### Card Size Scaling Does Not Scale Up
+### Adaptive Text Fill
 
-The adaptive font scaling in `app/pdf/front.py` currently only **shrinks** text to fit within card boundaries — it does not **scale up** to maximize the use of available card space.
+Card text now uses bidirectional adaptive fitting:
 
-- **Current behavior:** If the translated text is short (e.g., a language with brief bullet points), the font stays at the base size even when there is significant empty space on the card. The text appears small relative to the cut-out area.
-- **Desired behavior:** The renderer should also attempt to scale text *up* (beyond the base `font_scale`) when there is room, so that shorter content fills more of the card and is easier to read.
-- **Where:** `_find_optimal_font_scale()` in `app/pdf/front.py` — the loop currently only reduces scale; it needs a complementary upward pass.
+- **Scale down** when content is dense and would overflow.
+- **Scale up** when content is short and there is room, improving readability.
+- **Applied to both sides:** translated front and English back.
+- **Safety caps:** fitting is bounded by min/max scale factors and absolute font-size limits.
+
+Fold header behavior in `mode=fold`:
+
+- Metadata includes `Language`, `Code`, and `Source`.
+- Source resolution prefers per-language `source`, then top-level `metadata.source`, then `unknown`.
+- Source formatting includes origin/type plus verification flag and compact domain when available.
+- Instruction copy is split into explicit lines to avoid truncation in the header text area.
 
 ## License
 

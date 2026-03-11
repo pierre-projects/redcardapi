@@ -43,6 +43,8 @@ main.py
 =============================================================================
 """
 
+import re
+import unicodedata
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -52,7 +54,7 @@ from typing import List
 from .config import TRANSLATIONS_JSON_PATH, settings
 from .translations_store import TranslationsStore
 from .schemas import LanguageItem, CardPayload
-from .pdf_renderer import render_print_sheet_pdf
+from .pdf_renderer import render_print_sheet_pdf, render_fold_sheet_pdf
 from .layout import CardLayout
 from .back_content import get_back_content
 from .logging_config import get_logger
@@ -74,6 +76,14 @@ logger = get_logger("main")
 # The translations store is initialized once at startup and shared across
 # all requests. This avoids re-loading the JSON file on every request.
 store: TranslationsStore = None
+
+
+def _slugify_filename_part(text: str, fallback: str = "unknown") -> str:
+    """Convert free text into a filesystem-safe ASCII slug."""
+    normalized = unicodedata.normalize("NFKD", text or "")
+    ascii_text = normalized.encode("ascii", "ignore").decode("ascii")
+    slug = re.sub(r"[^a-zA-Z0-9]+", "-", ascii_text).strip("-").lower()
+    return slug or fallback
 
 
 # =============================================================================
@@ -291,6 +301,9 @@ def get_config():
         "valid_layouts": settings.get_valid_layouts(),
         "default_cards_per_page": settings.default_cards_per_page,
         "page_size": settings.page_size,
+        "render_modes": ["legacy", "fold"],
+        "fold_layouts": settings.get_valid_fold_layouts(),
+        "default_fold_cards_per_page": settings.default_fold_cards_per_page,
     }
 
 
@@ -416,116 +429,119 @@ def render_pdf(
         default=None,
         ge=4,
         le=12,
-        description="Number of cards per page (4, 6, 8, or 12). Defaults to 4."
+        description="Number of cards per page. Legacy: 4, 6, 8, or 12. Fold: 4, 5, or 6 rows."
+    ),
+    mode: str = Query(
+        default="legacy",
+        description='Render mode: "legacy" (2-page front/back) or "fold" (single-page front|back side-by-side).',
     ),
 ):
     """
     Generate and download a printable PDF for the specified language.
 
-    This is the main PDF generation endpoint. It creates a two-page PDF:
-    - Page 1: Front of cards (in the requested language)
-    - Page 2: Back of cards (in English)
-
-    FLOW:
-    1. Validate inputs:
-       a. Check if store is initialized (return 503 if not)
-       b. Look up language by code (return 404 if not found)
-       c. Validate/default cards_per_page parameter
-
-    2. Create layout:
-       a. Calculate card positions based on cards_per_page
-       b. Account for margins, gutters, and footer space
-
-    3. Render PDF:
-       a. Build payload with front content (translated) + back content (English)
-       b. Call pdf_renderer.render_print_sheet_pdf()
-       c. If FontNotAvailableError, let exception handler return 400
-       d. If other error, wrap in PDFRenderError and return 500
-
-    4. Return PDF:
-       a. Set Content-Type to application/pdf
-       b. Set Content-Disposition for download filename
-       c. Return PDF bytes
+    Supports two render modes:
+    - legacy (default): Two-page PDF. Page 1 = front grid, Page 2 = back grid.
+    - fold: Single-page official fold format. Each row has front (left) and
+      back (right) side-by-side, max 2 columns.
 
     PARAMETERS:
     - code: Language code (e.g., "en", "es", "zh-CN")
-    - cards_per_page: Layout option (4, 6, 8, or 12). Query param.
+    - cards_per_page: Layout option. Legacy: 4, 6, 8, 12. Fold: 4, 5, 6 (rows).
+    - mode: "legacy" or "fold"
 
     RETURNS:
     - Binary PDF file as attachment
-    - Filename: know-your-rights-{code}-{count}up.pdf
 
     ERRORS:
-    - 400: Font not available for requested language
+    - 400: Invalid mode or font not available
     - 404: Language code not found
     - 500: PDF generation failed
-    - 503: Service not ready (store not initialized)
+    - 503: Service not ready
     """
-    # === STEP 1: VALIDATE INPUTS ===
+    # === VALIDATE INPUTS ===
 
-    # Ensure service is ready
     if store is None:
         logger.error("Store not initialized")
         raise HTTPException(status_code=503, detail="Service not ready")
 
-    # Look up language
+    if mode not in ("legacy", "fold"):
+        raise HTTPException(
+            status_code=400,
+            detail=f'Invalid mode "{mode}". Must be "legacy" or "fold".',
+        )
+
     item = store.get_language(code)
     if not item:
         raise LanguageNotFoundError(code)
 
-    # Validate cards_per_page (use default if not provided)
-    if cards_per_page is None:
-        cards_per_page = settings.default_cards_per_page
+    # === CREATE LAYOUT ===
+
+    if mode == "fold":
+        if cards_per_page is None:
+            cards_per_page = settings.default_fold_cards_per_page
+        else:
+            cards_per_page = settings.validate_fold_rows(cards_per_page)
+
+        logger.info(
+            f"Rendering FOLD PDF for {code}: {cards_per_page} rows, "
+            f"page_size={settings.page_size}"
+        )
+        layout = CardLayout.from_fold_rows(
+            rows=cards_per_page,
+            page_size=settings.page_size,
+            margin_inches=settings.margin_inches,
+        )
     else:
-        # This will clamp to valid values (4, 6, 8, 12)
-        cards_per_page = settings.validate_cards_per_page(cards_per_page)
+        if cards_per_page is None:
+            cards_per_page = settings.default_cards_per_page
+        else:
+            cards_per_page = settings.validate_cards_per_page(cards_per_page)
 
-    logger.info(f"Rendering PDF for language: {code} with {cards_per_page} cards per page")
+        logger.info(
+            f"Rendering LEGACY PDF for {code}: {cards_per_page} cards/page, "
+            f"page_size={settings.page_size}"
+        )
+        layout = CardLayout.from_cards_per_page(
+            count=cards_per_page,
+            page_size=settings.page_size,
+            margin_inches=settings.margin_inches,
+            gutter_inches=settings.gutter_inches,
+            footer_height_inches=settings.footer_height_inches,
+        )
 
-    # === STEP 2: CREATE LAYOUT ===
+    # === RENDER PDF ===
 
-    # Calculate card positions on the page
-    # This returns a CardLayout object with:
-    # - positions: List of (x, y, width, height) for each card
-    # - font_scale: Scaling factor for text (smaller for more cards)
-    layout = CardLayout.from_cards_per_page(
-        count=cards_per_page,
-        page_size=settings.page_size,
-        margin_inches=settings.margin_inches,
-        gutter_inches=settings.gutter_inches,
-        footer_height_inches=settings.footer_height_inches,
-    )
-
-    # === STEP 3: RENDER PDF ===
+    payload = {
+        "code": item["code"],
+        "name": item["name"],
+        "rtl": item["rtl"],
+        "official": True,
+        "source": item.get("source"),
+        "front": item.get("front", {}),
+        "back": get_back_content(item["code"]),
+    }
 
     try:
-        # Build complete payload with front (translated) and back (English)
-        pdf_bytes = render_print_sheet_pdf(
-            payload={
-                "code": item["code"],
-                "name": item["name"],
-                "rtl": item["rtl"],
-                "official": True,
-                "front": item.get("front", {}),
-                "back": get_back_content(item["code"]),  # English back content
-            },
-            layout=layout,
-        )
+        if mode == "fold":
+            pdf_bytes = render_fold_sheet_pdf(payload=payload, layout=layout)
+        else:
+            pdf_bytes = render_print_sheet_pdf(payload=payload, layout=layout)
     except FontNotAvailableError:
-        # Re-raise to let exception handler return proper 400 response
         raise
     except Exception as e:
-        # Wrap other errors in PDFRenderError for 500 response
-        logger.error(f"Failed to render PDF for {code}: {e}")
+        logger.error(f"Failed to render PDF for {code} (mode={mode}): {e}")
         raise PDFRenderError(str(e), code)
 
-    # === STEP 4: RETURN PDF ===
+    # === RETURN PDF ===
 
-    # Generate descriptive filename
-    filename = f"know-your-rights-{item['code']}-{cards_per_page}up.pdf"
+    mode_suffix = "-fold" if mode == "fold" else ""
+    lang_code = item["code"]
+    lang_name_slug = _slugify_filename_part(item.get("name", ""), fallback=lang_code.lower())
+    filename = (
+        f"know-your-rights-{lang_code}-{lang_name_slug}-{cards_per_page}up{mode_suffix}.pdf"
+    )
     logger.info(f"Successfully rendered PDF: {filename}")
 
-    # Return PDF as downloadable file
     return Response(
         content=pdf_bytes,
         media_type="application/pdf",

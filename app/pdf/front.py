@@ -12,10 +12,10 @@ from .constants import (
     BASE_TITLE_SIZE,
     BASE_BODY_SIZE,
     BASE_LEADING,
-    MIN_FONT_SCALE_FACTOR,
     MIN_ABSOLUTE_FONT_SIZE,
-    SCALE_STEP,
+    MAX_ABSOLUTE_FONT_SIZE,
 )
+from .fitting import find_best_fit_scale
 from .fonts import get_font
 from .guides import draw_text_line
 from .wrapping import wrap_lines
@@ -68,62 +68,49 @@ def _measure_front_content(
     return total_height
 
 
-def _find_optimal_font_scale(
+def _front_sizes_for_scale(scale: float) -> Tuple[int, int, int, float]:
+    """Compute front typography values for a given scale."""
+    title_size = max(MIN_ABSOLUTE_FONT_SIZE, min(MAX_ABSOLUTE_FONT_SIZE, int(BASE_TITLE_SIZE * scale)))
+    body_size = max(MIN_ABSOLUTE_FONT_SIZE, min(MAX_ABSOLUTE_FONT_SIZE, int(BASE_BODY_SIZE * scale)))
+    leading = max(8, int(BASE_LEADING * scale))
+    bullet_indent = 8 * scale
+    return title_size, body_size, leading, bullet_indent
+
+
+def _fit_front_scale(
     front_content: Dict[str, Any],
-    available_height: float,
-    available_width: float,
+    card_height: float,
+    card_width: float,
     base_scale: float,
     bold_font: str,
     regular_font: str,
     rtl: bool = False,
     lang_code: Optional[str] = None,
-) -> Tuple[float, bool, float]:
-    current_scale = base_scale
-    min_scale = base_scale * MIN_FONT_SCALE_FACTOR
-
-    original_title_size = max(MIN_ABSOLUTE_FONT_SIZE, int(BASE_TITLE_SIZE * base_scale))
-    original_body_size = max(MIN_ABSOLUTE_FONT_SIZE, int(BASE_BODY_SIZE * base_scale))
-    original_leading = max(8, int(BASE_LEADING * base_scale))
-    original_bullet_indent = 8 * base_scale
-
-    original_height = _measure_front_content(
-        front_content=front_content,
-        bold_font=bold_font,
-        regular_font=regular_font,
-        title_size=original_title_size,
-        body_size=original_body_size,
-        leading=original_leading,
-        max_width=available_width,
-        bullet_indent=original_bullet_indent,
-        rtl=rtl,
-        lang_code=lang_code,
-    )
-
-    while current_scale >= min_scale:
-        title_size = max(MIN_ABSOLUTE_FONT_SIZE, int(BASE_TITLE_SIZE * current_scale))
-        body_size = max(MIN_ABSOLUTE_FONT_SIZE, int(BASE_BODY_SIZE * current_scale))
-        leading = max(8, int(BASE_LEADING * current_scale))
-        bullet_indent = 8 * current_scale
-
-        content_height = _measure_front_content(
+) -> Tuple[float, bool, float, float]:
+    def measure_at_scale(scale: float) -> float:
+        title_size, body_size, leading, bullet_indent = _front_sizes_for_scale(scale)
+        pad = 0.12 * inch * scale + 0.06 * inch
+        max_width = max(1.0, card_width - 2 * pad)
+        return _measure_front_content(
             front_content=front_content,
             bold_font=bold_font,
             regular_font=regular_font,
             title_size=title_size,
             body_size=body_size,
             leading=leading,
-            max_width=available_width,
+            max_width=max_width,
             bullet_indent=bullet_indent,
             rtl=rtl,
             lang_code=lang_code,
-        )
+        ) + (2 * pad)
 
-        if content_height <= available_height:
-            return current_scale, True, original_height
-
-        current_scale -= SCALE_STEP
-
-    return min_scale, False, original_height
+    fit = find_best_fit_scale(
+        base_scale=base_scale,
+        available_height=card_height,
+        base_font_sizes=(BASE_TITLE_SIZE, BASE_BODY_SIZE),
+        measure_height=measure_at_scale,
+    )
+    return fit.scale, fit.fits, fit.base_height, fit.fitted_height
 
 
 def draw_front(
@@ -141,14 +128,10 @@ def draw_front(
     bold_font = get_font(lang_code, bold=True)
     regular_font = get_font(lang_code, bold=False)
 
-    base_pad = 0.12 * inch * layout.font_scale + 0.06 * inch
-    available_height = height - 2 * base_pad
-    available_width = width - 2 * base_pad
-
-    optimal_scale, fits, original_height = _find_optimal_font_scale(
+    optimal_scale, fits, base_height, fitted_height = _fit_front_scale(
         front_content=front_content,
-        available_height=available_height,
-        available_width=available_width,
+        card_height=height,
+        card_width=width,
         base_scale=layout.font_scale,
         bold_font=bold_font,
         regular_font=regular_font,
@@ -156,23 +139,45 @@ def draw_front(
         lang_code=lang_code,
     )
 
-    if optimal_scale < layout.font_scale:
-        scale_percent = int((optimal_scale / layout.font_scale) * 100)
+    pad = 0.12 * inch * optimal_scale + 0.06 * inch
+    available_height = height - 2 * pad
+    available_width = width - 2 * pad
+    title_size, body_size, leading, bullet_indent = _front_sizes_for_scale(optimal_scale)
+    content_height = _measure_front_content(
+        front_content=front_content,
+        bold_font=bold_font,
+        regular_font=regular_font,
+        title_size=title_size,
+        body_size=body_size,
+        leading=leading,
+        max_width=available_width,
+        bullet_indent=bullet_indent,
+        rtl=rtl,
+        lang_code=lang_code,
+    )
+    fill_ratio = content_height / available_height if available_height > 0 else 0.0
+
+    if abs(optimal_scale - layout.font_scale) / max(layout.font_scale, 1e-6) > 0.02:
+        direction = "increased" if optimal_scale > layout.font_scale else "reduced"
+        scale_percent = int((optimal_scale / max(layout.font_scale, 1e-6)) * 100)
         logger.info(
-            f"Adaptive scaling for {lang_code}: reduced to {scale_percent}% "
-            f"(original height: {original_height:.1f}pt, available: {available_height:.1f}pt)"
+            f"Adaptive fit for {lang_code}: {direction} to {scale_percent}% "
+            f"(base: {base_height:.1f}pt, fitted: {fitted_height:.1f}pt, "
+            f"available: {height:.1f}pt card, text_fill={fill_ratio:.2f})"
+        )
+    else:
+        logger.debug(
+            f"Adaptive fit for {lang_code}: unchanged "
+            f"(base: {base_height:.1f}pt, fitted: {fitted_height:.1f}pt, "
+            f"available: {height:.1f}pt card, text_fill={fill_ratio:.2f})"
         )
 
     if not fits:
         logger.warning(
             f"Content overflow for {lang_code}: text will be clipped "
-            f"(content needs {original_height:.1f}pt, available: {available_height:.1f}pt)"
+            f"(fitted needs {fitted_height:.1f}pt at min scale, available: {height:.1f}pt card)"
         )
 
-    pad = 0.12 * inch * optimal_scale + 0.06 * inch
-    title_size = max(MIN_ABSOLUTE_FONT_SIZE, int(BASE_TITLE_SIZE * optimal_scale))
-    body_size = max(MIN_ABSOLUTE_FONT_SIZE, int(BASE_BODY_SIZE * optimal_scale))
-    leading = max(8, int(BASE_LEADING * optimal_scale))
     cursor_y = bottom + height - pad
 
     title = front_content.get("header") or front_content.get("title") or ""
@@ -189,7 +194,6 @@ def draw_front(
     cursor_y -= 4 * optimal_scale
 
     pdf_canvas.setFont(regular_font, body_size)
-    bullet_indent = 8 * optimal_scale
     bullet_char = u"\u2022"
 
     for bullet_item in bullets:

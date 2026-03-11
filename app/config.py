@@ -151,6 +151,7 @@ class Settings(BaseSettings):
     # Users can override cards_per_page via query parameter.
 
     default_cards_per_page: int = 4   # Valid values: 4, 6, 8, or 12
+    default_fold_cards_per_page: int = 4  # Valid values for fold mode: 4, 5, or 6
     page_size: str = "letter"         # "letter" (8.5x11") or "a4" (210x297mm)
 
     # -------------------------------------------------------------------------
@@ -191,6 +192,18 @@ class Settings(BaseSettings):
         """
         return [4, 6, 8, 12]
 
+    def get_valid_fold_layouts(self) -> List[int]:
+        """
+        Return list of valid rows-per-page options for fold mode.
+
+        In fold mode each row contains a front|back pair (2 columns),
+        so rows = number of distinct cards on the sheet.
+
+        RETURNS:
+            List of valid fold row options: [4, 5, 6]
+        """
+        return [4, 5, 6]
+
     def validate_cards_per_page(self, count: int) -> int:
         """
         Validate and normalize cards-per-page value.
@@ -213,6 +226,21 @@ class Settings(BaseSettings):
         if count in valid:
             return count
         return self.default_cards_per_page
+
+    def validate_fold_rows(self, count: int) -> int:
+        """
+        Validate and normalize fold-mode rows value.
+
+        PARAMETERS:
+            count: User-provided rows per page value
+
+        RETURNS:
+            Validated count (4, 5, or 6)
+        """
+        valid = self.get_valid_fold_layouts()
+        if count in valid:
+            return count
+        return self.default_fold_cards_per_page
 
 
 # =============================================================================

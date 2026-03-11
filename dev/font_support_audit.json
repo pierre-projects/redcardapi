@@ -1,0 +1,1046 @@
+{
+  "source_file": "C:\\Users\\xxmis\\OneDrive\\Desktop\\Projects\\personal\\redcardapi\\redcard-backend\\dev\\noto_font_language_support.json",
+  "scope": "active_translations",
+  "translations_file": "C:\\Users\\xxmis\\OneDrive\\Desktop\\Projects\\personal\\redcardapi\\redcard-backend\\data\\Translations_with_sources.json",
+  "summary": {
+    "families_in_config": 18,
+    "languages_evaluated": 56,
+    "unmapped_translation_languages": 0,
+    "family_issues": 2,
+    "script_issues": 0,
+    "pass_primary": 54,
+    "pass_fallback": 2,
+    "fail_no_support": 0,
+    "exact_language_tag_matches": 53
+  },
+  "family_issues": [
+    "Missing Google metadata entry for family: NotoSansDevanagari",
+    "Missing local font files for family: NotoSansDevanagari"
+  ],
+  "script_issues": [],
+  "unmapped_translation_languages": [],
+  "language_results": [
+    {
+      "code": "am",
+      "script": "ETHIOPIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansEthiopic",
+      "exact_language_tag": true,
+      "expected_script": "Ethi",
+      "candidate_checks": [
+        {
+          "font": "NotoSansEthiopic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ar",
+      "script": "ARABIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansArabic",
+      "exact_language_tag": true,
+      "expected_script": "Arab",
+      "candidate_checks": [
+        {
+          "font": "NotoSansArabic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "bn",
+      "script": "BENGALI",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansBengali",
+      "exact_language_tag": true,
+      "expected_script": "Beng",
+      "candidate_checks": [
+        {
+          "font": "NotoSansBengali",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "bs",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ceb",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "el",
+      "script": "GREEK",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Grek",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "en",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "es",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "fa",
+      "script": "ARABIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansArabic",
+      "exact_language_tag": true,
+      "expected_script": "Arab",
+      "candidate_checks": [
+        {
+          "font": "NotoSansArabic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "fr",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ha",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "he",
+      "script": "HEBREW",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansHebrew",
+      "exact_language_tag": true,
+      "expected_script": "Hebr",
+      "candidate_checks": [
+        {
+          "font": "NotoSansHebrew",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "hi",
+      "script": "DEVANAGARI",
+      "status": "PASS_FALLBACK",
+      "reason": "fallback_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Deva",
+      "candidate_checks": [
+        {
+          "font": "NotoSansDevanagari",
+          "has_metadata": false,
+          "files_present": false,
+          "script_supported": false,
+          "exact_language_tag": false
+        },
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "hmn",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ht",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "hy",
+      "script": "ARMENIAN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansArmenian",
+      "exact_language_tag": true,
+      "expected_script": "Armn",
+      "candidate_checks": [
+        {
+          "font": "NotoSansArmenian",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ig",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ilo",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ja",
+      "script": "JAPANESE",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansJP",
+      "exact_language_tag": true,
+      "expected_script": "Jpan",
+      "candidate_checks": [
+        {
+          "font": "NotoSansJP",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ka",
+      "script": "GEORGIAN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansGeorgian",
+      "exact_language_tag": true,
+      "expected_script": "Geor",
+      "candidate_checks": [
+        {
+          "font": "NotoSansGeorgian",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "kar",
+      "script": "MYANMAR",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansMyanmar",
+      "exact_language_tag": false,
+      "expected_script": "Mymr",
+      "candidate_checks": [
+        {
+          "font": "NotoSansMyanmar",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": false
+        }
+      ]
+    },
+    {
+      "code": "kea",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "km",
+      "script": "KHMER",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansKhmer",
+      "exact_language_tag": true,
+      "expected_script": "Khmr",
+      "candidate_checks": [
+        {
+          "font": "NotoSansKhmer",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ko",
+      "script": "KOREAN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansKR",
+      "exact_language_tag": true,
+      "expected_script": "Kore",
+      "candidate_checks": [
+        {
+          "font": "NotoSansKR",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ln",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "lo",
+      "script": "LAO",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansLao",
+      "exact_language_tag": true,
+      "expected_script": "Laoo",
+      "candidate_checks": [
+        {
+          "font": "NotoSansLao",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "mh",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "mn",
+      "script": "MONGOLIAN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Cyrl",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "my",
+      "script": "MYANMAR",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansMyanmar",
+      "exact_language_tag": true,
+      "expected_script": "Mymr",
+      "candidate_checks": [
+        {
+          "font": "NotoSansMyanmar",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "nah",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": false,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": false
+        }
+      ]
+    },
+    {
+      "code": "ne",
+      "script": "DEVANAGARI",
+      "status": "PASS_FALLBACK",
+      "reason": "fallback_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Deva",
+      "candidate_checks": [
+        {
+          "font": "NotoSansDevanagari",
+          "has_metadata": false,
+          "files_present": false,
+          "script_supported": false,
+          "exact_language_tag": false
+        },
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "om",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "pa",
+      "script": "GURMUKHI",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansGurmukhi",
+      "exact_language_tag": true,
+      "expected_script": "Guru",
+      "candidate_checks": [
+        {
+          "font": "NotoSansGurmukhi",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "pl",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "prs",
+      "script": "ARABIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansArabic",
+      "exact_language_tag": true,
+      "expected_script": "Arab",
+      "candidate_checks": [
+        {
+          "font": "NotoSansArabic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ps",
+      "script": "ARABIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansArabic",
+      "exact_language_tag": true,
+      "expected_script": "Arab",
+      "candidate_checks": [
+        {
+          "font": "NotoSansArabic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "pt",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ro",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ru",
+      "script": "CYRILLIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Cyrl",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "rw",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "sm",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "so",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "sw",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ta",
+      "script": "TAMIL",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansTamil",
+      "exact_language_tag": true,
+      "expected_script": "Taml",
+      "candidate_checks": [
+        {
+          "font": "NotoSansTamil",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "th",
+      "script": "THAI",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansThai",
+      "exact_language_tag": true,
+      "expected_script": "Thai",
+      "candidate_checks": [
+        {
+          "font": "NotoSansThai",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ti",
+      "script": "ETHIOPIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansEthiopic",
+      "exact_language_tag": true,
+      "expected_script": "Ethi",
+      "candidate_checks": [
+        {
+          "font": "NotoSansEthiopic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "tl",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": false,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": false
+        }
+      ]
+    },
+    {
+      "code": "tr",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "tzo",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "uk",
+      "script": "CYRILLIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Cyrl",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "ur",
+      "script": "ARABIC",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansArabic",
+      "exact_language_tag": true,
+      "expected_script": "Arab",
+      "candidate_checks": [
+        {
+          "font": "NotoSansArabic",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "vi",
+      "script": "VIETNAMESE",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "yo",
+      "script": "LATIN",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSans",
+      "exact_language_tag": true,
+      "expected_script": "Latn",
+      "candidate_checks": [
+        {
+          "font": "NotoSans",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "yue",
+      "script": "CJK_TRADITIONAL",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansTC",
+      "exact_language_tag": true,
+      "expected_script": "Hant",
+      "candidate_checks": [
+        {
+          "font": "NotoSansTC",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "zh-CN",
+      "script": "CJK_SIMPLIFIED",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansSC",
+      "exact_language_tag": true,
+      "expected_script": "Hans",
+      "candidate_checks": [
+        {
+          "font": "NotoSansSC",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    },
+    {
+      "code": "zh-TW",
+      "script": "CJK_TRADITIONAL",
+      "status": "PASS_PRIMARY",
+      "reason": "primary_font_supports_script",
+      "selected_font": "NotoSansTC",
+      "exact_language_tag": true,
+      "expected_script": "Hant",
+      "candidate_checks": [
+        {
+          "font": "NotoSansTC",
+          "has_metadata": true,
+          "files_present": true,
+          "script_supported": true,
+          "exact_language_tag": true
+        }
+      ]
+    }
+  ]
+}
