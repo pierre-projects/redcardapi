@@ -2,6 +2,8 @@
 
 A FastAPI backend for generating multi-language "Know Your Rights" PDF cards with support for 56 languages and 22 Unicode scripts.
 
+Frontend repository: [redcardapi-frontend](https://github.com/pierre-projects/redcardapi-frontend)
+
 ## Table of Contents
 
 - [Overview](#overview)
