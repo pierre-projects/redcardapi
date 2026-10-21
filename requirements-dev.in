@@ -1,0 +1,8 @@
+# Test and lint tools. Regenerate with:
+#   pip-compile requirements-dev.in -o requirements-dev.txt
+-c requirements.txt
+pytest>=8
+httpx>=0.27
+pypdf>=5
+ruff>=0.6
+pip-audit>=2.7

@@ -1,4 +1,6 @@
-"""Text processing utilities for PDF rendering."""
-from .text_wrapper import wrap_text, is_cjk_text
+"""Text preparation for PDF rendering: shaping, bidi and line wrapping."""
 
-__all__ = ["wrap_text", "is_cjk_text"]
+from .shaping import shape, text_width
+from .wrap import wrap_text
+
+__all__ = ["shape", "text_width", "wrap_text"]

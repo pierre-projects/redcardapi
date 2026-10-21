@@ -1,131 +1,90 @@
-"""Shared text fitting helpers for PDF card renderers."""
+"""Find the largest text scale whose content fits a card."""
 
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
-from typing import Callable, Iterable, Tuple
+
+from reportlab.lib.units import inch
 
 from .constants import (
-    MIN_FONT_SCALE_FACTOR,
+    BASE_BODY_SIZE,
+    BASE_LEADING,
+    BASE_TITLE_SIZE,
+    FIT_BINARY_SEARCH_STEPS,
+    MAX_ABSOLUTE_FONT_SIZE,
     MAX_FONT_SCALE_FACTOR,
     MIN_ABSOLUTE_FONT_SIZE,
-    MAX_ABSOLUTE_FONT_SIZE,
-    FIT_BINARY_SEARCH_STEPS,
+    MIN_FONT_SCALE_FACTOR,
 )
 
 
-@dataclass
-class FitResult:
-    """Result of a font-scale fitting pass."""
+@dataclass(frozen=True)
+class Typography:
+    """Font sizes and spacing for one scale factor."""
+    scale: float
+    title_size: int
+    body_size: int
+    leading: int
+    bullet_indent: float
+    pad: float
 
+
+def _clamp_size(size: float) -> int:
+    return max(MIN_ABSOLUTE_FONT_SIZE, min(MAX_ABSOLUTE_FONT_SIZE, int(size)))
+
+
+def typography(scale: float, line_height: float = 1.0) -> Typography:
+    """Sizes for a scale; line_height > 1 for scripts with tall stacked glyphs."""
+    return Typography(
+        scale=scale,
+        title_size=_clamp_size(BASE_TITLE_SIZE * scale),
+        body_size=_clamp_size(BASE_BODY_SIZE * scale),
+        leading=max(8, int(BASE_LEADING * scale * line_height)),
+        bullet_indent=8 * scale,
+        pad=0.12 * inch * scale + 0.06 * inch,
+    )
+
+
+@dataclass(frozen=True)
+class FitResult:
     scale: float
     fits: bool
-    base_height: float
-    fitted_height: float
-    min_scale: float
-    max_scale: float
 
 
-def _compute_scale_bounds(
-    base_scale: float,
-    base_font_sizes: Iterable[int],
-) -> Tuple[float, float]:
-    """Clamp scale range using relative scale factors and absolute font-size caps."""
-    min_scale = base_scale * MIN_FONT_SCALE_FACTOR
-    max_scale = base_scale * MAX_FONT_SCALE_FACTOR
-
-    for base_size in base_font_sizes:
-        if base_size <= 0:
-            continue
-        min_scale = max(min_scale, MIN_ABSOLUTE_FONT_SIZE / base_size)
-        max_scale = min(max_scale, MAX_ABSOLUTE_FONT_SIZE / base_size)
-
-    if max_scale < min_scale:
-        max_scale = min_scale
-
-    return min_scale, max_scale
+def _scale_bounds(base_scale: float, base_font_sizes: Iterable[int]) -> tuple[float, float]:
+    """Relative limits around the layout's scale, tightened by absolute font-size caps."""
+    low = base_scale * MIN_FONT_SCALE_FACTOR
+    high = base_scale * MAX_FONT_SCALE_FACTOR
+    for size in base_font_sizes:
+        low = max(low, MIN_ABSOLUTE_FONT_SIZE / size)
+        high = min(high, MAX_ABSOLUTE_FONT_SIZE / size)
+    return low, max(low, high)
 
 
-def find_best_fit_scale(
-    *,
-    base_scale: float,
-    available_height: float,
-    base_font_sizes: Iterable[int],
-    measure_height: Callable[[float], float],
-) -> FitResult:
+def find_best_fit_scale(*, base_scale: float, available_height: float,
+                        base_font_sizes: Iterable[int],
+                        measure_height: Callable[[float], float]) -> FitResult:
+    """Binary-search the largest scale whose measured height fits.
+
+    Searches upward from the layout's scale when it fits, downward otherwise.
+    If even the smallest scale overflows, returns it with fits=False and the
+    text is clipped at the card edge.
     """
-    Select the largest scale that fits available height.
+    low_bound, high_bound = _scale_bounds(base_scale, base_font_sizes)
+    base_scale = max(low_bound, min(high_bound, base_scale))
 
-    Strategy:
-    - Clamp search range by relative limits + absolute font-size caps.
-    - If base scale fits, search upward.
-    - If base scale does not fit, search downward.
-    """
-    min_scale, max_scale = _compute_scale_bounds(base_scale, base_font_sizes)
-    base_scale = max(min_scale, min(max_scale, base_scale))
-
-    base_height = measure_height(base_scale)
-
-    # Base scale fits: grow to the largest fitting value.
-    if base_height <= available_height:
-        low = base_scale
-        high = max_scale
-        best_scale = base_scale
-        best_height = base_height
-
-        for _ in range(FIT_BINARY_SEARCH_STEPS):
-            if high - low <= 1e-4:
-                break
-            mid = (low + high) / 2.0
-            mid_height = measure_height(mid)
-            if mid_height <= available_height:
-                low = mid
-                best_scale = mid
-                best_height = mid_height
-            else:
-                high = mid
-
-        return FitResult(
-            scale=best_scale,
-            fits=True,
-            base_height=base_height,
-            fitted_height=best_height,
-            min_scale=min_scale,
-            max_scale=max_scale,
-        )
-
-    # Base does not fit: shrink to the largest fitting value.
-    min_height = measure_height(min_scale)
-    if min_height > available_height:
-        return FitResult(
-            scale=min_scale,
-            fits=False,
-            base_height=base_height,
-            fitted_height=min_height,
-            min_scale=min_scale,
-            max_scale=max_scale,
-        )
-
-    low = min_scale
-    high = base_scale
-    best_scale = min_scale
-    best_height = min_height
+    if measure_height(base_scale) <= available_height:
+        low, high = base_scale, high_bound
+    elif measure_height(low_bound) <= available_height:
+        low, high = low_bound, base_scale
+    else:
+        return FitResult(scale=low_bound, fits=False)
 
     for _ in range(FIT_BINARY_SEARCH_STEPS):
         if high - low <= 1e-4:
             break
-        mid = (low + high) / 2.0
-        mid_height = measure_height(mid)
-        if mid_height <= available_height:
+        mid = (low + high) / 2
+        if measure_height(mid) <= available_height:
             low = mid
-            best_scale = mid
-            best_height = mid_height
         else:
             high = mid
-
-    return FitResult(
-        scale=best_scale,
-        fits=True,
-        base_height=base_height,
-        fitted_height=best_height,
-        min_scale=min_scale,
-        max_scale=max_scale,
-    )
+    return FitResult(scale=low, fits=True)

@@ -1,6 +1,5 @@
-"""Modular PDF rendering package."""
+"""PDF print sheet rendering."""
 
-from .renderer import render_print_sheet_pdf
+from .renderer import render_pdf
 
-__all__ = ["render_print_sheet_pdf"]
-
+__all__ = ["render_pdf"]
