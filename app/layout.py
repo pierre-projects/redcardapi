@@ -13,8 +13,7 @@ FOLD_ROWS: tuple[int, ...] = (4, 5, 6)
 
 MODE_GRID = "grid"
 MODE_FOLD = "fold"
-# "legacy" was the original name of grid mode; still accepted from clients.
-MODE_ALIASES = {"legacy": MODE_GRID, MODE_GRID: MODE_GRID, MODE_FOLD: MODE_FOLD}
+MODES = (MODE_GRID, MODE_FOLD)
 
 FOLD_HEADER_INCHES = 0.8
 

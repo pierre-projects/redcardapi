@@ -11,7 +11,7 @@ from fastapi.responses import JSONResponse
 from ..data import Language
 from ..exceptions import LanguageNotFoundError, PDFRenderError, RedCardError, RenderTimeoutError
 from ..fonts import detect_script
-from ..layout import FOLD_ROWS, GRID_LAYOUTS, MODE_ALIASES, MODE_FOLD, MODE_GRID, CardLayout
+from ..layout import FOLD_ROWS, GRID_LAYOUTS, MODE_FOLD, MODE_GRID, MODES, CardLayout
 from ..pdf import render_pdf
 from .schemas import CardPayload, ConfigResponse, HealthResponse, LanguageItem, ReadyResponse
 from .state import AppState, get_state
@@ -60,7 +60,7 @@ async def config(state: AppState = Depends(get_state)):
         valid_layouts=sorted(GRID_LAYOUTS),
         default_cards_per_page=s.default_cards_per_page,
         page_size=s.page_size,
-        render_modes=[MODE_GRID, MODE_FOLD],
+        render_modes=list(MODES),
         fold_layouts=list(FOLD_ROWS),
         default_fold_cards_per_page=s.default_fold_cards_per_page,
     )
@@ -92,16 +92,15 @@ async def render(
         default=None,
         description="Grid mode: cards per page (4, 6, 8, 12). Fold mode: rows (4, 5, 6).",
     ),
-    mode: str = Query(default=MODE_GRID, description='"grid" (alias "legacy") or "fold".'),
+    mode: str = Query(default=MODE_GRID, description='"grid" or "fold".'),
     state: AppState = Depends(get_state),
 ):
     """Printable PDF for one language."""
-    resolved_mode = MODE_ALIASES.get(mode)
-    if resolved_mode is None:
+    if mode not in MODES:
         return _invalid(f'Invalid mode "{mode}". Use "grid" or "fold".')
 
     s = state.settings
-    if resolved_mode == MODE_FOLD:
+    if mode == MODE_FOLD:
         count = cards_per_page or s.default_fold_cards_per_page
         if count not in FOLD_ROWS:
             return _invalid(f"Fold mode supports {list(FOLD_ROWS)} rows, not {count}.")
@@ -116,14 +115,14 @@ async def render(
     fonts = state.require_fonts()
     filename = (
         f"know-your-rights-{language.display_code}-{_slug(language.name) or language.code}"
-        f"-{count}up{'-fold' if resolved_mode == MODE_FOLD else ''}.pdf"
+        f"-{count}up{'-fold' if mode == MODE_FOLD else ''}.pdf"
     )
     headers = {
         "Content-Disposition": f'attachment; filename="{filename}"',
         "Cache-Control": f"public, max-age={s.pdf_cache_seconds}",
     }
 
-    cache_key = (language.code, resolved_mode, count, s.page_size)
+    cache_key = (language.code, mode, count, s.page_size)
     cached = state.pdf_cache.get(cache_key)
     if cached is not None:
         return Response(content=cached[0], media_type="application/pdf", headers=headers)
@@ -140,12 +139,12 @@ async def render(
     try:
         pdf_bytes = await asyncio.wait_for(job, timeout=s.render_timeout_seconds)
     except TimeoutError as exc:
-        logger.error("Render timed out for %s (%s, %d)", language.code, resolved_mode, count)
+        logger.error("Render timed out for %s (%s, %d)", language.code, mode, count)
         raise RenderTimeoutError() from exc
     except RedCardError:
         raise
     except Exception as exc:
-        logger.exception("Render failed for %s (%s, %d)", language.code, resolved_mode, count)
+        logger.exception("Render failed for %s (%s, %d)", language.code, mode, count)
         raise PDFRenderError() from exc
 
     state.pdf_cache.put(cache_key, (pdf_bytes, filename))

@@ -45,7 +45,7 @@ def test_unknown_language_is_404_with_code(client):
 
 @pytest.mark.parametrize("mode,count,suffix", [
     ("grid", 4, "4up.pdf"),
-    ("legacy", 12, "12up.pdf"),  # legacy is accepted as an alias of grid
+    ("grid", 12, "12up.pdf"),
     ("fold", 5, "5up-fold.pdf"),
 ])
 def test_render_pdf(client, mode, count, suffix):
@@ -64,6 +64,7 @@ def test_render_filename_keeps_display_code(client):
 
 @pytest.mark.parametrize("params", [
     {"mode": "poster"},
+    {"mode": "legacy"},
     {"cards_per_page": 5},
     {"mode": "fold", "cards_per_page": 8},
 ])

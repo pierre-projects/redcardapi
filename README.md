@@ -35,7 +35,7 @@ docker run -p 8000:8000 -e CARD_ENVIRONMENT=production \
 Codes are case-insensitive (`zh-CN` = `zh-cn`).
 
 **Render modes:**
-- `grid` puts 4, 6, 8 or 12 cards per page: fronts on page 1, backs on page 2, for duplex printing. `legacy` is still accepted as an alias.
+- `grid` puts 4, 6, 8 or 12 cards per page: fronts on page 1, backs on page 2, for duplex printing.
 - `fold` puts 4, 5 or 6 rows on one page, each row front | back, to fold down the middle.
 
 An invalid `mode` or `cards_per_page` returns 422.
