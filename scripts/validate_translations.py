@@ -6,7 +6,8 @@ Checks:
   3. Heuristics for text corrupted by PDF extraction (reported as warnings).
 
 Usage: python -m scripts.validate_translations [path/to/translations.json]
-Exit code 1 if 1 or 2 fail.
+Languages listed in scripts/known_issues.py are reported but do not fail;
+exit code 1 on a schema error or on problems in any other language.
 """
 
 import re
@@ -19,6 +20,7 @@ from reportlab.pdfbase import pdfmetrics
 from app.config import settings
 from app.data import DatasetError, Language, TranslationStore
 from app.fonts import init_font_manager
+from scripts.known_issues import KNOWN_CORRUPT
 
 _IGNORED = {" ", "​", "‌", "‍", " "}
 # Junk from legacy (non-Unicode) fonts: "*", "=" or digits glued to letters of a
@@ -42,9 +44,10 @@ def corruption_issues(language: Language) -> list[str]:
     return issues
 
 
-def missing_glyphs(store: TranslationStore) -> list[str]:
+def missing_glyphs(store: TranslationStore) -> dict[str, str]:
+    """Language code -> description of characters its font cannot draw."""
     fonts = init_font_manager(settings.fonts_dir)
-    problems = []
+    problems: dict[str, str] = {}
     for language in store.languages():
         for bold in (False, True):
             font_name = fonts.pick(language.code, bold=bold)
@@ -53,11 +56,12 @@ def missing_glyphs(store: TranslationStore) -> list[str]:
             absent = sorted({ch for t in texts for ch in t
                              if not ch.isspace() and ch not in _IGNORED and ord(ch) not in cmap})
             if absent:
-                problems.append(f"{language.code}: {font_name} lacks {''.join(absent)!r}")
+                problems[language.code] = f"{font_name} lacks {''.join(absent)!r}"
     return problems
 
 
 def main(path: Path) -> int:
+    """Fail on schema errors and on problems in languages not already known to be corrupt."""
     try:
         store = TranslationStore.load(path)
     except DatasetError as exc:
@@ -65,18 +69,24 @@ def main(path: Path) -> int:
         return 1
     print(f"Schema OK: {len(store.languages())} languages")
 
-    errors = missing_glyphs(store)
-    for error in errors:
-        print(f"MISSING GLYPHS {error}")
-    if not errors:
-        print("Glyph coverage OK")
-
+    failed = False
+    glyphs = missing_glyphs(store)
     for language in store.languages():
+        code = language.code
+        known = code in KNOWN_CORRUPT
         issues = corruption_issues(language)
+        level = "KNOWN" if known else "ERROR"
+        if code in glyphs:
+            print(f"{level} {code} ({language.name}): missing glyphs, {glyphs[code]}")
         if issues:
-            print(f"WARNING {language.code} ({language.name}): {len(issues)} suspicious words, "
-                  f"e.g. {issues[0]}")
-    return 1 if errors else 0
+            print(f"{level} {code} ({language.name}): {len(issues)} suspicious words, e.g. {issues[0]}")
+        if not known and (code in glyphs or issues):
+            failed = True
+        if known and code not in glyphs and not issues:
+            print(f"NOTE {code}: no longer looks corrupted; remove it from scripts/known_issues.py")
+
+    print("Translations FAILED validation" if failed else "Translations OK (known issues listed above)")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":

@@ -108,7 +108,7 @@ Dependencies are pinned in `requirements.txt`, compiled from `requirements.in` w
 
 ## Known issues
 
-- **Some translations are corrupted.** Their source text was extracted from PDFs and is scrambled: Arabic, Khmer and Tamil (details in `tests/known_issues.py`). They render exactly what the data contains, so they need re-transcription from the ILRC originals and native-speaker review.
+- **Some translations are corrupted.** Their source text was extracted from PDFs and is scrambled: Arabic, Khmer and Tamil (details in `scripts/known_issues.py`). They render exactly what the data contains, so they need re-transcription from the ILRC originals and native-speaker review.
 - **The font files are large.** `assets/fonts` is about 60 MB, 58 MB of it CJK fonts used by five languages. Subsetting those fonts to the characters the cards use would cut this to a few MB. If the repo grows, Git LFS is the other option. Either way, check that the deploy platform fetches the real font files.
 
 ## License

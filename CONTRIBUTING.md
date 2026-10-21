@@ -28,7 +28,7 @@ CI runs the same checks, plus `pip-audit` and a Docker build.
 All card text lives in `data/Translations_with_sources.json`. The API validates the file at startup, and refuses to start if it is malformed.
 
 1. **Edit the language entry.** It needs `name` (English), `native` (the name in the language itself), `code`, `rtl`, `front.header`, `front.bullets[{id, text}]` and `source`.
-2. **Copy the text, don't extract it.** Copy from an editable source, or retype it. Do not extract it from a PDF: extraction scrambles Arabic, Indic and Khmer text (see `tests/known_issues.py`).
+2. **Copy the text, don't extract it.** Copy from an editable source, or retype it. Do not extract it from a PDF: extraction scrambles Arabic, Indic and Khmer text (see `scripts/known_issues.py`).
 3. **Run `python -m scripts.validate_translations`.** It checks:
    - the schema;
    - that every character has a glyph in the language's font;
@@ -37,7 +37,7 @@ All card text lives in `data/Translations_with_sources.json`. The API validates 
 5. **Look at the result.** Run `python -m scripts.render_review --mode fold <code>` and check `review.pdf`. Ideally a native speaker reviews it.
 6. **Sync the frontend.** The frontend bundles the same file. Run `npm run sync:data` in `redcardapi-frontend`.
 
-After fixing a language listed in `tests/known_issues.py`, remove it from that list. The tests fail until you do.
+After fixing a language listed in `scripts/known_issues.py`, remove it from that list. The validator and tests point it out until you do.
 
 ## Changing rendering code
 
