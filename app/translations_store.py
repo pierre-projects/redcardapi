@@ -528,6 +528,9 @@ class TranslationsStore:
             # Extract fields using flexible key matching
             code = _first_str(item, CODE_KEYS)
             name = _first_str(item, NAME_KEYS) or code  # Fall back to code if no name
+            # Language name in its own script (e.g. "Español", "العربية") so
+            # users can find their language without reading English.
+            native = _first_str(item, ("native", "native_name", "nativeName", "endonym")) or name
             rtl = _first_bool(item, RTL_KEYS, default=False)
             front = _first_obj(item, FRONT_KEYS)
             source = _first_obj(item, SOURCE_KEYS)
@@ -556,6 +559,7 @@ class TranslationsStore:
             normalized.append({
                 "code": code,
                 "name": name,
+                "native": native,
                 "rtl": rtl,
                 "official": True,  # Assume all loaded translations are official
                 "front": front_obj,

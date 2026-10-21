@@ -44,7 +44,10 @@ main.py
 """
 
 import re
+import threading
+import time
 import unicodedata
+from collections import OrderedDict, defaultdict, deque
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException, Request, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -237,13 +240,96 @@ async def redcard_error_handler(request: Request, exc: RedCardError):
 # =============================================================================
 # Enable Cross-Origin Resource Sharing so the frontend (running on a different
 # port during development) can make requests to this API.
+LOCALHOST_ORIGIN = re.compile(r"^https?://(localhost|127\.0\.0\.1)(:\d+)?$")
+
+if settings.environment.lower() == "production" and all(
+    LOCALHOST_ORIGIN.match(origin) for origin in settings.cors_origins
+):
+    raise RuntimeError(
+        "CARD_ENVIRONMENT=production but CARD_CORS_ORIGINS only allows localhost. "
+        "Set CARD_CORS_ORIGINS to the frontend's origin(s)."
+    )
+
+# The API is read-only and uses no cookies, so credentials are not allowed.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.cors_origins,  # List of allowed origins from config
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all HTTP methods
-    allow_headers=["*"],  # Allow all headers
+    allow_credentials=False,
+    allow_methods=["GET"],
+    allow_headers=["*"],
 )
+
+
+# Card, language and config JSON only change on redeploy; let browsers and
+# CDNs cache them briefly instead of hitting this server on every view.
+CACHEABLE_JSON_PREFIXES = ("/api/languages", "/api/card/", "/api/config")
+
+
+@app.middleware("http")
+async def add_cache_headers(request: Request, call_next):
+    response = await call_next(request)
+    if (
+        request.method == "GET"
+        and response.status_code == 200
+        and request.url.path.startswith(CACHEABLE_JSON_PREFIXES)
+    ):
+        response.headers.setdefault(
+            "Cache-Control",
+            f"public, max-age={settings.json_cache_seconds}",
+        )
+    return response
+
+
+# =============================================================================
+# PDF CACHE AND RATE LIMIT
+# =============================================================================
+# Rendering a PDF takes real CPU. Identical requests reuse cached bytes, and
+# each client gets a per-minute budget so the endpoint can't be used to
+# exhaust the server. In-memory and per-process, which suits a single
+# instance; put a CDN or shared limiter in front for larger deployments.
+
+_pdf_cache: "OrderedDict[tuple, tuple[bytes, str]]" = OrderedDict()
+_pdf_cache_lock = threading.Lock()
+_render_hits: "defaultdict[str, deque]" = defaultdict(deque)
+_render_hits_lock = threading.Lock()
+
+
+def _pdf_cache_get(key: tuple):
+    with _pdf_cache_lock:
+        hit = _pdf_cache.get(key)
+        if hit is not None:
+            _pdf_cache.move_to_end(key)
+        return hit
+
+
+def _pdf_cache_put(key: tuple, value: tuple) -> None:
+    if settings.pdf_cache_size <= 0:
+        return
+    with _pdf_cache_lock:
+        _pdf_cache[key] = value
+        _pdf_cache.move_to_end(key)
+        while len(_pdf_cache) > settings.pdf_cache_size:
+            _pdf_cache.popitem(last=False)
+
+
+def _check_render_rate_limit(request: Request) -> None:
+    limit = settings.render_rate_limit_per_minute
+    if limit <= 0:
+        return
+    client = request.client.host if request.client else "unknown"
+    now = time.monotonic()
+    with _render_hits_lock:
+        hits = _render_hits[client]
+        while hits and now - hits[0] > 60:
+            hits.popleft()
+        if len(hits) >= limit:
+            retry_after = max(1, int(60 - (now - hits[0])))
+            raise HTTPException(
+                status_code=429,
+                detail="Too many PDF requests. Please wait a minute and try again.",
+                headers={"Retry-After": str(retry_after)},
+            )
+        hits.append(now)
 
 
 # =============================================================================
@@ -415,6 +501,7 @@ def get_card_payload(code: str):
     return CardPayload(
         code=item["code"],
         name=item["name"],
+        native=item.get("native"),
         rtl=item["rtl"],
         official=item.get("official", True),
         front=item.get("front", {}),
@@ -424,6 +511,7 @@ def get_card_payload(code: str):
 
 @app.get("/api/render/{code}")
 def render_pdf(
+    request: Request,
     code: str,
     cards_per_page: int = Query(
         default=None,
@@ -473,6 +561,19 @@ def render_pdf(
     item = store.get_language(code)
     if not item:
         raise LanguageNotFoundError(code)
+
+    cache_key = (item["code"].lower(), mode, cards_per_page)
+    cached = _pdf_cache_get(cache_key)
+    if cached is not None:
+        pdf_bytes, filename = cached
+        logger.info(f"Serving cached PDF: {filename}")
+        return Response(
+            content=pdf_bytes,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f'attachment; filename="{filename}"'},
+        )
+
+    _check_render_rate_limit(request)
 
     # === CREATE LAYOUT ===
 
@@ -541,6 +642,7 @@ def render_pdf(
         f"know-your-rights-{lang_code}-{lang_name_slug}-{cards_per_page}up{mode_suffix}.pdf"
     )
     logger.info(f"Successfully rendered PDF: {filename}")
+    _pdf_cache_put(cache_key, (pdf_bytes, filename))
 
     return Response(
         content=pdf_bytes,

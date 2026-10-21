@@ -257,6 +257,7 @@ class LanguageItem(BaseModel):
 
     code: str
     name: str
+    native: Optional[str] = None  # Name in the language's own script (endonym)
     rtl: bool = False
     official: bool = True
     fontSupported: bool = True
@@ -350,6 +351,7 @@ class CardPayload(BaseModel):
 
     code: str
     name: str
+    native: Optional[str] = None  # Name in the language's own script (endonym)
     rtl: bool = False
     official: bool = True
     front: Dict[str, Any]  # Flexible dict to handle various JSON structures

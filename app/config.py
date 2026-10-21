@@ -171,6 +171,23 @@ class Settings(BaseSettings):
     log_level: str = "INFO"           # DEBUG, INFO, WARNING, ERROR, CRITICAL
 
     # -------------------------------------------------------------------------
+    # DEPLOYMENT / ABUSE PROTECTION
+    # -------------------------------------------------------------------------
+
+    # "production" refuses to start with the localhost-only CORS default, so a
+    # forgotten CARD_CORS_ORIGINS fails loudly instead of breaking the site.
+    environment: str = "development"
+
+    # Cache-Control max-age (seconds) for card/language/config JSON. Content
+    # only changes on redeploy.
+    json_cache_seconds: int = 300
+
+    # PDF rendering is CPU-heavy: identical requests are served from an
+    # in-memory cache, and each client IP is limited per minute (0 = off).
+    pdf_cache_size: int = 64
+    render_rate_limit_per_minute: int = 20
+
+    # -------------------------------------------------------------------------
     # METHODS
     # -------------------------------------------------------------------------
 

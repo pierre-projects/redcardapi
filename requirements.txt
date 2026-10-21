@@ -1,17 +1,20 @@
+# Version ranges cap the next major release so a fresh install can't pull
+# in breaking changes. Raise the caps deliberately after testing.
+
 # Web Framework
-fastapi>=0.109.0
-uvicorn>=0.27.0
+fastapi>=0.109.0,<1.0
+uvicorn>=0.27.0,<1.0
 
 # Settings/Configuration
-pydantic-settings>=2.1.0
+pydantic-settings>=2.1.0,<3.0
 
 # PDF Generation
-reportlab>=4.4.9
-pillow>=12.1.0
+reportlab>=4.4.9,<5.0
+pillow>=11.1.0,<13.0
 
 # RTL/Arabic Text Support
-arabic-reshaper>=3.0.0
-python-bidi>=0.6.0
+arabic-reshaper>=3.0.0,<4.0
+python-bidi>=0.6.0,<1.0
 
 # Character/Encoding
-charset-normalizer>=3.4.4
+charset-normalizer>=3.4.4,<4.0
