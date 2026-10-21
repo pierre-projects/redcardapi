@@ -12,8 +12,6 @@ anyio==4.15.1
     # via
     #   starlette
     #   watchfiles
-arabic-reshaper==3.0.1
-    # via -r requirements.in
 charset-normalizer==3.5.2
     # via reportlab
 click==8.5.0
@@ -47,7 +45,7 @@ python-dotenv==1.2.4
     #   uvicorn
 pyyaml==6.0.3
     # via uvicorn
-reportlab==4.5.1
+reportlab==5.0.1
     # via -r requirements.in
 starlette==1.9.0
     # via fastapi

@@ -3,7 +3,9 @@
 Brahmic and Southeast Asian scripts (Devanagari, Bengali, Tamil, Gurmukhi,
 Thai, Lao, Khmer, Myanmar) need shaping: conjuncts, reordered vowel signs
 and stacked consonants. Drawn unshaped, ReportLab prints the raw code points
-and words come out wrong (e.g. "अधिकार" renders as "अधकिार").
+and words come out wrong (e.g. "अधिकार" renders as "अधकिार"). Arabic-script
+text needs it for joining letters, including Pashto/Urdu letters that
+table-based reshapers do not know (ټ, ښ, ځ, ړ).
 
 ReportLab only shapes in drawString when its separate rlbidi package is
 installed, so we shape ourselves: shapeStr() returns a ShapedStr whose glyph
@@ -17,6 +19,9 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import ShapedStr, shapeStr
 
 _COMPLEX_RANGES = (
+    (0x0600, 0x06FF),  # Arabic (incl. Farsi, Pashto, Urdu letters)
+    (0x0750, 0x077F),  # Arabic Supplement
+    (0x08A0, 0x08FF),  # Arabic Extended-A
     (0x0900, 0x0DFF),  # Devanagari … Sinhala
     (0x0E00, 0x0EFF),  # Thai, Lao
     (0x1000, 0x109F),  # Myanmar

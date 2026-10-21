@@ -8,11 +8,13 @@ Checks:
 Usage: python -m scripts.validate_translations [path/to/translations.json]
 Languages listed in scripts/known_issues.py are reported but do not fail;
 exit code 1 on a schema error or on problems in any other language.
+Languages whose source sets "verified": false are listed for review.
 """
 
 import re
 import sys
 import unicodedata
+from itertools import pairwise
 from pathlib import Path
 
 from reportlab.pdfbase import pdfmetrics
@@ -22,22 +24,38 @@ from app.data import DatasetError, Language, TranslationStore
 from app.fonts import init_font_manager
 from scripts.known_issues import KNOWN_CORRUPT
 
-_IGNORED = {" ", "​", "‌", "‍", " "}
+_IGNORED = {" ", "\u200b", "\u200c", "\u200d", "\u00a0"}
 # Junk from legacy (non-Unicode) fonts: "*", "=" or digits glued to letters of a
 # non-Latin script, e.g. Khmer "ភា)*ក់".
-_LEGACY_FONT_JUNK = re.compile(r"[Ԁ-￿][*=0-9)]|[*=0-9(][Ԁ-￿]")
+_LEGACY_FONT_JUNK = re.compile(r"[\u0500-\uffff][*=0-9)]|[*=0-9(][\u0500-\uffff]")
+# Arabic uses ك/ي; Persian-family languages use ک/ی. A mix means letters
+# came from a different language's font mapping.
+_FOREIGN_LETTERS = {
+    "ar": "\u06a9\u06cc",  # Persian kaf and yeh
+    "fa": "\u0643\u064a",  # Arabic kaf and yeh
+    "prs": "\u0643\u064a",  # Arabic kaf and yeh
+    "ps": "\u0643",  # Arabic kaf
+    "ur": "\u0643\u064a",  # Arabic kaf and yeh
+}
 
 
 def corruption_issues(language: Language) -> list[str]:
-    """Signs that text was extracted from a PDF in visual rather than logical order."""
+    """Signs that text was mangled by extraction from a PDF."""
     texts = [language.front.header] + [b.text for b in language.front.bullets]
     issues = []
+    foreign = _FOREIGN_LETTERS.get(language.code, "")
     for word in (w for text in texts for w in text.split()):
         if unicodedata.category(word[0]).startswith("M"):
             # Text in logical order never starts a word with a combining mark.
             issues.append(f"word starts with a combining mark: {word!r}")
+        if any(a == b and unicodedata.category(a).startswith("M") for a, b in pairwise(word)):
+            issues.append(f"doubled combining mark: {word!r}")
+        if "\ufffd" in word:
+            issues.append(f"replacement character: {word!r}")
         if _LEGACY_FONT_JUNK.search(word) and language.code not in ("ti", "yo"):
             issues.append(f"symbols inside a word: {word!r}")
+        if foreign and any(ch in foreign for ch in word):
+            issues.append(f"letters from another language's alphabet: {word!r}")
         if language.rtl and word == "ال":
             # The definite article never stands alone; usually a split "لا".
             issues.append("standalone 'ال' (split lam-alef?)")
@@ -84,6 +102,8 @@ def main(path: Path) -> int:
             failed = True
         if known and code not in glyphs and not issues:
             print(f"NOTE {code}: no longer looks corrupted; remove it from scripts/known_issues.py")
+        if not language.source.verified:
+            print(f"REVIEW {code} ({language.name}): {language.source.review_note or 'not verified'}")
 
     print("Translations FAILED validation" if failed else "Translations OK (known issues listed above)")
     return 1 if failed else 0

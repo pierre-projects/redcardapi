@@ -44,14 +44,35 @@ def test_cjk_lines_do_not_start_with_closing_punctuation():
     assert all(line[0] not in "，。" for line in lines)
 
 
-def test_rtl_lines_keep_logical_line_order():
-    # Each line is reordered for display on its own, so the first line holds
-    # the beginning of the sentence (bidi used to run on the whole paragraph).
+def test_rtl_lines_keep_sentence_order():
+    # The first line holds the beginning of the sentence (bidi used to run on
+    # the whole paragraph, putting its end on the first line).
     words = ["أول", "ثاني", "ثالث", "رابع", "خامس", "سادس", "سابع", "ثامن"]
     lines = wrap_text(" ".join(words), "NotoSansArabic", 12, 70, Script.ARABIC, rtl=True)
     assert len(lines) > 1
-    from app.text.bidi import reshape
-    first_word_shaped = reshape(words[0])
-    last_word_shaped = reshape(words[-1])
-    assert first_word_shaped in lines[0][::-1] or first_word_shaped[::-1] in lines[0]
-    assert last_word_shaped[::-1] in lines[-1] or last_word_shaped in lines[-1][::-1]
+    assert lines[0].startswith(words[0])
+    assert lines[-1].endswith(words[-1])
+
+
+def test_pashto_letters_are_joined():
+    # Pashto-specific letters must take joining forms; unshaped they print
+    # isolated (the reshaper used before did not know them).
+    from reportlab.pdfbase import pdfmetrics
+
+    from app.text.shaping import shape
+    word = "پوښتنی"
+    shaped = shape(word, "NotoSansArabic", 20)
+    assert str(shaped) != word  # contextual glyphs, not the isolated letters
+    assert text_width(word, "NotoSansArabic", 20) < pdfmetrics.stringWidth(word, "NotoSansArabic", 20)
+
+
+def test_rtl_runs_keep_latin_and_digits_left_to_right():
+    from app.text.bidi import visual_runs
+    # Runs keep their logical text; only their order is reversed.
+    assert visual_runs("اتصل بالرقم 911 الآن") == [" الآن", "911", "اتصل بالرقم "]
+    assert visual_runs("لا شيء") == ["لا شيء"]
+
+
+def test_hebrew_lines_come_back_in_visual_order():
+    lines = wrap_text("אל תפתח את הדלת", "NotoSansHebrew", 12, 500, Script.HEBREW, rtl=True)
+    assert lines == ["תלדה תא חתפת לא"]

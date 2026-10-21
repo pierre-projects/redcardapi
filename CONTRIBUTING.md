@@ -28,7 +28,7 @@ CI runs the same checks, plus `pip-audit` and a Docker build.
 All card text lives in `data/Translations_with_sources.json`. The API validates the file at startup, and refuses to start if it is malformed.
 
 1. **Edit the language entry.** It needs `name` (English), `native` (the name in the language itself), `code`, `rtl`, `front.header`, `front.bullets[{id, text}]` and `source`.
-2. **Copy the text, don't extract it.** Copy from an editable source, or retype it. Do not extract it from a PDF: extraction scrambles Arabic, Indic and Khmer text (see `scripts/known_issues.py`).
+2. **Copy the text, don't extract it.** Copy from an editable source, or retype it. Do not extract it from a PDF: extraction scrambles Arabic-script, Indic and Khmer text. If you can only transcribe from flawed artwork, set `"verified": false` and explain in `source.review_note`.
 3. **Run `python -m scripts.validate_translations`.** It checks:
    - the schema;
    - that every character has a glyph in the language's font;

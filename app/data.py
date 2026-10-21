@@ -28,7 +28,10 @@ class Source(BaseModel):
     type: str
     origin: str | None = None
     url: str | None = None
+    # False when the text could not be checked against clean source artwork;
+    # review_note says why and what a native speaker should check.
     verified: bool = False
+    review_note: str | None = None
 
 
 class Language(BaseModel):

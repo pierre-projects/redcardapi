@@ -78,7 +78,7 @@ app/
   layout.py          sheet geometry; GRID_LAYOUTS and FOLD_ROWS are the only list of valid layouts
   api/               routes, response schemas, per-app state, PDF cache and rate limiter
   fonts/             language → script → Noto font; registration at startup
-  text/              shaping (HarfBuzz), right-to-left (reshape + bidi), line wrapping
+  text/              shaping (HarfBuzz), right-to-left run ordering, line wrapping
   pdf/               plan text once per sheet, draw it into every card, page guides
 scripts/             validate_translations, render_review
 tests/               API, data, fonts (glyph coverage), text, rendering, data quality
@@ -89,8 +89,8 @@ A render goes through four steps:
 1. **Pick the font.** The language code maps to a script, and the script to a Noto font (`app/fonts`).
 2. **Plan the front and back once per sheet.** Wrapping is tried at different text scales, and a binary search finds the largest that fits the card (`app/pdf/fitting.py`).
 3. **Shape and wrap the text.**
-   - Devanagari, Bengali, Tamil, Gurmukhi, Thai, Lao, Khmer and Myanmar are shaped with HarfBuzz (`uharfbuzz`), and their widths are measured from the shaped glyphs.
-   - Right-to-left text is reshaped, wrapped in logical order, then reordered line by line.
+   - Arabic-script text (Arabic, Farsi, Dari, Pashto, Urdu), Devanagari, Bengali, Tamil, Gurmukhi, Thai, Lao, Khmer and Myanmar are shaped with HarfBuzz (`uharfbuzz`), and their widths are measured from the shaped glyphs.
+   - Right-to-left text is wrapped in logical order; each line's runs are then laid out right to left (Hebrew lines are reordered with python-bidi).
    - Lines break at spaces, or between characters for CJK, and never inside a letter cluster.
 4. **Draw the planned lines** into every card position.
 
@@ -108,7 +108,7 @@ Dependencies are pinned in `requirements.txt`, compiled from `requirements.in` w
 
 ## Known issues
 
-- **Some translations are corrupted.** Their source text was extracted from PDFs and is scrambled: Arabic, Khmer and Tamil (details in `scripts/known_issues.py`). They render exactly what the data contains, so they need re-transcription from the ILRC originals and native-speaker review.
+- **Three translations need native-speaker review.** Khmer, Tamil and Pashto were reconstructed from ILRC artwork that is itself badly typeset (the Khmer card is also cut off at the end; the Pashto card omits two words). They are marked `"verified": false` with a `review_note` in the data, the API returns that note, and `python -m scripts.validate_translations` lists them. Arabic, Farsi, Dari and Marshallese were corrected against clean ILRC artwork.
 - **The font files are large.** `assets/fonts` is about 60 MB, 58 MB of it CJK fonts used by five languages. Subsetting those fonts to the characters the cards use would cut this to a few MB. If the repo grows, Git LFS is the other option. Either way, check that the deploy platform fetches the real font files.
 
 ## License
