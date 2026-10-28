@@ -9,7 +9,7 @@ from ..data import Language
 from ..fonts import Script, detect_script
 from ..layout import Rect
 from ..text import wrap_text
-from .constants import BASE_BODY_SIZE, BASE_TITLE_SIZE
+from .constants import BASE_BODY_SIZE, BASE_TITLE_SIZE, MIN_ABSOLUTE_FONT_SIZE
 from .draw import draw_line
 from .fitting import Typography, find_best_fit_scale, typography
 
@@ -32,14 +32,20 @@ class FrontPlan:
     title_lines: list[str]
     bullet_lines: list[list[str]]
     height: float
+    # English "machine translation" line at the bottom; empty for other sources.
+    notice_font: str = ""
+    notice_size: float = 0
+    notice_lines: tuple[str, ...] = ()
 
 
 def plan_front(language: Language, card_width: float, card_height: float,
-               base_scale: float, regular_font: str, bold_font: str) -> FrontPlan:
+               base_scale: float, regular_font: str, bold_font: str,
+               notice_font: str = "") -> FrontPlan:
     script = detect_script(language.code)
     line_height = LINE_HEIGHT.get(script, 1.0)
     header = language.front.header
     bullets = [b.text for b in language.front.bullets]
+    notice = language.source.machine_notice if notice_font else None
     cache: dict[float, FrontPlan] = {}
 
     def layout_at(scale: float) -> FrontPlan:
@@ -49,12 +55,16 @@ def plan_front(language: Language, card_width: float, card_height: float,
             title = wrap_text(header, bold_font, t.title_size, width, script, language.rtl)
             body = [wrap_text(b, regular_font, t.body_size, width - t.bullet_indent, script, language.rtl)
                     for b in bullets]
+            notice_size = max(MIN_ABSOLUTE_FONT_SIZE, t.body_size - 2)
+            notice_lines = tuple(wrap_text(notice, notice_font, notice_size, width)) if notice else ()
             height = (
                 2 * t.pad
                 + len(title) * t.leading + 4 * scale
                 + sum(len(lines) * t.leading + 2 * scale for lines in body)
+                + len(notice_lines) * notice_size * 1.2 + (2 * scale if notice_lines else 0)
             )
-            cache[scale] = FrontPlan(t, bold_font, regular_font, language.rtl, title, body, height)
+            cache[scale] = FrontPlan(t, bold_font, regular_font, language.rtl, title, body, height,
+                                     notice_font, notice_size, notice_lines)
         return cache[scale]
 
     fit = find_best_fit_scale(
@@ -74,6 +84,16 @@ def draw_front(pdf: Canvas, rect: Rect, plan: FrontPlan) -> None:
     inner_left, inner_right = left + t.pad, left + width - t.pad
     floor = bottom + t.pad
     y = bottom + height - t.pad
+
+    if plan.notice_lines:
+        # Pinned to the bottom edge; the body stops above it.
+        step = plan.notice_size * 1.2
+        pdf.setFont(plan.notice_font, plan.notice_size)
+        top = floor + (len(plan.notice_lines) - 1) * step
+        for index, line in enumerate(plan.notice_lines):
+            draw_line(pdf, line, inner_left, inner_right, top - index * step, plan.notice_font,
+                      plan.notice_size)
+        floor += len(plan.notice_lines) * step + 2 * t.scale
 
     pdf.setFont(plan.bold_font, t.title_size)
     for line in plan.title_lines:

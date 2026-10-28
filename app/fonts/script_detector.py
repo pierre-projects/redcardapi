@@ -38,6 +38,7 @@ LANGUAGE_TO_SCRIPT: dict[str, Script] = {
     "mk": Script.CYRILLIC,
     "el": Script.GREEK,
     "ar": Script.ARABIC,
+    "apd": Script.ARABIC,  # Sudanese Arabic
     "fa": Script.ARABIC,
     "prs": Script.ARABIC,
     "ps": Script.ARABIC,

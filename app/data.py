@@ -6,9 +6,11 @@ Anything else is a startup error, so bad data never reaches a request.
 """
 
 import json
+from datetime import date
 from pathlib import Path
+from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
 
 
 class Bullet(BaseModel):
@@ -25,13 +27,35 @@ class Front(BaseModel):
 
 class Source(BaseModel):
     model_config = ConfigDict(extra="ignore")
-    type: str
+    # official: ILRC's own card. machine: a translation app's output of the
+    # English card text. community: written by a contributor.
+    type: Literal["official", "machine", "community"]
     origin: str | None = None
     url: str | None = None
-    # False when the text could not be checked against clean source artwork;
-    # review_note says why and what a native speaker should check.
+    # official: True when the text matches clean ILRC artwork. machine and
+    # community: True once a native speaker has checked it. When False,
+    # review_note says why and what a reviewer should check.
     verified: bool = False
     review_note: str | None = None
+    # Machine translations must say which app produced them, when, and from what.
+    engine: str | None = None  # e.g. "Google Translate"
+    translated_on: date | None = None
+    translated_from: str | None = None  # e.g. "English, ILRC card text"
+
+    @model_validator(mode="after")
+    def machine_needs_provenance(self) -> "Source":
+        if self.type == "machine" and not (self.engine and self.translated_on):
+            raise ValueError("machine translations need 'engine' and 'translated_on'")
+        return self
+
+    @property
+    def machine_notice(self) -> str | None:
+        """English line printed on machine-translated cards, so a cut-out card still says so."""
+        if self.type != "machine":
+            return None
+        if self.verified:
+            return f"Machine translation ({self.engine}), checked by a native speaker."
+        return f"Machine translation ({self.engine}), not yet checked by a native speaker."
 
 
 class Language(BaseModel):

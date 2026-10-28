@@ -52,7 +52,9 @@ def corruption_issues(language: Language) -> list[str]:
             issues.append(f"doubled combining mark: {word!r}")
         if "\ufffd" in word:
             issues.append(f"replacement character: {word!r}")
-        if _LEGACY_FONT_JUNK.search(word) and language.code not in ("ti", "yo"):
+        # A word wrapped in real parentheses, e.g. Sudanese Arabic "(تمضي)", is fine.
+        core = word[1:-1] if word.startswith("(") and word.endswith(")") else word
+        if _LEGACY_FONT_JUNK.search(core) and language.code not in ("ti", "yo"):
             issues.append(f"symbols inside a word: {word!r}")
         if foreign and any(ch in foreign for ch in word):
             issues.append(f"letters from another language's alphabet: {word!r}")
@@ -102,6 +104,9 @@ def main(path: Path) -> int:
             failed = True
         if known and code not in glyphs and not issues:
             print(f"NOTE {code}: no longer looks corrupted; remove it from scripts/known_issues.py")
+        if language.source.type == "machine":
+            source = language.source
+            print(f"MACHINE {code} ({language.name}): {source.engine}, {source.translated_on}")
         if not language.source.verified:
             print(f"REVIEW {code} ({language.name}): {language.source.review_note or 'not verified'}")
 

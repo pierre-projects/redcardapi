@@ -6,7 +6,7 @@ from app.data import DatasetError, TranslationStore
 
 
 def test_loads_every_language(store):
-    assert len(store.languages()) == 56
+    assert len(store.languages()) == 59
     assert store.get("ZH-CN").display_code == "zh-CN"
     assert store.get("nope") is None
     assert len(store.back.paragraphs) == 5
@@ -51,3 +51,32 @@ def test_invalid_language_fails_at_load(tmp_path, override):
 def test_missing_file(tmp_path):
     with pytest.raises(DatasetError, match="not found"):
         TranslationStore.load(tmp_path / "missing.json")
+
+
+MACHINE_SOURCE = {"type": "machine", "engine": "Google Translate", "translated_on": "2026-10-28",
+                  "translated_from": "English, ILRC card text"}
+
+
+def test_machine_translation_loads_with_provenance(tmp_path):
+    store = TranslationStore.load(_write(tmp_path, _minimal(source=MACHINE_SOURCE)))
+    source = store.get("es").source
+    assert not store.get("es").official
+    assert source.translated_on.isoformat() == "2026-10-28"
+    assert source.machine_notice == (
+        "Machine translation (Google Translate), not yet checked by a native speaker.")
+
+
+@pytest.mark.parametrize("missing", ["engine", "translated_on"])
+def test_machine_translation_without_provenance_fails(tmp_path, missing):
+    source = {k: v for k, v in MACHINE_SOURCE.items() if k != missing}
+    with pytest.raises(DatasetError, match="engine"):
+        TranslationStore.load(_write(tmp_path, _minimal(source=source)))
+
+
+def test_unknown_source_type_fails(tmp_path):
+    with pytest.raises(DatasetError):
+        TranslationStore.load(_write(tmp_path, _minimal(source={"type": "app"})))
+
+
+def test_only_machine_translations_carry_a_notice(store):
+    assert all(lang.source.machine_notice is None for lang in store.languages() if lang.official)

@@ -889,6 +889,43 @@
         "verified": true
       }
     },
+    "id": {
+      "name": "Indonesian",
+      "native": "Bahasa Indonesia",
+      "code": "id",
+      "rtl": false,
+      "front": {
+        "header": "Anda memiliki hak konstitusional sebagai berikut:",
+        "bullets": [
+          {
+            "id": "bullet_1",
+            "text": "JANGAN MEMBUKA PINTU jika petugas imigrasi mengetuk pintu."
+          },
+          {
+            "id": "bullet_2",
+            "text": "JANGAN MENJAWAB PERTANYAAN APA PUN dari petugas imigrasi jika mereka mencoba berbicara kepada Anda. Anda berhak untuk tetap diam."
+          },
+          {
+            "id": "bullet_3",
+            "text": "JANGAN MENANDATANGANI APA PUN tanpa terlebih dahulu membicarakan dengan pengacara. Anda berhak untuk berbicara dengan pengacara."
+          },
+          {
+            "id": "bullet_4",
+            "text": "Jika Anda berada di luar rumah, tanyakan kepada petugas apakah Anda bebas untuk pergi dan jika mereka mengatakan ya, pergilah dengan tenang."
+          },
+          {
+            "id": "bullet_5",
+            "text": "BERIKAN KARTU INI KEPADA PETUGAS. Jika Anda berada di dalam rumah, tunjukkan kartu ini melalui jendela atau selipkan di bawah pintu."
+          }
+        ]
+      },
+      "source": {
+        "type": "official",
+        "origin": "ILRC",
+        "url": "https://www.ilrc.org/sites/default/files/2026-04/Artwork-for-Printing-Your-Own-Red-Cards-Indonesian.pdf",
+        "verified": true
+      }
+    },
     "ja": {
       "name": "Japanese",
       "native": "日本語",
@@ -1147,6 +1184,44 @@
         "origin": "ILRC",
         "url": "https://www.ilrc.org/red-cards",
         "verified": true
+      }
+    },
+    "mam": {
+      "name": "Mam",
+      "native": "Mam",
+      "code": "mam",
+      "rtl": false,
+      "front": {
+        "header": "At kyoklena toj kawbʼil:",
+        "bullets": [
+          {
+            "id": "bullet_1",
+            "text": "MIʼN TZʼOKX T-JAQOʼNA T-JAYE qa ma tzʼok t-xoʼna jun aqʼunal te inmigración."
+          },
+          {
+            "id": "bullet_2",
+            "text": "MIʼN TZAJ TZAQʼWEʼNA TIʼJ JUNTZ XJEL qa ma tzʼok tilil tuʼn jun aqʼunal te inmigración tuʼn tyolin tukʼila. At toklena tun t-xi t-ximana."
+          },
+          {
+            "id": "bullet_3",
+            "text": "MIʼN TZʼOKX TQʼOʼNA T-FIRMA TIʼJ JUN TIʼXTIʼ qa mya bʼaʼn tuʼn t-yoline tukʼe jun abogado. At toklena tun t-yoline tukʼe jun ajkawil."
+          },
+          {
+            "id": "bullet_4",
+            "text": "Qa aya t-xe t-jay, qaninxa te ajkawil qa bʼaʼn tuʼn tetza, extzen qa ma tzaj kyqʼamaʼn qa bʼaʼn, bʼaʼn tuʼn tetza tukʼil tzalajbʼil."
+          },
+          {
+            "id": "bullet_5",
+            "text": "QʼONXA A TARJETA LU TE OFICIAL. Qa at toj tjaya, yekʼunxa ajuʼ tarjeta toj ventan moqa qʼonxa tjaqʼ ttzi ja."
+          }
+        ]
+      },
+      "source": {
+        "type": "official",
+        "origin": "ILRC",
+        "url": "https://www.ilrc.org/sites/default/files/2026-04/Artwork-for-Printing-Your-Own-Red-Cards-Mam.pdf",
+        "verified": true,
+        "transcription_note": "ILRC's artwork types the glottal stop as an acute accent (U+00B4). It is stored as the modifier letter apostrophe (U+02BC), which looks the same but never splits a word across lines."
       }
     },
     "mh": {
@@ -1668,6 +1743,44 @@
         "verified": true
       }
     },
+    "apd": {
+      "name": "Sudanese Arabic",
+      "native": "العربية السودانية",
+      "code": "apd",
+      "rtl": true,
+      "front": {
+        "header": "إنت عندك حقوق بيضمنها ليك الدستور، اللي هي:",
+        "bullets": [
+          {
+            "id": "bullet_1",
+            "text": "من حقك ما تفتح بابك لو جاء موظف الهجرة يدق ليك الباب"
+          },
+          {
+            "id": "bullet_2",
+            "text": "من حقك ما تجاوب على أي أسئلة يحاول يسألك ليها موظف الهجرة. من حقك بس تقعد ساكت وما ترد."
+          },
+          {
+            "id": "bullet_3",
+            "text": "ما توقع (تمضي) على أي ورق بدون ما تتكلم مع محامي. من حقك انك تتكلم مع محامي."
+          },
+          {
+            "id": "bullet_4",
+            "text": "لو كنت برة البيت، اسأل موظف الهجرة إذا كان بإمكانك تمشي، ولو قال ايوة، امشي طوالي بكل هدوء."
+          },
+          {
+            "id": "bullet_5",
+            "text": "ادي الكرت دا لموظف الهجرة. ولو كنت داخل محل سكنك، بس وريهو الكرت بالشباك، أو مررو ليهو بي تحت الباب"
+          }
+        ]
+      },
+      "source": {
+        "type": "official",
+        "origin": "ILRC",
+        "url": "https://www.ilrc.org/sites/default/files/2026-04/Artwork-for-Printing-Your-Own-Red-Cards-Sudanese-Arabic.pdf",
+        "verified": false,
+        "review_note": "Transcribed by eye from ILRC artwork; its text layer is scrambled. The artwork's header starts 'نت', missing its first letter; it was restored as 'إنت'. Needs native-speaker review."
+      }
+    },
     "sw": {
       "name": "Swahili",
       "native": "Kiswahili",
@@ -2101,7 +2214,7 @@
   },
   "metadata": {
     "version": "1.0.0",
-    "total_languages": 56,
+    "total_languages": 59,
     "description": "Constitutional Rights Red Card - Multi-language Database",
     "source": "ILRC Red Cards (ilrc.org/red-cards)",
     "extraction_date": "2026-01-30",
@@ -2111,7 +2224,8 @@
       "fa",
       "he",
       "ps",
-      "ur"
+      "ur",
+      "apd"
     ],
     "sources_added": "2026-02-01T02:04:59.049652",
     "primary_source": "ILRC Red Cards (https://www.ilrc.org/red-cards)",

@@ -4,7 +4,7 @@ Thank you for helping. This project produces "Know Your Rights" red cards in man
 
 ## Attribution (required)
 
-The 56 translations come from the Immigrant Legal Resource Center (ILRC), who created the original red cards. Contributions that touch translation content must keep this attribution and must not misrepresent ILRC's role.
+The 59 translations come from the Immigrant Legal Resource Center (ILRC), who created the original red cards. Contributions that touch translation content must keep this attribution and must not misrepresent ILRC's role.
 
 ## Setup
 
@@ -38,6 +38,30 @@ All card text lives in `data/Translations_with_sources.json`. The API validates 
 6. **Sync the frontend.** The frontend bundles the same file. Run `npm run sync:data` in `redcardapi-frontend`.
 
 After fixing a language listed in `scripts/known_issues.py`, remove it from that list. The validator and tests point it out until you do.
+
+### Adding a language ILRC doesn't publish (machine translation)
+
+First check https://www.ilrc.org/red-cards. If ILRC has a card in the language, transcribe it as `"type": "official"` instead.
+
+Otherwise you can add a machine translation of the English card text. People read this card in a stressful moment, so the app labels these cards everywhere: above the card on screen, on saved images, on printed cards and PDFs, and in the language lists.
+
+1. **Translate from the English text**, not from another language's card. Translate the header and each bullet separately, so the bullets keep their meaning and order.
+2. **Record where the text came from.** The API refuses to start if a machine translation has no `engine` or `translated_on`:
+   ```json
+   "source": {
+     "type": "machine",
+     "engine": "Google Translate",
+     "translated_on": "2026-10-28",
+     "translated_from": "English, ILRC card text",
+     "verified": false,
+     "review_note": "Machine translation. Needs a native speaker to check every bullet."
+   }
+   ```
+   Never add an `origin` of `ILRC` or an ILRC `url` to a machine translation. ILRC did not write it.
+3. **Check it yourself before the pull request.** Translate the result back into English with a different app, and compare it to the English bullets. Fix anything that changed meaning, especially "do not open the door", "right to remain silent", "do not sign anything" and "lawyer".
+4. Then continue from step 3 above (validate, map the script, render, sync).
+
+**Native-speaker review.** A native speaker who checks every bullet against the English sets `"verified": true`. The notice then reads "checked by a native speaker". If they rewrite the text, change `type` to `"community"` and put their name or organization in `origin`.
 
 ## Changing rendering code
 

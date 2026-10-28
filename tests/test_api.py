@@ -6,7 +6,7 @@ from tests.conftest import make_settings
 
 
 def test_health_and_ready(client):
-    assert client.get("/api/health").json() == {"ok": True, "languages_loaded": 56}
+    assert client.get("/api/health").json() == {"ok": True, "languages_loaded": 59}
     ready = client.get("/api/ready")
     assert ready.status_code == 200
     assert ready.json()["fonts_loaded"] is True
@@ -17,13 +17,15 @@ def test_config_lists_layouts(client):
     assert body["valid_layouts"] == [4, 6, 8, 12]
     assert body["fold_layouts"] == [4, 5, 6]
     assert body["render_modes"] == ["grid", "fold"]
+    assert body["default_color"] == "#B91C1C"
+    assert body["default_color"] in body["color_presets"]
 
 
 def test_languages_include_native_names_and_font_support(client):
     response = client.get("/api/languages")
     assert response.headers["cache-control"].startswith("public, max-age=")
     languages = {lang["code"]: lang for lang in response.json()}
-    assert len(languages) == 56
+    assert len(languages) == 59
     assert languages["es"]["native"] == "Español"
     assert languages["ar"]["rtl"] is True
     assert languages["zh-cn"]["name"] == "Chinese (Simplified)"
@@ -62,7 +64,26 @@ def test_render_filename_keeps_display_code(client):
     assert 'know-your-rights-zh-CN-chinese-simplified-4up.pdf' in response.headers["content-disposition"]
 
 
+@pytest.mark.parametrize("mode,suffix", [("grid", "4up"), ("fold", "4up-fold")])
+def test_render_color_pdf(client, mode, suffix):
+    response = client.get("/api/render/es", params={"mode": mode, "color": "#b91c1c"})
+    assert response.status_code == 200
+    assert response.headers["content-disposition"].endswith(f'-spanish-{suffix}-color-B91C1C.pdf"')
+    assert response.content.startswith(b"%PDF")
+
+
+def test_color_is_part_of_the_pdf_cache_key(client_factory):
+    client = client_factory(pdf_cache_size=8)
+    plain = client.get("/api/render/fr")
+    red = client.get("/api/render/fr", params={"color": "B91C1C"})
+    blue = client.get("/api/render/fr", params={"color": "1D4ED8"})
+    assert len({plain.content, red.content, blue.content}) == 3
+
+
 @pytest.mark.parametrize("params", [
+    {"color": "red"},
+    {"color": "#FFF"},
+    {"color": "B91C1C00"},
     {"mode": "poster"},
     {"mode": "legacy"},
     {"cards_per_page": 5},

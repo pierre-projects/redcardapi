@@ -1,6 +1,6 @@
 # Red Card API
 
-A FastAPI service that renders printable "Know Your Rights" red cards as PDFs in 56 languages. It also serves the card text and print options as JSON.
+A FastAPI service that renders printable "Know Your Rights" red cards as PDFs in 59 languages. It also serves the card text and print options as JSON.
 
 - **Frontend:** [redcardapi-frontend](https://github.com/pierre-projects/redcardapi-frontend). The frontend bundles the card text, so it can show cards without this API. The API is needed for PDF downloads.
 - **Translations:** sourced from the Immigrant Legal Resource Center (ILRC), who created the original red cards.
@@ -108,7 +108,7 @@ Dependencies are pinned in `requirements.txt`, compiled from `requirements.in` w
 
 ## Known issues
 
-- **Three translations need native-speaker review.** Khmer, Tamil and Pashto were reconstructed from ILRC artwork that is itself badly typeset (the Khmer card is also cut off at the end; the Pashto card omits two words). They are marked `"verified": false` with a `review_note` in the data, the API returns that note, and `python -m scripts.validate_translations` lists them. Arabic, Farsi, Dari and Marshallese were corrected against clean ILRC artwork.
+- **Four translations need native-speaker review.** Khmer, Tamil and Pashto were reconstructed from ILRC artwork that is itself badly typeset (the Khmer card is also cut off at the end; the Pashto card omits two words). Sudanese Arabic was transcribed by eye because its PDF text layer is scrambled, and the artwork's header is missing its first letter. They are marked `"verified": false` with a `review_note` in the data, the API returns that note, and `python -m scripts.validate_translations` lists them. Arabic, Farsi, Dari and Marshallese were corrected against clean ILRC artwork.
 - **The font files are large.** `assets/fonts` is about 60 MB, 58 MB of it CJK fonts used by five languages. Subsetting those fonts to the characters the cards use would cut this to a few MB. If the repo grows, Git LFS is the other option. Either way, check that the deploy platform fetches the real font files.
 
 ## License
