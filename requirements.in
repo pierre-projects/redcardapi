@@ -5,5 +5,5 @@ uvicorn[standard]>=0.30,<1.0
 pydantic>=2.6,<3.0
 pydantic-settings>=2.1,<3.0
 reportlab>=5.0.1,<6.0
-uharfbuzz>=0.40,<1.0      # shaping: Arabic script, Devanagari, Tamil, Khmer, Myanmar, ...
+uharfbuzz>=0.57.0,<1.0      # shaping: Arabic script, Devanagari, Tamil, Khmer, Myanmar, ...
 python-bidi>=0.6,<1.0     # Hebrew line reordering
