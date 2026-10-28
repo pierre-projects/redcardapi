@@ -4,6 +4,8 @@ from pathlib import Path
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+from .pdf.colors import COLOR_PRESETS, DEFAULT_CARD_COLOR
+
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -34,6 +36,10 @@ class Settings(BaseSettings):
     margin_inches: float = 0.5
     gutter_inches: float = 0.25
     footer_height_inches: float = 0.55
+
+    # Color prints: hex colors without "#", offered as swatches by /api/config.
+    color_presets: list[str] = list(COLOR_PRESETS)
+    default_color: str = DEFAULT_CARD_COLOR
 
     # Caching: JSON and PDFs only change on redeploy.
     json_cache_seconds: int = 300

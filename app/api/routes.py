@@ -13,6 +13,7 @@ from ..exceptions import LanguageNotFoundError, PDFRenderError, RedCardError, Re
 from ..fonts import detect_script
 from ..layout import FOLD_ROWS, GRID_LAYOUTS, MODE_FOLD, MODE_GRID, MODES, CardLayout
 from ..pdf import render_pdf
+from ..pdf.colors import normalize_hex
 from .schemas import CardPayload, ConfigResponse, HealthResponse, LanguageItem, ReadyResponse
 from .state import AppState, get_state
 
@@ -63,6 +64,8 @@ async def config(state: AppState = Depends(get_state)):
         render_modes=list(MODES),
         fold_layouts=list(FOLD_ROWS),
         default_fold_cards_per_page=s.default_fold_cards_per_page,
+        color_presets=[f"#{c}" for c in s.color_presets],
+        default_color=f"#{s.default_color}",
     )
 
 
@@ -93,11 +96,21 @@ async def render(
         description="Grid mode: cards per page (4, 6, 8, 12). Fold mode: rows (4, 5, 6).",
     ),
     mode: str = Query(default=MODE_GRID, description='"grid" or "fold".'),
+    color: str | None = Query(
+        default=None,
+        description='Color print: hex card color such as "B91C1C". Omit for black on white.',
+    ),
     state: AppState = Depends(get_state),
 ):
     """Printable PDF for one language."""
     if mode not in MODES:
         return _invalid(f'Invalid mode "{mode}". Use "grid" or "fold".')
+
+    card_color = None
+    if color:
+        card_color = normalize_hex(color)
+        if card_color is None:
+            return _invalid(f'Invalid color "{color}". Use a 6-digit hex color like "B91C1C".')
 
     s = state.settings
     if mode == MODE_FOLD:
@@ -115,14 +128,15 @@ async def render(
     fonts = state.require_fonts()
     filename = (
         f"know-your-rights-{language.display_code}-{_slug(language.name) or language.code}"
-        f"-{count}up{'-fold' if mode == MODE_FOLD else ''}.pdf"
+        f"-{count}up{'-fold' if mode == MODE_FOLD else ''}"
+        f"{f'-color-{card_color}' if card_color else ''}.pdf"
     )
     headers = {
         "Content-Disposition": f'attachment; filename="{filename}"',
         "Cache-Control": f"public, max-age={s.pdf_cache_seconds}",
     }
 
-    cache_key = (language.code, mode, count, s.page_size)
+    cache_key = (language.code, mode, count, s.page_size, card_color)
     cached = state.pdf_cache.get(cache_key)
     if cached is not None:
         return Response(content=cached[0], media_type="application/pdf", headers=headers)
@@ -135,7 +149,8 @@ async def render(
         gutter_inches=s.gutter_inches, footer_height_inches=s.footer_height_inches,
     )
     loop = asyncio.get_running_loop()
-    job = loop.run_in_executor(state.render_pool, render_pdf, language, state.store.back, layout, fonts)
+    job = loop.run_in_executor(state.render_pool, render_pdf, language, state.store.back,
+                               layout, fonts, card_color)
     try:
         pdf_bytes = await asyncio.wait_for(job, timeout=s.render_timeout_seconds)
     except TimeoutError as exc:

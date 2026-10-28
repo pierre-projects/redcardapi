@@ -16,6 +16,11 @@ GRID_FOOTER = (
     "If you use a professional printer, we suggest you print 2-sided cards with white text on red card stock",
     "with rounded corners.",
 )
+COLOR_GRID_FOOTER = (
+    "To print at home, use heavy weight paper, or card stock. Cut out the cards along the dotted lines. If",
+    "you're unable to print on both sides, you can simply fold on the center line to make a 2-sided card.",
+    "This sheet is already in color, so plain white paper or card stock works.",
+)
 FOLD_INSTRUCTIONS = (
     "To print at home, use heavy weight paper or card stock.",
     "Cut out the cards along the dotted lines.",
@@ -65,13 +70,13 @@ def draw_grid_guides(pdf: Canvas, layout: CardLayout) -> None:
     pdf.restoreState()
 
 
-def draw_grid_footer(pdf: Canvas, layout: CardLayout, font: str) -> None:
+def draw_grid_footer(pdf: Canvas, layout: CardLayout, font: str, color_print: bool = False) -> None:
     size = max(7, int(BASE_FOOTER_SIZE * layout.font_scale))
     pdf.saveState()
     pdf.setFont(font, size)
     y = layout.margin + 0.1 * inch
     # Drawn bottom-up, so the last line of the text sits lowest.
-    for line in reversed(GRID_FOOTER):
+    for line in reversed(COLOR_GRID_FOOTER if color_print else GRID_FOOTER):
         pdf.drawString(layout.margin, y, line)
         y += size + 2
     pdf.restoreState()

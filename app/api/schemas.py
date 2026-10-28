@@ -46,6 +46,8 @@ class ConfigResponse(BaseModel):
     render_modes: list[str]
     fold_layouts: list[int]
     default_fold_cards_per_page: int
+    color_presets: list[str]  # "#RRGGBB" swatches for color prints
+    default_color: str
 
 
 class HealthResponse(BaseModel):
